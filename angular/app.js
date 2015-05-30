@@ -30,6 +30,10 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       url: "/tickets",
       templateUrl: "about/tickets.html"
     })
+    .state('about.schedule', {
+      url: "/schedule",
+      templateUrl: "about/schedule.html"
+    })
     .state('about.map', {
       url: "/map",
       templateUrl: "about/map.html"
