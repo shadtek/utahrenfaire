@@ -10,7 +10,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: "home.html"
     })
     .state('about', {
-      url: "/about",
+      url: "",
       templateUrl: "about/about.html",
       abstract: true
     })
@@ -33,6 +33,18 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('about.schedule', {
       url: "/schedule",
       templateUrl: "about/schedule.html"
+    })
+    .state('about.gallery', {
+      url: "/gallery",
+      templateUrl: "about/gallery.html"
+    })
+    .state('about.vendors', {
+      url: "/vendors",
+      templateUrl: "about/vendors.html"
+    })
+    .state('about.entertainers', {
+      url: "/entertainers",
+      templateUrl: "about/entertainers.html"
     })
     .state('about.map', {
       url: "/map",
