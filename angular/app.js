@@ -18,6 +18,14 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       url: "/feast",
       templateUrl: "about/feast.html"
     })
+    .state('about.feast.friday', {
+      url: "/friday",
+      templateUrl: "about/friday.html"
+    })
+    .state('about.feast.saturday', {
+      url: "/saturday",
+      templateUrl: "about/saturday.html"
+    })
     .state('about.tickets', {
       url: "/tickets",
       templateUrl: "about/tickets.html"
