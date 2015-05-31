@@ -1,4 +1,4 @@
-var app = angular.module('utahrenfaire', ['ui.router', 'firebase', 'ngGrid']);
+var app = angular.module('utahrenfaire', ['ui.router', 'firebase']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //
