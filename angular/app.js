@@ -45,7 +45,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('about.entertainers', {
       url: "/entertainers",
-      templateUrl: "states/entertainers/entertainers.html"
+      templateUrl: "states/entertainers/entertainers.html",
+      controller: 'entertainersCtrl'
     })
     .state('about.map', {
       url: "/map",
