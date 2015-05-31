@@ -1,4 +1,4 @@
-var app = angular.module('utahrenfaire', ['ui.router']);
+var app = angular.module('utahrenfaire', ['ui.router', 'firebase', 'ngGrid']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   //
@@ -7,56 +7,57 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('home', {
       url: "/",
-      templateUrl: "home.html"
+      templateUrl: "states/home/home.html"
     })
     .state('about', {
       url: "",
-      templateUrl: "about/about.html",
+      templateUrl: "states/about.html",
       abstract: true
     })
     .state('about.feast', {
       url: "/feast",
-      templateUrl: "about/feast.html"
+      templateUrl: "states/feast/feast.html"
     })
     .state('about.feast.friday', {
       url: "/friday",
-      templateUrl: "about/friday.html"
+      templateUrl: "states/friday.html"
     })
     .state('about.feast.saturday', {
       url: "/saturday",
-      templateUrl: "about/saturday.html"
+      templateUrl: "states/saturday.html"
     })
     .state('about.tickets', {
       url: "/tickets",
-      templateUrl: "about/tickets.html"
+      templateUrl: "states/tickets/tickets.html"
     })
     .state('about.schedule', {
       url: "/schedule",
-      templateUrl: "about/schedule.html"
+      templateUrl: "states/schedule/schedule.html"
     })
     .state('about.gallery', {
       url: "/gallery",
-      templateUrl: "about/gallery.html"
+      templateUrl: "states/gallery/gallery.html"
     })
     .state('about.vendors', {
       url: "/vendors",
-      templateUrl: "about/vendors.html"
+      templateUrl: "states/vendors/vendors.html",
+      controller: 'vendorsCtrl'
     })
     .state('about.entertainers', {
       url: "/entertainers",
-      templateUrl: "about/entertainers.html"
+      templateUrl: "states/entertainers/entertainers.html"
     })
     .state('about.map', {
       url: "/map",
-      templateUrl: "about/map.html"
+      templateUrl: "states/map/map.html"
     })
     .state('about.registration', {
       url: "/registration",
-      templateUrl: "about/registration.html"
+      templateUrl: "states/registration/registration.html"
     })
     .state('about.contact', {
       url: "/contact",
-      templateUrl: "about/contact.html"
+      templateUrl: "states/contact/contact.html"
     })
     .state('otherwise', {
     url: '*path',
