@@ -1,9 +1,12 @@
 var app = angular.module('utahrenfaire');
 
-app.factory('mainService', function($firebaseArray) {
+app.service('mainService', function($firebaseArray) {
 
 	var url = 'https://utahrenfaire.firebaseio.com/';
 	var ref = new Firebase(url);
-	return $firebaseArray(ref)
+	var vendors = new Firebase(url + 'vendors');
+
+	this.root = $firebaseArray(ref);
+	this.vendors = $firebaseArray(vendors);
 
 })
