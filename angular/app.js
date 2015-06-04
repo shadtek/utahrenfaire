@@ -60,6 +60,14 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       url: "/contact",
       templateUrl: "states/contact/contact.html"
     })
+    .state('about.login', {
+      url: "/login",
+      templateUrl: "states/login/login.html",
+      controller: 'LoginCtrl'
+    })
+
+
+
     .state('otherwise', {
     url: '*path',
     resolve: {

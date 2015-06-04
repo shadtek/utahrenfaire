@@ -26,7 +26,8 @@
 
 </head>
 
-<body cz-shortcut-listen="true">
+<body ng-controller="mainCtrl" cz-shortcut-listen="true">
+  <a rel="#top"></a>
   <div class="header-links">
   <a class="facebook" href="https://www.facebook.com/UtahRenaissanceFaire" target="_blank"></a>
   </div>
@@ -89,9 +90,9 @@
             </div>
             <ul>
               <li>© Utah Valley Fine Arts Council 2015</li>
-                <li><a ui-sref="about.contact">Contact Us</a></li>
-                <li><a href="https://www.linkedin.com/in/shadtek" target="_blank">Converted to AngularJS by Spencer Shattuck</a></li>
-              <!-- <li><a href="login">Login</a></li> -->
+              <li><a href="#top" ng-click="go('/contact')">Contact Us</a></li>
+              <li><a href="https://www.linkedin.com/in/shadtek" target="_blank">Converted to AngularJS by Spencer Shattuck</a></li>
+              <!-- <li><a href="#top" ng-click="go('/login')">Login</a></li> -->
             </ul>
           </footer>
         </div>
@@ -105,8 +106,11 @@
   <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
   <script src='angular/app.js'></script>
+  <script src='angular/mainCtrl.js'></script>
   <script src='states/vendors/vendorsCtrl.js'></script>
   <script src='states/entertainers/entertainersCtrl.js'></script>
+  <script src='states/login/LoginCtrl.js'></script>
+  <script src='angular/authService.js'></script>
   <script src='angular/mainService.js'></script>
   <script type="text/javascript" src="js/json2.js"></script>
   <script type="text/javascript" src="js/knockout-2.0.0.js"></script>
