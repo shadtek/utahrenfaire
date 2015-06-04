@@ -65,6 +65,10 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: "states/login/login.html",
       controller: 'LoginCtrl'
     })
+    .state('about.dashboard', {
+      url: "/dashboard",
+      templateUrl: "states/dashboard/dashboard.html"
+    })
 
 
 
