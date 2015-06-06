@@ -1,13 +1,18 @@
 var app = angular.module('utahrenfaire', ['ui.router', 'firebase']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-  //
   // For any unmatched url, redirect to /
 
   $stateProvider
     .state('home', {
       url: "/",
-      templateUrl: "states/home/home.html"
+      templateUrl: "states/home/home.html",
+      controller: 'homeCtrl',
+      resolve: {
+        mainInfoRef: function(mainService){
+          return mainService.getMainInfo();
+        }
+      }
     })
     .state('about', {
       url: "",
@@ -60,18 +65,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       url: "/contact",
       templateUrl: "states/contact/contact.html"
     })
-    .state('about.login', {
-      url: "/login",
-      templateUrl: "states/login/login.html",
-      controller: 'LoginCtrl'
-    })
-    .state('about.dashboard', {
-      url: "/dashboard",
-      templateUrl: "states/dashboard/dashboard.html"
-    })
-
-
-
     .state('otherwise', {
     url: '*path',
     resolve: {

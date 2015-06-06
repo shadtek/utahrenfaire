@@ -3,11 +3,11 @@
     <div class="image-wrapper">
       <div class="announcement">
         <h2>Join Us</h2>
-        <span class="event-place">Thanksgiving Point</span>
+        <span class="event-place">{{mainInfo.eventPlace}}</span>
         <br>
-        <span>Friday &amp; Saturday</span>
+        <span>{{mainInfo.eventDays}}</span>
         <br>
-        <span>August 28 &amp; 29, 2015</span>
+        <span>{{mainInfo.eventDate}}</span>
         <br>
         <br>
           <div class="buy-button-wrapper">
@@ -64,7 +64,7 @@
           <div class="banner-wrapper">
             <div class="span4">
               <div class="food banner">
-              <a ui-sref="about.feast">
+              <a href="#top" ng-click="go('/feast')">
                 <h2>Feast</h2>
                 <p>
                   You are invited to attend the Royal Feast at 7pm each night. Guests will enjoy live authentic music, VIP jousting seating and a 5 course Medieval dinner. $40 per seat and Seating is limited!
