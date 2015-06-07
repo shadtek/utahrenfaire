@@ -1,7 +1,7 @@
 <h1 class="vendors-list">Entertainers</h1>
 <table class="table table-striped table-condensed">
   <tbody>
-    <tr ng-repeat="item in entertainers">
+    <tr ng-repeat="item in entertainers track by item.name">
       <td class="span2">
         <div class="vendor-list-image">
           <img style="width:134px;" src={{item.photo}} />
@@ -11,6 +11,7 @@
         <div class="vendor-listing">
           <h3>{{item.name}}</h3>
           <p>{{item.description}}</p>
+          <h4><a ng-href="{{item.website}}">{{item.website}}</a></h4>
         </div>
       </td>
     </tr>
