@@ -49,14 +49,13 @@
       <div class="image-container"></div>
     </div>
   </div>
+</div>
   <div class="row">
     <div class="span12">
       <div class="wood-wrapper">
         <div class="wood">
           Want to participate as a Vendor or Entertainer?
           <a ui-sref="about.registration">Click Here to Join Us</a>
-          <div>
-          </div>
         </div>
       </div>
       <div class="row">
@@ -66,26 +65,20 @@
               <div class="food banner">
               <a href="#top" ng-click="go('/feast')">
                 <h2>Feast</h2>
-                <p>
-                  You are invited to attend the Royal Feast at 7pm each night. Guests will enjoy live authentic music, VIP jousting seating and a 5 course Medieval dinner. $40 per seat and Seating is limited!
-                </p>
+                <p>{{mainInfo.feastBanner}}</p>
               </a>
               </div>
             </div>
             <div class="span4">
               <div class="entertainment banner">
                 <h2>Entertainment</h2>
-                <p>
-                  Jousting, archery, sword and shield combat shows await you. Entertainment, theater, music and street performers will delight all ages.
-                </p>
+                <p>{{mainInfo.entertainmentBanner}}</p>
               </div>
             </div>
             <div class="span4">
               <div class="vendors banner">
                 <h2>Vendors</h2>
-                <p>
-                  Stroll through the old medieval village marketplace. All around will be the stalls of the finest handicrafts and authentic wear.
-                </p>
+                <p>{{mainInfo.vendorsBanner}}</p>
               </div>
             </div>
           </div>
