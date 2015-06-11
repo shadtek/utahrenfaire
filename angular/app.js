@@ -21,7 +21,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('about.feast', {
       url: "/feast",
-      templateUrl: "states/feast/feast.html"
+      templateUrl: "states/feast/feast.html",
+      controller: 'feastCtrl'
     })
     .state('about.feast.friday', {
       url: "/friday",
@@ -33,15 +34,18 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('about.tickets', {
       url: "/tickets",
-      templateUrl: "states/tickets/tickets.html"
+      templateUrl: "states/tickets/tickets.html",
+      controller: 'ticketsCtrl'
     })
     .state('about.schedule', {
       url: "/schedule",
-      templateUrl: "states/schedule/schedule.html"
+      templateUrl: "states/schedule/schedule.html",
+      controller: 'scheduleCtrl'
     })
     .state('about.gallery', {
       url: "/gallery",
-      templateUrl: "states/gallery/gallery.html"
+      templateUrl: "states/gallery/gallery.html",
+      controller: 'galleryCtrl'
     })
     .state('about.vendors', {
       url: "/vendors",
@@ -55,15 +59,18 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('about.map', {
       url: "/map",
-      templateUrl: "states/map/map.html"
+      templateUrl: "states/map/map.html",
+      controller: 'mapCtrl'
     })
     .state('about.registration', {
       url: "/registration",
-      templateUrl: "states/registration/registration.html"
+      templateUrl: "states/registration/registration.html",
+      controller: 'registrationCtrl'
     })
     .state('about.contact', {
       url: "/contact",
-      templateUrl: "states/contact/contact.html"
+      templateUrl: "states/contact/contact.html",
+      controller: 'contactCtrl'
     })
     .state('otherwise', {
     url: '*path',

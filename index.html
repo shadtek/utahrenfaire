@@ -46,8 +46,8 @@
               <li><a ui-sref="about.tickets">Tickets</a></li>
               <li><a ui-sref="about.schedule">Schedule</a></li>
               <!-- <li><a ui-sref="about.gallery">Gallery</a></li> -->
-              <!-- <li><a ui-sref="about.vendors">Vendors</a></li> -->
-              <!-- <li><a ui-sref="about.entertainers">Entertainers</a></li> -->
+              <li><a ui-sref="about.vendors">Vendors</a></li>
+              <li><a ui-sref="about.entertainers">Entertainers</a></li>
               <li><a ui-sref="about.map">Map</a></li>
             </ul>
             <div class="clearfix"></div>
@@ -90,7 +90,7 @@
             </div>
             <ul>
               <li>© Utah Valley Fine Arts Council 2015</li>
-              <li><a href="#top" ng-click="go('/contact')">Contact Us</a></li>
+              <li><a ui-sref="about.contact">Contact Us</a></li>
               <li><a href="https://www.linkedin.com/in/shadtek" target="_blank">Converted to AngularJS by Spencer Shattuck</a></li>
             </ul>
           </footer>
@@ -115,8 +115,16 @@
   <!-- Controllers -->
   <script src='angular/mainCtrl.js'></script>
   <script src='states/home/homeCtrl.js'></script>
+  <script src='states/feast/feastCtrl.js'></script>
+  <script src='states/tickets/ticketsCtrl.js'></script>
+  <script src='states/schedule/scheduleCtrl.js'></script>
+  <script src='states/gallery/galleryCtrl.js'></script>
   <script src='states/vendors/vendorsCtrl.js'></script>
   <script src='states/entertainers/entertainersCtrl.js'></script>
+  <script src='states/map/mapCtrl.js'></script>
+  <script src='states/registration/registrationCtrl.js'></script>
+  <script src='states/contact/contactCtrl.js'></script>
+  
   <!-- Services -->
   <script src='angular/mainService.js'></script>
   

@@ -63,7 +63,7 @@
           <div class="banner-wrapper">
             <div class="span4">
               <div class="food banner">
-              <a href="#top" ng-click="go('/feast')">
+              <a ui-sref="about.feast">
                 <h2>Feast</h2>
                 <p>{{mainInfo.feastBanner}}</p>
               </a>
@@ -71,12 +71,14 @@
             </div>
             <div class="span4">
               <div class="entertainment banner">
+              <a href="#top" ng-click="go('/entertainers')">
                 <h2>Entertainment</h2>
                 <p>{{mainInfo.entertainmentBanner}}</p>
               </div>
             </div>
             <div class="span4">
               <div class="vendors banner">
+              <a href="#top" ng-click="go('/vendors')">
                 <h2>Vendors</h2>
                 <p>{{mainInfo.vendorsBanner}}</p>
               </div>
