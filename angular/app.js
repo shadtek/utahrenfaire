@@ -72,6 +72,61 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: "states/contact/contact.html",
       controller: 'contactCtrl'
     })
+    .state('about.admin', {
+      url: "",
+      templateUrl: "states/admin/admin.html",
+      abstract: true
+    })
+    .state('about.admin.login', {
+      url: "/login",
+      templateUrl: "states/admin/login/login.html",
+      controller: 'loginCtrl'
+    })
+    .state('about.admin.edits', {
+      url: "",
+      templateUrl: "states/admin/edits.html",
+      controller: 'logoutCtrl',
+      abstract: true
+    })
+    .state('about.admin.edits.homeEdits', {
+      url: "/home-edits",
+      templateUrl: "states/admin/homeEdits/homeEdits.html",
+      controller: 'homeEditsCtrl',
+      resolve: {
+        loggedIn: function(authService){
+          return authService.checkAuth();
+        },
+        mainInfoRef: function(firebaseService, $state){
+          return firebaseService.getMainInfo();
+        }
+      }
+    })
+    .state('about.admin.edits.vendorEdits', {
+      url: "/vendor-edits",
+      templateUrl: "states/admin/vendorEdits/vendorEdits.html",
+      controller: 'vendorEditsCtrl',
+      resolve: {
+        loggedIn: function(authService){
+          return authService.checkAuth();
+        },
+        vendorsRef: function(firebaseService, $state){
+        return firebaseService.getVendors();
+        }
+      }
+    })
+    .state('about.admin.edits.entertainerEdits', {
+      url: "/entertainer-edits",
+      templateUrl: "states/admin/entertainerEdits/entertainerEdits.html",
+      controller: 'entertainerEditsCtrl',
+      resolve: {
+        loggedIn: function(authService){
+          return authService.checkAuth();
+        },
+        entertainersRef: function(firebaseService, $state){
+        return firebaseService.getEntertainers();
+        }
+      }
+    })
     .state('otherwise', {
     url: '*path',
     resolve: {
@@ -84,4 +139,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true);
 
-});
+})
+.run(function($rootScope, $state){
+    //If the route change failed due to authentication error, redirect them out
+  $rootScope.$on('$stateChangeError', function(current, previous, rejection){
+    console.log('You need to be logged in to see this page.');
+    
+      $state.go('about.admin.login');
+  })
+})

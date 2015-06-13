@@ -1,1 +1,25 @@
-<iframe src="https://www.picatic.com/events/widget/54211?utm_source=promotion&utm_medium=widget&utm_campaign=54211&event_title=true&ticket_description=true&width=std" frameborder="0" style="display:block;height:379px;max-width:none;width:100%;"></iframe>
+<iframe id="iframe" class="iframe-holder" onload="onLoadHandler()" src="https://www.picatic.com/events/widget/54211?utm_source=promotion&utm_medium=widget&utm_campaign=54211&event_title=true&ticket_description=true&width=std" frameborder="0" style="display:block;height:379px;max-width:none;width:100%;"></iframe>
+
+<script type="text/javascript">
+function onLoadHandler() {
+	console.log("I hid the knight.")
+	document.getElementById("iframe").className = ""
+}
+</script>
+
+<!-- 
+Notes for the fun little loading gif:
+1. Add to any iframe:
+	id="iframe" class="iframe-holder" onload="onLoadHandler()"
+2. Use this script:
+	<script type="text/javascript">
+	function onLoadHandler() {
+		console.log("I hid the knight.")
+		document.getElementById("iframe").className = ""
+	}
+	</script>
+3. In the CSS:
+	.iframe-holder {
+  	background: url(img/loading1.gif) top center no-repeat;
+	}
+-->

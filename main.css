@@ -463,3 +463,38 @@ body .well {
 .carousel-inner {
   height: 425px;
 }
+
+/*
+  STUFF TO ADD TO LESS
+*/
+.flex {
+  display: flex;
+}
+
+.flex-between {
+  justify-content: space-between;
+  border-top: 1px solid #b7b4b2;
+  padding: 3px;
+}
+
+.edit-container {
+  flex-direction: column;
+  width: 100%;
+}
+
+.flex-column {
+  flex-direction: column;
+  width: 80%;
+}
+
+.input-boxes input, .input-boxes textarea {
+  width: 75%;
+}
+
+.logout {
+  float: right;
+}
+
+.iframe-holder {
+  background: url(img/loading1.gif) top center no-repeat;
+}

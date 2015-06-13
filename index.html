@@ -1,4 +1,5 @@
-﻿<html lang="en" ng-app="utahrenfaire">
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="utahrenfaire">
 
 <head>
   <base href="/"></base>
@@ -92,6 +93,7 @@
               <li>© Utah Valley Fine Arts Council 2015</li>
               <li><a ui-sref="about.contact">Contact Us</a></li>
               <li><a href="https://www.linkedin.com/in/shadtek" target="_blank">Converted to AngularJS by Spencer Shattuck</a></li>
+              <li><a ui-sref="about.admin.login">Admin</a></li>
             </ul>
           </footer>
         </div>
@@ -124,9 +126,16 @@
   <script src='states/map/mapCtrl.js'></script>
   <script src='states/registration/registrationCtrl.js'></script>
   <script src='states/contact/contactCtrl.js'></script>
-  
+  <script src='states/admin/login/loginCtrl.js'></script>
+  <script src='states/admin/homeEdits/homeEditsCtrl.js'></script>
+  <script src='states/admin/vendorEdits/vendorEditsCtrl.js'></script>
+  <script src='states/admin/entertainerEdits/entertainerEditsCtrl.js'></script>
+  <script src='states/admin/logoutCtrl.js'></script>
   <!-- Services -->
   <script src='angular/mainService.js'></script>
+  <script src='angular/authService.js'></script>
+  <script src='angular/firebaseService.js'></script>
+
   
 </body>
 
