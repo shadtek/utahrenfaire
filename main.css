@@ -494,7 +494,3 @@ body .well {
 .logout {
   float: right;
 }
-
-.iframe-holder {
-  background: url(img/loading1.gif) top center no-repeat;
-}

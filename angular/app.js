@@ -20,18 +20,28 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       abstract: true
     })
     .state('about.feast', {
-      url: "/feast",
-      templateUrl: "states/feast/feast.html",
-      controller: 'feastCtrl'
+      url: '/feast',
+      views: {
+        "": {
+          templateUrl: "states/feast/feast.html",
+          controller: 'feastCtrl'
+        },
+        "friday@about.feast": {
+          templateUrl: "states/feast/friday.html"
+        },
+        "saturday@about.feast": {
+          templateUrl: "states/feast/saturday.html"
+        }
+      }
     })
-    .state('about.feast.friday', {
-      url: "/friday",
-      templateUrl: "states/feast/friday.html"
-    })
-    .state('about.feast.saturday', {
-      url: "/saturday",
-      templateUrl: "states/feast/saturday.html"
-    })
+    // .state('about.feast.friday', {
+    //   url: "/friday",
+    //   templateUrl: "states/feast/friday.html",
+    // })
+    // .state('about.feast.saturday', {
+    //   url: "/saturday",
+    //   templateUrl: "states/feast/saturday.html"
+    // })
     .state('about.tickets', {
       url: "/tickets",
       templateUrl: "states/tickets/tickets.html",
