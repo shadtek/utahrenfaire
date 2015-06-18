@@ -19,6 +19,10 @@ app.service('firebaseService', function ($firebase, $firebaseObject, $firebaseAr
     return $firebaseArray(new Firebase(firebaseUrl + 'entertainers'));
   };
 
+  this.getFeastInfo = function() {
+    return $firebaseObject(new Firebase(firebaseUrl + 'feastInfo'));
+  };
+
 
 
 })

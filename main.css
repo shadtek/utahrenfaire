@@ -494,3 +494,7 @@ body .well {
 .logout {
   float: right;
 }
+
+.feastPhoto {
+  width: 100%;
+}

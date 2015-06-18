@@ -1,7 +1,6 @@
 var app = angular.module('utahrenfaire', ['ui.router', 'firebase']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-  // For any unmatched url, redirect to /
 
   $stateProvider
     .state('home', {
@@ -31,6 +30,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         },
         "saturday@about.feast": {
           templateUrl: "states/feast/saturday.html"
+        }
+      },
+      resolve: {
+        feastInfoRef: function(firebaseService){
+          return firebaseService.getFeastInfo();
         }
       }
     })
@@ -129,6 +133,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    // For any unmatched url, redirect to "/"
     .state('otherwise', {
     url: '*path',
     resolve: {
