@@ -9,8 +9,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: "states/home/home.html",
       controller: 'homeCtrl',
       resolve: {
-        mainInfoRef: function(mainService){
-          return mainService.getMainInfo();
+        mainInfoRef: function(firebaseService){
+          return firebaseService.getMainInfo();
         }
       }
     })
