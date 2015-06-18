@@ -34,14 +34,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-    // .state('about.feast.friday', {
-    //   url: "/friday",
-    //   templateUrl: "states/feast/friday.html",
-    // })
-    // .state('about.feast.saturday', {
-    //   url: "/saturday",
-    //   templateUrl: "states/feast/saturday.html"
-    // })
     .state('about.tickets', {
       url: "/tickets",
       templateUrl: "states/tickets/tickets.html",
