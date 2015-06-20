@@ -11,7 +11,7 @@ this.getMainInfo = function() {
 	return $firebaseObject(new Firebase(firebaseUrl + 'mainInfo'));
 };
 ```  
-- Put a resolve on the state in the app.js
+- Put a resolve on the 'home' state in the app.js
 ```javascript
 resolve: {
   mainInfoRef: function(firebaseService){
@@ -21,7 +21,12 @@ resolve: {
 ```  
 - On the controller for the particular state/view/page, in our example homeCtrl.js
 ```javascript
-$scope.mainInfo = mainInfoRef;
+app.controller('homeCtrl', function($scope, firebaseService, mainInfoRef) {
+	window.scrollTo(0, 0)
+	
+	$scope.mainInfo = mainInfoRef;
+
+})
 ```  
 - Now in the html file we can do something like this to show the value that is stored in Firebase.
 ```html
