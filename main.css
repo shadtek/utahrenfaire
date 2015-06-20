@@ -498,3 +498,17 @@ body .well {
 .feastPhoto {
   width: 100%;
 }
+
+/*.mobileText {
+  display: none;
+}
+
+@media only screen  
+  and (max-device-width: 480px) {
+    .logo img {
+      display: none;
+    }
+    .mobileText{
+      display: inline;
+    }
+}*/
