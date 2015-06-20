@@ -4,8 +4,8 @@ The website for the Utah Renaissance Faire is built on AngularJS with ui-router 
 Firebase App: https://utahrenfaire.firebaseio.com/
 
 To get rid of the # in your URLs:
-: Inject $locationProvider in your app.config
-: Before the end of your $stateProvider do this
+- Inject $locationProvider in your app.config
+- Before the end of your $stateProvider do this
 ```
 // For any unmatched url, redirect to "/" and clean up the address bar.
 .state('otherwise', {
