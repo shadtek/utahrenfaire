@@ -4,7 +4,7 @@
   <div class="flex flex-between">
     <div class="flex flex-column input-boxes">
       <input ng-model="item.name" placeholder="Name"/>
-      <input ng-model="item.photo" placeholder="Photo location"/>
+      <input ng-model="item.photo" placeholder="Photo URL"/>
       <textarea ng-model="item.description" rows="4" placeholder="Description"></textarea>
       <input ng-model="item.website" placeholder="Website"/>
     </div>
@@ -17,7 +17,7 @@
   <div ng-repeat="item in entertainers track by item.name" class="flex flex-between">
     <div class="flex flex-column input-boxes">
       <input ng-model="item.name" placeholder="Name"/>
-      <input ng-model="item.photo" placeholder="Photo location"/>
+      <input ng-model="item.photo" placeholder="Photo URL"/>
       <textarea  ng-model="item.description" rows="4" placeholder="Description"></textarea>
       <input ng-model="item.website" placeholder="Website"/>
     </div>
