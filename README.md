@@ -12,11 +12,13 @@ this.getMainInfo = function() {
 };
 ```
 
-<<<<<<< HEAD
-2. app.js
-=======
-2. app.js
+2. Put a resolve on the state in the app.js
 ```javascript
-
+resolve: {
+  mainInfoRef: function(firebaseService){
+    return firebaseService.getMainInfo();
+  }
+}
 ```
->>>>>>> e29e5a6e6a5e2cfa4f91ca808dde1e6d5f7f8750
+
+3. 
