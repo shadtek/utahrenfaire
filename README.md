@@ -18,4 +18,5 @@ To get rid of the # in your URLs:
     });
 
     $locationProvider.html5Mode(true);
-3. In the index.html put <base href="/"></base> in the head.
+3. In the index.html put in the head.
+####<base href="/"></base> 
