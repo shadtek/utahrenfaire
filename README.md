@@ -6,13 +6,13 @@ Firebase App: https://utahrenfaire.firebaseio.com/
 **Data path to the view:**
 
 1. Get data from the Firebase endpoint in firebaseService.js 
-`javascript
+```javascript
 this.getMainInfo = function() {
 	return $firebaseObject(new Firebase(firebaseUrl + 'mainInfo'));
 };
-`
+```
 
 2. app.js
-`javascript
+```javascript
 
-`
+```
