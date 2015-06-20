@@ -12,4 +12,11 @@ this.getMainInfo = function() {
 };
 ```
 
+<<<<<<< HEAD
 2. app.js
+=======
+2. app.js
+```javascript
+
+```
+>>>>>>> e29e5a6e6a5e2cfa4f91ca808dde1e6d5f7f8750
