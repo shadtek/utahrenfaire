@@ -3,7 +3,7 @@ The website for the Utah Renaissance Faire runs on Node.js, is built on AngularJ
 
 Firebase App: https://utahrenfaire.firebaseio.com/
 
-**Data path to the view:**  
+**Data path from Firebase to the view:**  
 - Get data from the Firebase endpoint in firebaseService.js 
 ```javascript
 this.getMainInfo = function() {
@@ -18,7 +18,11 @@ resolve: {
   }
 }
 ```  
-- On the controller for the particular page, in our example homeCtrl.js
+- On the controller for the particular state/view/page, in our example homeCtrl.js
 ```javascript
 $scope.mainInfo = mainInfoRef;
-``` 
+```  
+- Now in the html file we can do something like this:
+```html
+<span>{{mainInfo.eventDate}}</span>
+```
