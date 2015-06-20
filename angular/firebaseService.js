@@ -23,6 +23,9 @@ app.service('firebaseService', function ($firebase, $firebaseObject, $firebaseAr
     return $firebaseObject(new Firebase(firebaseUrl + 'feastInfo'));
   };
 
+  this.getGallery = function() {
+    return $firebaseArray(new Firebase(firebaseUrl + 'gallery'));
+  };
 
 
 })

@@ -1,0 +1,28 @@
+<h2>Gallery Edits</h2>
+<!-- Start Add -->
+<div class="flex edit-container">
+  <div class="flex flex-between">
+    <div class="flex flex-column input-boxes">
+      <input ng-model="item.photo" placeholder="Photo URL"/>
+    </div>
+    <div>
+      <button class="btn-mini btn-info" ng-click="addGallery(item)">Add New</button>
+    </div>
+  </div>
+  <!-- End Add -->
+  <!-- Start Repeat -->
+  <div ng-repeat="item in gallery track by $index" class="flex flex-between">
+    <div class="flex input-boxes">
+      <div class="thumbnail"><img src={{item.photo}} /></div>
+      <input ng-model="item.photo" placeholder="Photo URL"/>
+    </div>
+    <div>
+      <button class="btn-mini btn-success" ng-click="updateGallery(item)">Update</button>
+      <button class="btn-mini btn-warning" ng-click="toggleGalleryHide(item)">Hide</button>
+      <button class="btn-mini btn-danger" ng-click="removeGallery(item)">Delete</button>
+      <h3 ng-hide="!item.hide">Hidden</h3>
+      <p ng-hide="item.hide">Shown</p>
+    </div>
+  </div>
+  <!-- End Repeat -->
+</div>

@@ -36,3 +36,6 @@ app.controller('homeCtrl', function($scope, firebaseService, mainInfoRef) {
 ```html
 <span>{{mainInfo.eventDate}}</span>
 ```
+
+**How the editors work:**  
+*TBD*

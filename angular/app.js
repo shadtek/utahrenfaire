@@ -51,7 +51,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('about.gallery', {
       url: "/gallery",
       templateUrl: "states/gallery/gallery.html",
-      controller: 'galleryCtrl'
+      controller: 'galleryCtrl',
+      resolve: {
+        galleryRef: function(firebaseService, $state){
+          return firebaseService.getGallery();
+        }
+      }
     })
     .state('about.vendors', {
       url: "/vendors",
@@ -88,16 +93,19 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: "states/contact/contact.html",
       controller: 'contactCtrl'
     })
+    //Just the Admin header.
     .state('about.admin', {
       url: "",
       templateUrl: "states/admin/admin.html",
       abstract: true
     })
+    //Login view
     .state('about.admin.login', {
       url: "/login",
       templateUrl: "states/admin/login/login.html",
       controller: 'loginCtrl'
     })
+    //Where the buttons are held
     .state('about.admin.edits', {
       url: "",
       templateUrl: "states/admin/edits.html",
@@ -140,6 +148,19 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         },
         entertainersRef: function(firebaseService, $state){
         return firebaseService.getEntertainers();
+        }
+      }
+    })
+    .state('about.admin.edits.galleryEdits', {
+      url: "/gallery-edits",
+      templateUrl: "states/admin/galleryEdits/galleryEdits.html",
+      controller: 'galleryEditsCtrl',
+      resolve: {
+        loggedIn: function(authService){
+          return authService.checkAuth();
+        },
+        galleryRef: function(firebaseService, $state){
+          return firebaseService.getGallery();
         }
       }
     })

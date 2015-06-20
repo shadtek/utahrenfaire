@@ -487,8 +487,12 @@ body .well {
   width: 80%;
 }
 
+.input-boxes {
+  flex-wrap: wrap;
+}
+
 .input-boxes input, .input-boxes textarea {
-  width: 75%;
+  width: 535px;
 }
 
 .logout {
@@ -497,6 +501,12 @@ body .well {
 
 .feastPhoto {
   width: 100%;
+}
+
+.thumbnail {
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
 }
 
 /*.mobileText {
