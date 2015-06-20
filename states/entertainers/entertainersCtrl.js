@@ -1,12 +1,8 @@
 var app = angular.module('utahrenfaire');
 
-app.controller('entertainersCtrl', function($scope, mainService) {
+app.controller('entertainersCtrl', function($scope, firebaseService, entertainersRef) {
 	window.scrollTo(0, 0)
 	
-	$scope.entertainers = mainService.entertainers;
-
-	$scope.entertainers.$loaded().then(function(data) {
-		console.log($scope.entertainers);
-	})
+	$scope.entertainers = entertainersRef;
 
 })

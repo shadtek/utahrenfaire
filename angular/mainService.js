@@ -4,4 +4,5 @@ app.service('mainService', function($firebaseArray, $firebaseObject) {
 
 //Nothing to see here.
 
+
 })

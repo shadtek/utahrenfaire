@@ -56,12 +56,22 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('about.vendors', {
       url: "/vendors",
       templateUrl: "states/vendors/vendors.html",
-      controller: 'vendorsCtrl'
+      controller: 'vendorsCtrl',
+      resolve: {
+        vendorsRef: function(firebaseService){
+          return firebaseService.getVendors();
+        }
+      }
     })
     .state('about.entertainers', {
       url: "/entertainers",
       templateUrl: "states/entertainers/entertainers.html",
-      controller: 'entertainersCtrl'
+      controller: 'entertainersCtrl',
+      resolve: {
+        entertainersRef: function(firebaseService){
+          return firebaseService.getEntertainers();
+        }
+      }
     })
     .state('about.map', {
       url: "/map",
