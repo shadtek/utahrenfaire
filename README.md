@@ -5,8 +5,7 @@ Firebase App: https://utahrenfaire.firebaseio.com/
 
 To get rid of the # in your URLs:
 - Inject $locationProvider in your app.config
-- Before the end of your $stateProvider do this
-
+- Before the end of your $stateProvider do this:
 ```
 // For any unmatched url, redirect to "/" and clean up the address bar.
 .state('otherwise', {
@@ -20,8 +19,7 @@ url: '*path',
 });
 $locationProvider.html5Mode(true);
 ```
-
-3. In the index.html put in the head
+- In the index.html put in the head
 
 ```
 <base href="/"></base>
