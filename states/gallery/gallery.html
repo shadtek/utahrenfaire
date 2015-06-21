@@ -1,12 +1,4 @@
 <h1>Event Photos</h1>
-<table class="table table-striped table-condensed">
-  <tbody>
-    <tr ng-show="!item.hide" ng-repeat="item in gallery track by $index">
-      <td class="span2">
-        <div class="vendor-list-image">
-          <img style="width:134px;" src={{item.photo}} />
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<span ng-show="!item.hide" ng-repeat="item in gallery track by $index">
+	<img style="width:134px;" src={{item.photo}} />
+</span>

@@ -484,7 +484,7 @@ body .well {
 
 .flex-column {
   flex-direction: column;
-  width: 80%;
+  /*width: 80%;*/
 }
 
 .input-boxes {
