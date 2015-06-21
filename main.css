@@ -509,6 +509,11 @@ body .well {
   overflow: hidden;
 }
 
+.gallery-inputs {
+  width: 545px;
+  flex-direction: block;
+}
+
 /*.mobileText {
   display: none;
 }
