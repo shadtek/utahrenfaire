@@ -1,4 +1,4 @@
-var app = angular.module('utahrenfaire', ['ui.router', 'firebase']);
+var app = angular.module('utahrenfaire', ['ui.router', 'firebase', 'ui.bootstrap', 'bootstrapLightbox']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 

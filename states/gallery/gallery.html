@@ -1,4 +1,8 @@
 <h1>Event Photos</h1>
-<span ng-show="!item.hide" ng-repeat="item in gallery track by $index">
-	<img style="width:134px;" src={{item.photo}} />
+<span ng-show="!item.hide" ng-repeat="item in gallery">
+	<a ng-click="openLightboxModal($index)">
+  	<img style="width:134px;" ng-src={{item.photo}} />
+  </a>
 </span>
+
+<!-- <span ng-show="!item.hide" ng-repeat="item in gallery track by $index"> -->
