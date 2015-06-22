@@ -5,21 +5,11 @@
   </div>
 </span> -->
 <div class="flex edit-container">
-
   <div ng-repeat="item in gallery track by $index" class="flex flex-between">
     <div class="flex input-boxes gallery-inputs">
-      
-      <input ng-model="item.url" placeholder="Photo URL"/>
-      <input ng-model="item.year" placeholder="Year: yyyy"/>
       <div class="thumbnail"><img src={{item.url}} /></div>
     </div>
-    <div>
-      <button class="btn-mini btn-success" ng-click="updateGallery(item)">Update</button>
-      <button class="btn-mini btn-warning" ng-click="toggleGalleryHide(item)">Hide</button>
-      <button class="btn-mini btn-danger" ng-click="removeGallery(item)">Delete</button>
-    </div>
   </div>
-
 </div>
 <script>
 $(function () {
