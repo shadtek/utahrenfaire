@@ -1,4 +1,33 @@
 <h1>Event Photos</h1>
-<span ng-show="!item.hide" ng-repeat="item in gallery">
-  <img style="width:134px;" ng-src={{item.url}} />
-</span>
+<!-- <span ng-show="!item.hide" ng-repeat="item in gallery">
+  <div class="gallery-thumbs">
+	  <img class="pics" ng-src={{item.url}} data-glisse-big={{item.url}} rel={{item.year}} title="The Utah Renaissance Faire"/>
+  </div>
+</span> -->
+<div class="flex edit-container">
+
+  <div ng-repeat="item in gallery track by $index" class="flex flex-between">
+    <div class="flex input-boxes gallery-inputs">
+      
+      <input ng-model="item.url" placeholder="Photo URL"/>
+      <input ng-model="item.year" placeholder="Year: yyyy"/>
+      <div class="thumbnail"><img src={{item.url}} /></div>
+    </div>
+    <div>
+      <button class="btn-mini btn-success" ng-click="updateGallery(item)">Update</button>
+      <button class="btn-mini btn-warning" ng-click="toggleGalleryHide(item)">Hide</button>
+      <button class="btn-mini btn-danger" ng-click="removeGallery(item)">Delete</button>
+    </div>
+  </div>
+
+</div>
+<script>
+$(function () {
+    $('.pics').glisse({
+        changeSpeed: 550, 
+        speed: 500,
+        effect:'fade',
+        fullscreen: true
+    }); 
+});
+</script>
