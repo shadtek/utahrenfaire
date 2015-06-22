@@ -1,10 +1,12 @@
 <h1>Event Photos</h1>
 <div class="flex gallery">
   <div ng-repeat="item in gallery track by $index" class="flex ">
-    <div class="flex gallery-inputs">
-      <div class="thumbnail">
+    
+    <!-- <div class="flex gallery-inputs"> -->
+      <div class="thumbnail gallery-wrap">
       	<img ng-src={{item.url}} rel={{item.year}} title="The Utah Renaissance Faire"/>
       </div>
-    </div>
+    
+    <!-- </div> -->
   </div>
 </div>
