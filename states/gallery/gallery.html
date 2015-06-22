@@ -4,10 +4,15 @@
 	  <img class="pics" ng-src={{item.url}} data-glisse-big={{item.url}} rel={{item.year}} title="The Utah Renaissance Faire"/>
   </div>
 </span> -->
-<div class="flex edit-container">
-  <div ng-repeat="item in gallery track by $index" class="flex flex-between">
-    <div class="flex input-boxes gallery-inputs">
-      <div class="thumbnail"><img src={{item.url}} /></div>
+<div class="flex">
+<!-- edit-container -->
+  <div ng-repeat="item in gallery track by $index" class="flex ">
+  <!-- flex-between -->
+    <div class="flex gallery-inputs">
+    <!-- input-boxes -->
+      <div class="thumbnail">
+      	<img src={{item.url}} />
+      </div>
     </div>
   </div>
 </div>
