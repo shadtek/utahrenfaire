@@ -1,28 +1,10 @@
 <h1>Event Photos</h1>
-<!-- <span ng-show="!item.hide" ng-repeat="item in gallery">
-  <div class="gallery-thumbs">
-	  <img class="pics" ng-src={{item.url}} data-glisse-big={{item.url}} rel={{item.year}} title="The Utah Renaissance Faire"/>
-  </div>
-</span> -->
-<div class="flex">
-<!-- edit-container -->
+<div class="flex gallery">
   <div ng-repeat="item in gallery track by $index" class="flex ">
-  <!-- flex-between -->
     <div class="flex gallery-inputs">
-    <!-- input-boxes -->
       <div class="thumbnail">
-      	<img src={{item.url}} />
+      	<img ng-src={{item.url}} rel={{item.year}} title="The Utah Renaissance Faire"/>
       </div>
     </div>
   </div>
 </div>
-<script>
-$(function () {
-    $('.pics').glisse({
-        changeSpeed: 550, 
-        speed: 500,
-        effect:'fade',
-        fullscreen: true
-    }); 
-});
-</script>
