@@ -513,12 +513,7 @@ body .well {
   flex-direction: block;
 }
 
-.gallery-thumbs {
-  height: 100px;
-  width: 100px;
-  overflow: hidden;
-}
-
+/* Gallery Styles */
 
 
 /*.mobileText {

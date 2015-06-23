@@ -15,7 +15,7 @@ app.controller('galleryEditsCtrl', function($scope, galleryRef, firebaseService)
     $scope.gallery.$save(item);
     console.log("Updated")
   };
-
+  
   $scope.toggleGalleryHide = function(item){
     item.hide = !item.hide;
     $scope.gallery.$save(item);
