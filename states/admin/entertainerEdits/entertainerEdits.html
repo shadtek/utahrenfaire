@@ -5,6 +5,7 @@
     <div class="flex flex-column input-boxes">
       <input ng-model="item.name" placeholder="Name"/>
       <input ng-model="item.photo" placeholder="Photo URL"/>
+      <div class="thumbnail"><img src={{item.photo}} /></div>
       <textarea ng-model="item.description" rows="4" placeholder="Description"></textarea>
       <input ng-model="item.website" placeholder="Website"/>
     </div>
@@ -18,6 +19,7 @@
     <div class="flex flex-column input-boxes">
       <input ng-model="item.name" placeholder="Name"/>
       <input ng-model="item.photo" placeholder="Photo URL"/>
+      <div class="thumbnail"><img src={{item.photo}} /></div>
       <textarea  ng-model="item.description" rows="4" placeholder="Description"></textarea>
       <input ng-model="item.website" placeholder="Website"/>
     </div>
