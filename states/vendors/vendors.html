@@ -1,5 +1,4 @@
 <h1>Vendors</h1>
-<!--
 <table class="table table-striped table-condensed">
   <tbody>
     <tr ng-show="!item.hide" ng-repeat="item in vendors track by item.name">
@@ -18,18 +17,4 @@
     </tr>
     
   </tbody>
-</table> -->
-
-<div class="flex edit-container">
-  <!-- Start Repeat -->
-  <div ng-repeat="item in vendors track by item.name" class="flex flex-between">
-    <div class="flex flex-column input-boxes">
-      <h3>{{item.name}}</h3>
-      <input ng-model="item.photo" placeholder="Photo URL"/>
-      <div class="thumbnail"><img src={{item.photo}} /></div>
-      <p>{{item.description}}</p>
-      <h4><a ng-href="{{item.website}}" target="_blank">{{item.website}}</a></h4>
-    </div>
-  </div>
-  <!-- End Repeat -->
-</div>
+</table>
