@@ -4,7 +4,7 @@
   <form class="flex flex-between" ng-submit="addGallery(item)">
     <div class="flex flex-column input-boxes">
       <input ng-model="item.url" placeholder="Facebook Album URL"/>
-      <input ng-model="item.year" placeholder="Year: yyyy"/>
+      <input ng-model="item.linkName" placeholder="Link name you want to show"/>
     </div>
     <div>
       <button class="btn-mini btn-info">Add New</button>
@@ -13,10 +13,10 @@
   <!-- End Add -->
   <!-- Start Repeat -->
   <div ng-repeat="item in gallery track by $index" class="flex flex-between">
-    <div class="flex input-boxes gallery-inputs">
+    <div class="flex flex-column input-boxes">
       
       <input ng-model="item.url" placeholder="Photo URL"/>
-      <input ng-model="item.year" placeholder="Year: yyyy"/>
+      <input ng-model="item.linkName" placeholder="Link name you want to show"/>
     </div>
     <div>
       <button class="btn-mini btn-success" ng-click="updateGallery(item)">Update</button>

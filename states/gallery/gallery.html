@@ -1,6 +1,4 @@
-<h1>Event Photos</h1>
-<div>
-	<div ng-repeat="item in gallery track by $index">
-	  <img ng-show="!item.hide" ng-src={{item.url}} rel={{item.year}} title="The Utah Renaissance Faire"/>
-	</div>
+<h1>Photos and Videos</h1>
+<div ng-show="!item.hide" ng-repeat="item in gallery track by $index">
+  <h2><a ng-href="{{item.url}}">{{item.linkName}}</a></h2>
 </div>

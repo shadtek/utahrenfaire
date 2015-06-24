@@ -5,4 +5,5 @@ app.controller('galleryCtrl', function($scope, firebaseService, galleryRef) {
 
 	$scope.gallery = galleryRef;
 
+
 })
