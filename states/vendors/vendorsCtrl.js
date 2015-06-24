@@ -5,4 +5,9 @@ app.controller('vendorsCtrl', function($scope, firebaseService, vendorsRef) {
 	
 	$scope.vendors = vendorsRef;
 
+	$scope.toggleImgHide = function(item){
+    item.hide = !item.hide;
+    console.log("Hide Toggled")
+  };
+
 })
