@@ -1,8 +1,6 @@
-﻿<!DOCTYPE html>
 <html lang="en" ng-app="utahrenfaire">
 
 <head>
-  <base href="/"></base>
   <meta charset="utf-8">
   <title>The Utah Renaissance Faire</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
@@ -10,11 +8,10 @@
   <meta name="author" content="">
   <link href="less/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="main.css" rel="stylesheet">
-  <!-- Gallery -->
-  <link href="angular-carousel.css" rel="stylesheet" type="text/css" />
   <!--[if IE]>
             <link href="/css/iefix.css" rel="stylesheet">
     <![endif]-->
+
   <!-- <link href="/bundles/mdlfrontend/css/frontpage.css" rel="stylesheet" type="text/css"> -->
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -23,13 +20,12 @@
   <!-- Le fav and touch icons -->
   <!-- <link rel="shortcut icon" href="favicon.ico">
         <link rel="apple-touch-icon" href="img/apple-touch-icon.png"> -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="js/less-1.3.0.min.js" type="text/javascript"></script>
 
 </head>
 
-<body ng-controller="mainCtrl" cz-shortcut-listen="true">
-  <a rel="#top"></a>
+<body cz-shortcut-listen="true">
   <div class="header-links">
   <a class="facebook" href="https://www.facebook.com/UtahRenaissanceFaire" target="_blank"></a>
   </div>
@@ -38,22 +34,13 @@
       <div class="row">
         <div class="span12">
           <div class="logo">
-            <a ui-sref="home">
+            <a href="/">
               <img src="img/logo.png" alt="Logo">
-              <!-- <div class="mobileText">
-                <p>Utah Renaissance Faire</p>
-              </div> -->
             </a>
           </div>
           <div class="menubar">
             <ul class="pull-right">
-              <li><a ui-sref="about.feast">Feast</a></li>
-              <li><a ui-sref="about.tickets">Tickets</a></li>
-              <li><a ui-sref="about.schedule">Schedule</a></li>
-              <li><a ui-sref="about.gallery">Gallery</a></li>
-              <li><a ui-sref="about.vendors">Vendors</a></li>
-              <li><a ui-sref="about.entertainers">Entertainers</a></li>
-              <li><a ui-sref="about.map">Map</a></li>
+              
             </ul>
             <div class="clearfix"></div>
           </div>
@@ -63,7 +50,16 @@
 
     <section role="main">
       <div class="main">
-        <ui-view></ui-view>
+        <div class="span12">
+          <div class="well">
+            <div class="content-wrapper">
+              <div class="row contact-us">
+                <h1>404 you reached a page that doesn't exist!</h1>
+                <img src="img/King_Spencer.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="clearfix"></div>
     </section>
@@ -95,9 +91,9 @@
             </div>
             <ul>
               <li>© Utah Valley Fine Arts Council 2015</li>
-              <li><a ui-sref="about.contact">Contact Us</a></li>
-              <li><a href="https://www.linkedin.com/in/shadtek" target="_blank">Converted to AngularJS by Spencer Shattuck</a></li>
-              <li><a ui-sref="about.admin.login">Admin</a></li>
+                <li><a ui-sref="about.contact">Contact Us</a></li>
+                <li><a href="https://www.linkedin.com/in/shadtek" target="_blank">WebDev'd by Spencer Shattuck</a></li>
+              <!-- <li><a href="login">Login</a></li> -->
             </ul>
           </footer>
         </div>
@@ -105,45 +101,13 @@
     </footer>
     <div class="clearfix"></div>
   </div>
-  <!-- Bootstrap and Styles -->
+  <script src="angular/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <script src='angular/app.js'></script>
   <script type="text/javascript" src="js/json2.js"></script>
   <script type="text/javascript" src="js/knockout-2.0.0.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/bootstrap-carousel.js"></script>
-  <!-- Angular and Dependencies -->
-  <script src="angular/angular.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-  <!-- Gallery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-touch.js"></script>
-  <script src="angular-carousel.js"></script>
-  <!-- Firebase and Dependencies -->
-  <script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
-  <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
-  <!-- App Init -->
-  <script src='angular/app.js'></script>
-  <!-- Controllers -->
-  <script src='angular/mainCtrl.js'></script>
-  <script src='states/home/homeCtrl.js'></script>
-  <script src='states/feast/feastCtrl.js'></script>
-  <script src='states/tickets/ticketsCtrl.js'></script>
-  <script src='states/schedule/scheduleCtrl.js'></script>
-  <script src='states/gallery/galleryCtrl.js'></script>
-  <script src='states/vendors/vendorsCtrl.js'></script>
-  <script src='states/entertainers/entertainersCtrl.js'></script>
-  <script src='states/map/mapCtrl.js'></script>
-  <script src='states/registration/registrationCtrl.js'></script>
-  <script src='states/contact/contactCtrl.js'></script>
-  <script src='states/admin/login/loginCtrl.js'></script>
-  <script src='states/admin/homeEdits/homeEditsCtrl.js'></script>
-  <script src='states/admin/vendorEdits/vendorEditsCtrl.js'></script>
-  <script src='states/admin/entertainerEdits/entertainerEditsCtrl.js'></script>
-  <script src='states/admin/galleryEdits/galleryEditsCtrl.js'></script>
-  <!-- Logout Controller -->
-  <script src='states/admin/logoutCtrl.js'></script>
-  <!-- Services -->
-  <script src='angular/mainService.js'></script>
-  <script src='angular/authService.js'></script>
-  <script src='angular/firebaseService.js'></script>
 </body>
 
 </html>
