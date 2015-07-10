@@ -1,0 +1,31 @@
+<h1>General Admission Tickets</h1>
+<h3>Guests who are in costume and purchase general admission tickets at the gate receive $2 off!</h3>
+<h3>Tickets are good for both days of the faire. No admission charge for Grassroots Shakespeare's Richard II at 7pm each night. Military discount of 50% is only for tickets bought at the gate and does not apply to the business or school group rates or the King's Feast. 
+<br/>
+If you are looking for feast tickets click 
+<a ui-sref="about.feast">here</a>.
+</h3>
+<iframe id="iframe" class="iframe-holder" onload="onLoadHandler()" src="https://www.picatic.com/events/widget/54184?utm_source=promotion&utm_medium=widget&utm_campaign=54184&ticket_description=true&width=std" frameborder="0" style="display:block;height:812px;max-width:none;width:100%;"></iframe>
+
+<script type="text/javascript">
+function onLoadHandler() {
+	console.log("I hid the knight.")
+	document.getElementById("iframe").className = ""
+}
+</script>
+
+<!-- 
+Notes for the fun little loading gif:
+1. Add to any iframe id="iframe" class="iframe-holder" onload="onLoadHandler()"
+2. Use this script:
+	<script type="text/javascript">
+	function onLoadHandler() {
+		console.log("I hid the knight.")
+		document.getElementById("iframe").className = ""
+	}
+	</script>
+3. In the CSS:
+	.iframe-holder {
+  	background: url(img/loading1.gif) top center no-repeat;
+	}
+-->
