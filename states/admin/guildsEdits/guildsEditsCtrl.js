@@ -1,29 +1,29 @@
 var app = angular.module('utahrenfaire');
 
-app.controller('guildsEditsCtrl', function($scope, guildssRef, firebaseService){
+app.controller('guildsEditsCtrl', function($scope, guildsRef, firebaseService){
   window.scrollTo(0, 0)
 
-  $scope.guildss = guildssRef;
+  $scope.guilds = guildsRef;
 
   $scope.addGuilds = function(item){
-    $scope.guildss.$add(item);
+    $scope.guilds.$add(item);
     console.log("Added")
     $scope.item = ""
   }
 
   $scope.updateGuilds = function(item){
-    $scope.guildss.$save(item);
+    $scope.guilds.$save(item);
     console.log("Updated")
   };
 
   $scope.toggleGuildsHide = function(item){
     item.hide = !item.hide;
-    $scope.guildss.$save(item);
+    $scope.guilds.$save(item);
     console.log("Hide Toggled")
   };
 
   $scope.removeGuilds = function(item){
-    $scope.guildss.$remove(item);
+    $scope.guilds.$remove(item);
     console.log("Deleted")
   }
 

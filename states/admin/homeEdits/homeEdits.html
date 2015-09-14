@@ -10,9 +10,14 @@
   <span>Event Days</span>
 </form>
 <form ng-submit="updateMainInfo()">
+  <input ng-model="mainInfo.eventHours" />
+  <button class="btn-mini">Update</button>
+  <span>Event Hours</span>
+</form>
+<form ng-submit="updateMainInfo()">
   <input ng-model="mainInfo.eventDate" />
   <button class="btn-mini">Update</button>
-  <span>Event Days</span>
+  <span>Event Dates</span>
 </form>
 <form ng-submit="updateMainInfo()">
   <textarea rows="6" ng-model="mainInfo.guildsBanner"></textarea>

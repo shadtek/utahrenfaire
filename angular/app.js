@@ -115,6 +115,19 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
+    .state('about.admin.edits.guildsEdits', {
+      url: "/guilds-edits",
+      templateUrl: "states/admin/guildsEdits/guildsEdits.html",
+      controller: 'guildsEditsCtrl',
+      resolve: {
+        loggedIn: function(authService){
+          return authService.checkAuth();
+        },
+        guildsRef: function(firebaseService, $state){
+          return firebaseService.getGuilds();
+        }
+      }
+    })
     .state('about.admin.edits.vendorEdits', {
       url: "/vendor-edits",
       templateUrl: "states/admin/vendorEdits/vendorEdits.html",
