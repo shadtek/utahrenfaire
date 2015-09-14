@@ -1,0 +1,35 @@
+<h2>Guilds Edits</h2>
+<div class="flex edit-container">
+  <!-- Start Add -->
+  <div class="flex flex-between">
+    <div class="flex flex-column input-boxes">
+      <input ng-model="item.name" placeholder="Name"/>
+      <input ng-model="item.photo" placeholder="Photo URL"/>
+      <div class="thumbnail"><img src={{item.photo}} /></div>
+      <textarea ng-model="item.description" rows="4" placeholder="Description"></textarea>
+      <input ng-model="item.website" placeholder="Website"/>
+    </div>
+    <div>
+      <button class="btn-mini btn-info" ng-click="addGuilds(item)">Add New</button>
+    </div>
+  </div>
+  <!-- End Add -->
+  <!-- Start Repeat -->
+  <div ng-repeat="item in guilds track by item.name" class="flex flex-between">
+    <div class="flex flex-column input-boxes">
+      <input ng-model="item.name" placeholder="Name"/>
+      <input ng-model="item.photo" placeholder="Photo URL"/>
+      <div class="thumbnail"><img src={{item.photo}} /></div>
+      <textarea  ng-model="item.description" rows="4" placeholder="Description"></textarea>
+      <input ng-model="item.website" placeholder="Website"/>
+    </div>
+    <div>
+      <button class="btn-mini btn-success" ng-click="updateGuilds(item)">Update</button>
+      <button class="btn-mini btn-warning" ng-click="toggleGuildsHide(item)">Hide</button>
+      <button class="btn-mini btn-danger" ng-click="removeGuilds(item)">Delete</button>
+      <h3 ng-hide="!item.hide">Hidden</h3>
+      <p ng-hide="item.hide">Shown</p>
+    </div>
+  </div>
+  <!-- End Repeat -->
+</div>
