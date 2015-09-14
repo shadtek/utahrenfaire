@@ -1,6 +1,8 @@
 # utahrenfaire
 The website for the Utah Renaissance Faire runs on Node.js, is built on AngularJS with ui-router, and editable items are referenced on Firebase.
 
+The files are served up using this repo: https://github.com/shadtek/static-server
+
 Firebase App: https://utahrenfaire.firebaseio.com/
 
 **Data path from Firebase to the view:**  

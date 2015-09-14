@@ -18,26 +18,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: "states/about.html",
       abstract: true
     })
-    .state('about.feast', {
-      url: '/feast',
-      views: {
-        "": {
-          templateUrl: "states/feast/feast.html",
-          controller: 'feastCtrl'
-        },
-        "friday@about.feast": {
-          templateUrl: "states/feast/friday.html"
-        },
-        "saturday@about.feast": {
-          templateUrl: "states/feast/saturday.html"
-        }
-      },
-      resolve: {
-        feastInfoRef: function(firebaseService){
-          return firebaseService.getFeastInfo();
-        }
-      }
-    })
     .state('about.tickets', {
       url: "/tickets",
       templateUrl: "states/tickets/tickets.html",
@@ -55,6 +35,16 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       resolve: {
         galleryRef: function(firebaseService, $state){
           return firebaseService.getGallery();
+        }
+      }
+    })
+    .state('about.guilds', {
+      url: "/guilds",
+      templateUrl: "states/guilds/guilds.html",
+      controller: 'guildsCtrl',
+      resolve: {
+        guildsRef: function(firebaseService, $state){
+          return firebaseService.getGuilds();
         }
       }
     })
