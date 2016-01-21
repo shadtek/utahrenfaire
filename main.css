@@ -34,7 +34,7 @@ body .well {
 }
 .logo {
   display: block;
-  z-index: 10000000000;
+  z-index: 100000000;
   position: absolute;
   margin-top: -65px;
   margin-left: 15px;
@@ -504,16 +504,6 @@ body .well {
   overflow: hidden;
 }
 
-/*.mobileText {
-  display: none;
+.sq-embed-menu {
+  z-index: 1;
 }
-
-@media only screen  
-  and (max-device-width: 480px) {
-    .logo img {
-      display: none;
-    }
-    .mobileText{
-      display: inline;
-    }
-}*/
