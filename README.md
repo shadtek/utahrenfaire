@@ -8,6 +8,10 @@ Firebase App: https://utahrenfaire.firebaseio.com/
 **Data path from Firebase to the view:**  
 *The example we will be using is getting the event date to appear on the home page.*
 
+- Your data structure should look like this:
+
+![alt tag](http://i.imgur.com/Wrg314d.jpg)
+
 - Get data from the Firebase endpoint in your service. In this project we are using firebaseService.js
 ```javascript
 this.getMainInfo = function() {
