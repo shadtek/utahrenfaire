@@ -4,10 +4,12 @@
 <head>
   <base href="/"></base>
   <meta charset="utf-8">
-  <title>The Utah Renaissance Faire</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>UtahRenFaire</title>
   <link rel="canonical" href="utahrenfaire.org" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
-  <meta name="description" content="The Utah Renaissance Faire at Thanksgiving Point. Friday and Saturday 10am to 8pm on August 26-27" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Standard Meta -->
+  <meta name="description" content="The Utah Renaissance Faire at Thanksgiving Point. Friday and Saturday 10am to 8pm on August 26th and 27th, 2015" />
   <meta name="keywords" content="medieval times, utah renaissance faire, renfaire, utah valley ren fair, jousting, knights of mayhem, Grassroots Shakespeare Company, family fun" />
   <meta name="author" content="Spencer Shattuck" />
   
@@ -15,98 +17,622 @@
   <meta property="og:image" content="utahrenfaire.org/img/bw-joust.jpg" />
   <meta property="og:url" content="utahrenfaire.org" />
   <meta property="og:site_name" content="The Utah Renaissance Faire" />
-  <meta property="og:description" content="At Thanksgiving Point. Friday and Saturday 10am to 8pm on August 26-27, 2016" />
+  <meta property="og:description" content="At Thanksgiving Point. Friday and Saturday 10am to 8pm on August 26th and 27th, 2015" />
   <meta name="twitter:title" content="UtahRenFaire" />
   <meta name="twitter:image" content="utahrenfaire.org/img/bw-joust.jpg" />
   <meta name="twitter:url" content="utahrenfaire.org" />
-  <meta name="twitter:card" content="At Thanksgiving Point. Friday and Saturday 10am to 8pm on August 26-27, 2016" />
+  <meta name="twitter:card" content="At Thanksgiving Point. Friday and Saturday 10am to 8pm on August 26th and 27th, 2015" />
 
-  <link href="less/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="main.css" rel="stylesheet">
-  <link href="custom.css" rel="stylesheet">
-  <!--[if IE]>
-    <link href="/css/iefix.css" rel="stylesheet">
-  <![endif]-->
-  <!-- <link href="/bundles/mdlfrontend/css/frontpage.css" rel="stylesheet" type="text/css"> -->
-  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!-- Font -->
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- Icomoon Icon Fonts-->
+  <link rel="stylesheet" href="css/icomoon.css">
+  <!-- Simple Line Icons -->
+  <link rel="stylesheet" href="css/simple-line-icons.css">
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/lightblue.css">
+
+  <!-- Modernizr JS -->
+  <script src="js/modernizr-2.6.2.min.js"></script>
+  
+  <!-- FOR IE9 below -->
   <!--[if lt IE 9]>
-    <script src="/js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
   <![endif]-->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="js/less-1.3.0.min.js" type="text/javascript"></script>
+  
 
 </head>
 
 <body ng-controller="mainCtrl" cz-shortcut-listen="true">
   <a rel="#top"></a>
-  <div class="header-links">
-  <a class="facebook" href="https://www.facebook.com/UtahRenaissanceFaire" target="_blank"></a>
-  </div>
-  <div class="container">
-    <header>
-      <div class="row">
-        <div class="span12">
-          <div class="logo">
-            <a ui-sref="home">
-              <img src="img/logo.png" alt="Logo">
-            </a>
-          </div>
-          <div class="menubar">
-            <ul class="pull-right">
-              <li><a ui-sref="about.tickets">Tickets</a></li>
-              <li><a href="http://bit.ly/1EJV1pm" target="_blank">Schedule</a></li>
-              <li><a ui-sref="about.gallery">Gallery</a></li>
-              <li><a ui-sref="about.guilds">Guilds</a></li>
-              <li><a ui-sref="about.entertainers">Entertainers</a></li>
-              <li><a ui-sref="about.vendors">Vendors</a></li>
-              <li><a ui-sref="about.map">Map</a></li>
-            </ul>
-            <div class="clearfix"></div>
-          </div>
+  <header role="banner" id="-header">
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <!-- Mobile Toggle Menu Button -->
+          <a href="#" class="js--nav-toggle -nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+          <a id="logo" class="navbar-brand" href="index.html"><img src="images/urf-logo.png"></a>
+          <a id="logo-text" class="navbar-brand" href="index.html">Utah Renaissance Faire</a>
         </div>
-      </div>
-    </header>
-
-    <section role="main">
-      <div class="main">
-        <ui-view></ui-view>
-      </div>
-      <div class="clearfix"></div>
-    </section>
-    <div class="clearfix"></div>
-
-    <footer>
-      <div class="row" id="footer">
-        <div class="span12">
-          <footer>
-            <div style="text-align:center; margin-bottom:2em;">
-              <a href="https://www.facebook.com/UtahRenaissanceFaire" target="_blank">
-                <img style="width: 200px;" src="img/patrons/UtahFineArts_logo.jpg" alt="Utah Fine Arts Council">
-              </a>
-              <!-- <a href="http://www.ksl.com/?nid=253" target="_blank">
-                <img src="img/patrons/ksl_radio.png" alt="KSL Radio">
-              </a> -->
-              <a href="https://www.uvu.edu/arts/" target="_blank">
-                <img style="width: 200px;" src="img/patrons/UVU_logo.png" alt="Utah Valley University">
-              </a>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+            <li><a data-nav-section="faire-info"><span>Faire Features</span></a></li>
+            <li><a data-nav-section="pricing"><span>Tickets</span></a></li>
+            <li><a data-nav-section="services"><span>Village</span></a></li>
+            <li><a href="#" data-nav-section="features"><span>Gallery</span></a></li>
+            <!-- <li><a href="#" data-nav-section="testimonials"><span>Gallery</span></a></li>
+            <li><a href="#" data-nav-section="pricing"><span>Guilds</span></a></li>
+            <li><a href="#" data-nav-section="pricing"><span>Entertainers</span></a></li>
+            <li><a href="#" data-nav-section="press"><span>Vendors</span></a></li>
+            <li><a href="#" data-nav-section="press"><span>Map</span></a></li> -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- <ui-view></ui-view>  -->
+  <!-- Slider start -->
+  <div id="slider" data-section="home">
+    <div class="owl-carousel owl-carousel-fullwidth">
+      <!-- item -->
+      <div class="item" style="background-image:url(images/bw-joust.jpg); background-position: center;">
+        <div class="overlay"></div>
+        <div class="container" style="position: relative;">
+          <div class="row">
+            <div class="col-md-7 col-sm-7">
+              <div class="-owl-text-wrap">
+                <div class="-owl-text">
+                  <h1 class="-lead to-animate">Jousting</h1>
+                    <h2 class="-sub-lead to-animate">
+                    Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="to-animate-2"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
             </div>
-            <ul>
-              <li>© Utah Valley Fine Arts Council 2015</li>
-              <li><a ui-sref="about.contact">Contact Us</a></li>
-              <li><a href="https://www.linkedin.com/in/shadtek" target="_blank">Converted to AngularJS by Spencer Shattuck</a></li>
-              <li><a ui-sref="about.admin.login">Admin</a></li>
-            </ul>
-          </footer>
+          </div>
         </div>
       </div>
-    </footer>
-    <div class="clearfix"></div>
+      <!-- /item -->
+      <!-- item -->
+        <div class="item" style="background-image:url(images/stary-olsa.jpg); background-position: center;">
+          <div class="overlay"></div>
+          <div class="container" style="position: relative;">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+              <div class="-owl-text-wrap">
+                <div class="-owl-text">
+                  <h1 class="-lead to-animate">Stary Olsa</h1>
+                    <h2 class="-sub-lead to-animate">
+                    Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="-sub-lead to-animate"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- /item -->
+      <!-- item -->
+        <div class="item" style="background-image:url(images/viking-boats.jpg); background-position: center;">
+          <div class="overlay"></div>
+          <div class="container" style="position: relative;">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+                <div class="-owl-text-wrap">
+                  <div class="-owl-text">
+                    <h1 class="-lead to-animate">Educational</h1>
+                    <h2 class="-sub-lead to-animate">Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="to-animate-2"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="item" style="background-image:url(images/family.jpg); background-position: center;">
+          <div class="overlay"></div>
+          <div class="container" style="position: relative;">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+              <div class="-owl-text-wrap">
+                <div class="-owl-text">
+                  <h1 class="-lead to-animate">Family Friendly</h1>
+                    <h2 class="-sub-lead to-animate">
+                    Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="to-animate-2"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="item" style="background-image:url(images/bird2.jpg); background-position: center;">
+          <div class="overlay"></div>
+          <div class="container" style="position: relative;">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+                <div class="-owl-text-wrap">
+                  <div class="-owl-text">
+                    <h1 class="-lead to-animate">Birds of Prey</h1>
+                    <h2 class="-sub-lead to-animate">Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="to-animate-2"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="item" style="background-image:url(images/moki1.jpg); background-position: center;">
+          <div class="overlay"></div>
+          <div class="container" style="position: relative;">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+                <div class="-owl-text-wrap">
+                  <div class="-owl-text">
+                    <h1 class="-lead to-animate">Magic</h1>
+                    <h2 class="-sub-lead to-animate">Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="to-animate-2"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="item" style="background-image:url(images/music.jpg); background-position: center;">
+          <div class="overlay"></div>
+          <div class="container" style="position: relative;">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+                <div class="-owl-text-wrap">
+                  <div class="-owl-text">
+                    <h1 class="-lead to-animate">Music</h1>
+                    <h2 class="-sub-lead to-animate">Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="to-animate-2"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="item" style="background-image:url(images/fairy2015.jpg); background-position: center;">
+          <div class="overlay"></div>
+          <div class="container" style="position: relative;">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+                <div class="-owl-text-wrap">
+                  <div class="-owl-text">
+                    <h1 class="-lead to-animate">Fairies</h1>
+                    <h2 class="-sub-lead to-animate">Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="to-animate-2"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="item" style="background-image:url(images/bottles.jpg); background-position: center;">
+          <div class="overlay"></div>
+          <div class="container" style="position: relative;">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+                <div class="-owl-text-wrap">
+                  <div class="-owl-text">
+                    <h1 class="-lead to-animate">Vendors</h1>
+                    <h2 class="-sub-lead to-animate">Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="to-animate-2"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="item" style="background-image:url(images/armor2.jpg); background-position: center;">
+          <div class="overlay"></div>
+          <div class="container" style="position: relative;">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+                <div class="-owl-text-wrap">
+                  <div class="-owl-text">
+                    <h1 class="-lead to-animate">Armored Combat</h1>
+                    <h2 class="-sub-lead to-animate">Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="to-animate-2"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="item" style="background-image:url(images/robbie.jpg); background-position: center;">
+          <div class="overlay"></div>
+          <div class="container" style="position: relative;">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+                <div class="-owl-text-wrap">
+                  <div class="-owl-text">
+                    <h1 class="-lead to-animate">Join Us</h1>
+                    <h2 class="-sub-lead to-animate">Thanksgiving Point<br>
+                    Friday and Saturday, Rain or Shine<br>
+                    10am - 8pm<br>
+                    August 26 and 27, 2016</h2>
+                    <p class="to-animate-2"><a href="https://utahrenfaire.yapsody.com/event/index/29315?ref=ebtn" target="_blank" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /item -->
+    </div>
   </div>
-  <!-- Bootstrap and Styles -->
-  <script type="text/javascript" src="js/json2.js"></script>
-  <!-- <script type="text/javascript" src="js/knockout-2.0.0.js"></script> -->
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="js/bootstrap-carousel.js"></script>
+  <!-- /Slider -->
+  <!-- faire info -->
+  <div id="-about-us" data-section="faire-info" data-nav-section="faire-info">
+    <div class="container">
+      <div class="row" id="team">
+        <div class="col-md-12 section-heading text-center to-animate">
+          <h2><a data-nav-section="faire-info">Faire Features</a></h2>
+        </div>
+        <div class="col-md-12">
+          <div class="row">
+            <!-- item -->
+            <div class="text-center to-animate">
+              <div class="feature">
+                <img src="images/mayhem.jpg" class="img-responsive" alt="Feature">
+                <h3 class="name">Knights of Mayhem</h3>
+                <div class="position">Jousting</div>
+                <p class="text-center">Charlie and his Knights Of Mayhem instantly stir up excitement among the crowds, who watch with eager delight and anticipation from the edge of their seats. The Knights put on an incredible show and afterwards the fans rush to meet their favorite Knight, get autographs, pictures and even a rose! Fans are given an opportunity to take a ride on one of their well trained magnificent horses, led by the Captain of the war horses, Jagermeister.</p>
+                <ul class="social social-circle">
+                  <li><a href="http://www.knightsofmayhem.com/" target="_blank"><i class="icon-globe2"></i></a></li>
+                  <li><a href="https://www.facebook.com/joustingchampions" target="_blank"><i class="icon-facebook-official"></i></a></li>
+                  <li><a href="https://www.youtube.com/results?search_query=knights+of+mayhem" target="_blank"><i class="icon-youtube"></i></a></li>
+                  <li><a href="https://twitter.com/knightsofmayhem" target="_blank"><i class="icon-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/knightofmayhem/" target="_blank"><i class="icon-instagram"></i></a></li>
+                  <li><a href="tel:408-916-8041"><i class="icon-phone" target="_blank"></i></a></li>
+                  <li><a href="mailto:charlieandrews.kom@gmail.com" target="_blank"><i class="icon-envelope"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /item -->
+            <!-- item -->
+            <div class="text-center to-animate">
+              <div class="feature">
+                <img src="images/grassroots.jpg" class="img-responsive" alt="Feature">
+                <h3 class="name">Grassroots Shakespeare</h3>
+                <div class="position">Evening Theater</div>
+                <p class="text-center">Grassroots Shakespeare Company is a collaborative touring ensemble of multidisciplinary artists who create joyous, vibrant productions inspired by Shakespeare's original staging techniques. Through open-air performances, interactive workshops, and scholarly events, they produce and promote genuinely engaging, popular, and relevant theatre.</p>
+                <ul class="social social-circle">
+                  <li><a href="http://www.grassrootsshakespeare.com/" target="_blank"><i class="icon-globe2"></i></a></li>
+                  <li><a href="https://www.facebook.com/GrassrootsShakespeare/" target="_blank"><i class="icon-facebook-official"></i></a></li>
+                  <!-- <li><a href="https://www.youtube.com/" target="_blank"><i class="icon-youtube"></i></a></li> -->
+                  <li><a href="https://twitter.com/grassrootsbard" target="_blank"><i class="icon-twitter"></i></a></li>
+                  <!-- <li><a href="https://www.instagram.com/" target="_blank"><i class="icon-instagram"></i></a></li> -->
+                  <li><a href="tel:(707) 722-7529"><i class="icon-phone" target="_blank"></i></a></li>
+                  <li><a href="mailto:grassrootsshakespeare@gmail.com" target="_blank"><i class="icon-envelope"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /item -->
+            <!-- item -->
+            <div class="text-center to-animate">
+              <div class="feature">
+                <img src="images/stary-olsa-tall.jpg" class="img-responsive" alt="Feature">
+                <h3 class="name">Stary Olsa</h3>
+                <div class="position">Special Musical Guests</div>
+                <p class="text-center">Stay Olsa is a medieval Belarusian music band. It was founded in 1999 by its present leader Zmicier Sasnoŭski and now consists of six musicians. Stary Olsa gained its popularity in Belarus, Europe and CIS countries. The fans and subscribers of their official pages come from all over the world. Every day in social networks and emails they would get exciting feedback from their fans with just one question: "When are you coming to the USA?"</p>
+                <ul class="social social-circle">
+                  <li><a href="http://staryolsa.com/en/home.html" target="_blank"><i class="icon-globe2"></i></a></li>
+                  <li><a href="https://www.facebook.com/stary.olsa" target="_blank"><i class="icon-facebook-official"></i></a></li>
+                  <li><a href="https://www.youtube.com/channel/UC_Rr5UNfVFRHwJVy483R6lg" target="_blank"><i class="icon-youtube"></i></a></li>
+                  <li><a href="https://twitter.com/StaryOlsa" target="_blank"><i class="icon-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/staryolsa/" target="_blank"><i class="icon-instagram"></i></a></li>
+                  <li><a href="tel:(503) 763-0498"><i class="icon-phone" target="_blank"></i></a></li>
+                  <li><a href="mailto:jeanine@staryolsa.com" target="_blank"><i class="icon-envelope"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /item -->
+            <!-- item -->
+            <div class="text-center to-animate">
+              <div class="feature">
+                <img src="images/acl-action.jpg" class="img-responsive" alt="Feature">
+                <h3 class="name">Armored Combat League: USA Knights</h3>
+                <div class="position">Live Steel Battle</div>
+                <p class="text-center">Full Force, Full Speed, Full Contact, All Real.</p>
+                <ul class="social social-circle">
+                  <li><a href="http://www.aclknights.com/" target="_blank"><i class="icon-globe2"></i></a></li>
+                  <li><a href="https://www.facebook.com/ArmoredCombatLeague.Team.Usa" target="_blank"><i class="icon-facebook-official"></i></a></li>
+                  <li><a href="http://www.youtube.com/user/USAKnights" target="_blank"><i class="icon-youtube"></i></a></li>
+                  <li><a href="https://twitter.com/USA_Knights" target="_blank"><i class="icon-twitter"></i></a></li>
+                  <!-- <li><a href="https://www.instagram.com/" target="_blank"><i class="icon-instagram"></i></a></li> -->
+                  <!-- <li><a href="tel:"><i class="icon-phone" target="_blank"></i></a></li> -->
+                  <li><a href="mailto:jbrooks@usaknights.org" target="_blank"><i class="icon-envelope"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /item -->
+            <!-- item -->
+            <div class="text-center to-animate">
+              <div class="feature">
+                <img src="images/feast2.jpg" class="img-responsive" alt="Feature">
+                <h3 class="name">House Teasdale King's Feast</h3>
+                <div class="position">VIP Jousting and Feast</div>
+                <p class="text-center">Buy a VIP pass ahead of time, these do sell out quickly as we only have room for 80 VIP guests. If you're lucky enough to have a ticket come in for preferred seating at the last joust of the day and then feast in the large tent with the House Teasdale as the entertainers keep the night going with magic, music, and comedy.</p>
+                <ul class="social social-circle">
+                  <li><a href="#"><i class="icon-ticket"></i></a></li>
+                  <li><a href="#"><i class="icon-info-circle"></i></a></li>
+                  <!-- <li><a href="#" target="_blank"><i class="icon-globe2"></i></a></li>
+                  <li><a href="https://www.facebook.com/" target="_blank"><i class="icon-facebook-official"></i></a></li>
+                  <li><a href="http://www.youtube.com/user/" target="_blank"><i class="icon-youtube"></i></a></li>
+                  <li><a href="https://twitter.com/" target="_blank"><i class="icon-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/" target="_blank"><i class="icon-instagram"></i></a></li>
+                  <li><a href="tel:"><i class="icon-phone" target="_blank"></i></a></li>
+                  <li><a href="mailto:" target="_blank"><i class="icon-envelope"></i></a></li> -->
+                </ul>
+              </div>
+            </div>
+            <!-- /item -->
+            <!-- item -->
+            <div class="text-center to-animate">
+              <div class="feature">
+                <img src="images/skymasters.jpg" class="img-responsive" alt="Feature">
+                <h3 class="name">Skymasters Wildlife Foundation</h3>
+                <div class="position">Birds of Prey</div>
+                <p class="text-center">Skymasters Wildlife Foundation was founded by Ben Woodruff in the Salt Lake City area to showcase birds of prey and other birds and animals for the benefit of education and outreach to the community. Many of these birds are not available to view up close in the wild.</p>
+                <ul class="social social-circle">
+                  <!-- <li><a href="#" target="_blank"><i class="icon-globe2"></i></a></li> -->
+                  <li><a href="https://www.facebook.com/Skymasters-Wildlife-Foundation-466615720119907" target="_blank"><i class="icon-facebook-official"></i></a></li>
+                  <!-- <li><a href="http://www.youtube.com/user/" target="_blank"><i class="icon-youtube"></i></a></li>
+                  <li><a href="https://twitter.com/" target="_blank"><i class="icon-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/" target="_blank"><i class="icon-instagram"></i></a></li>
+                  <li><a href="tel:"><i class="icon-phone" target="_blank"></i></a></li>
+                  <li><a href="mailto:" target="_blank"><i class="icon-envelope"></i></a></li> -->
+                </ul>
+              </div>
+            </div>
+            <!-- /item -->
+            <!-- item -->
+            <div class="text-center to-animate">
+              <div class="feature">
+                <img src="images/lefty.jpg" class="img-responsive" alt="Feature">
+                <h3 class="name">Captain Lefty</h3>
+                <div class="position">Pirate Show</div>
+                <p class="text-center">Fire, guns, knives, and COMEDY! Captain Lefty and his lovely Gypsy Princess have an exciting, amazing, cheeky, and funny pirate act that you will love!</p>
+                <ul class="social social-circle">
+                  <li><a href="http://www.eliascaress.com/" target="_blank"><i class="icon-globe2"></i></a></li>
+                  <li><a href="https://www.facebook.com/OutlawEntertainers" target="_blank"><i class="icon-facebook-official"></i></a></li>
+                  <li><a href="http://www.youtube.com/user/leftyoutlawful" target="_blank"><i class="icon-youtube"></i></a></li>
+                  <!-- <li><a href="https://twitter.com/" target="_blank"><i class="icon-twitter"></i></a></li> -->
+                  <!-- <li><a href="https://www.instagram.com/" target="_blank"><i class="icon-instagram"></i></a></li> -->
+                  <li><a href="tel:(801)783-6058"><i class="icon-phone" target="_blank"></i></a></li>
+                  <li><a href="mailto:eliascaress@gmail.com" target="_blank"><i class="icon-envelope"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /item -->
+            <!-- item -->
+            <div class="text-center to-animate">
+              <div class="feature">
+                <img src="images/david.jpg" class="img-responsive" alt="Feature">
+                <h3 class="name">David Belt</h3>
+                <div class="position">Living History</div>
+                <p class="text-center">Mr. David Belt is a faire fan favorite! He uses his signature panache to teach about weapons, armor, and medieval military history.</p>
+                <ul class="social social-circle">
+                  <!-- <li><a href="#" target="_blank"><i class="icon-globe2"></i></a></li> -->
+                  <!-- <li><a href="https://www.facebook.com/" target="_blank"><i class="icon-facebook-official"></i></a></li> -->
+                  <!-- <li><a href="http://www.youtube.com/user/" target="_blank"><i class="icon-youtube"></i></a></li> -->
+                  <!-- <li><a href="https://twitter.com/" target="_blank"><i class="icon-twitter"></i></a></li> -->
+                  <!-- <li><a href="https://www.instagram.com/" target="_blank"><i class="icon-instagram"></i></a></li> -->
+                  <!-- <li><a href="tel:"><i class="icon-phone" target="_blank"></i></a></li> -->
+                  <!-- <li><a href="mailto:" target="_blank"><i class="icon-envelope"></i></a></li> -->
+                </ul>
+              </div>
+            </div>
+            <!-- /item -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /faire info -->
+  <!-- pricing -->
+  <div id="-pricing" data-section="pricing">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 section-heading text-center">
+          <h2 class="single-animate animate-pricing-1"><a data-nav-section="pricing">Tickets</a></h2>
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
+              <h3>Guests who are in costume and purchase general admission tickets at the gate receive $2 off!<br>
+              ALL tickets are good for both days of the faire. No admission charge for Grassroots Shakespeare's play at 7pm each night. Military discount of 50% is only for tickets bought at the gate and does not apply to the Educational Excursions.<br>
+              Children age 5 and under are free and do not require a ticket.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- item -->
+        <div class="col-md-4 col-sm-6">
+          <div class="price-box to-animate">
+            <h2 class="pricing-plan">Family Pass</h2>
+            <div class="price"><sup class="currency">$</sup>25<small> for up to 6 people</small></div>
+            <a href="http://bit.ly/1Tzwv5y" class="btn btn-default btn-sm">Get Tickets</a>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="col-md-4 col-sm-6">
+          <div class="price-box to-animate">
+            <h2 class="pricing-plan">Adults</h2>
+            <div class="price"><sup class="currency">$</sup>12<small> ages 12 through 64</small></div>
+            <a href="http://bit.ly/1Tzwv5y" class="btn btn-default btn-sm">Get Tickets</a>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- Clearfix for discounted tickets. -->
+        <div class="clearfix"></div>
+        <!-- item -->
+        <div class="col-md-4 col-sm-6">
+          <div class="price-box to-animate">
+            <h2 class="pricing-plan">Students</h2>
+            <div class="price"><sup class="currency">$</sup>10<small> with valid ID</small></div>
+            <a href="http://bit.ly/1Tzwv5y" class="btn btn-default btn-sm">Get Tickets</a>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="col-md-4 col-sm-6">
+          <div class="price-box to-animate">
+            <h2 class="pricing-plan">Seniors</h2>
+            <div class="price"><sup class="currency">$</sup>10<small> ages 65+</small></div>
+            <a href="http://bit.ly/1Tzwv5y" class="btn btn-default btn-sm">Get Tickets</a>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="col-md-4 col-sm-6">
+          <div class="price-box to-animate">
+            <h2 class="pricing-plan">Children</h2>
+            <div class="price"><sup class="currency">$</sup>8<small> ages 6-11</small></div>
+            <a href="http://bit.ly/1Tzwv5y" class="btn btn-default btn-sm">Get Tickets</a>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- Clearfix for long ticket info boxes. -->
+        <div class="clearfix"></div>
+        <!-- item -->
+        <div class="col-md-4 col-sm-6">
+          <div class="price-box to-animate">
+            <h2 class="pricing-plan">Educational Excursions</h2>
+            <div class="price"><sup class="currency">$</sup>4<small> per person</small></div>
+            <p class="text-justify">Part of our non-profit mission is to allow school children to have the opportunity to come enjoy living history at an affordable price.</p>
+            <hr>
+            <ul class="pricing-info">
+              <li>Must be part of a school or homeschool.</li>
+              <li>Must check in on Friday bewteen 10am and 3pm.</li>
+              <li>Wristbands are good for both days if marked at the faire on Friday.</li>
+              <li>Wristbands can be obtained in advance if you contact us after your purchase.</li>
+            </ul>
+            <a href="http://bit.ly/1Tzwv5y" class="btn btn-default btn-sm">Get Tickets</a>
+          </div>
+        </div>
+        <!-- /item -->
+        <!-- item -->
+        <div class="clearfix visible-sm-block"></div>
+        <div class="col-md-4 col-sm-6">
+          <div class="price-box popular to-animate">
+            <div class="popular-text">VIP</div>
+            <h2 class="pricing-plan">House Teasdale's VIP Joust and Feast</h2>
+            <div class="price"><sup class="currency">$</sup>38<small> per guest.</small></div>
+            <p class="text-justify">A unique experience at the Utah Renaissance Faire. This year we have changed the menu and the structure from past years. Click the button below to get the full details.</p>
+            <hr>
+            <ul class="pricing-info">
+              <li>Pick Friday or Saturday.</li>
+              <li>Limited to 80 guests only.</li>
+              <li>VIP seats at the last joust.</li>
+              <li>Following the joust, enjoy a buffet-style feast.</li>
+              <li>Live magic, music, and comedy.</li>
+            </ul>
+            <a href="#" class="btn btn-primary btn-sm">Get info & tickets</a>
+          </div>
+        </div>
+        <!-- /item -->
+      </div>
+    </div>
+  </div>
+  <!-- /pricing -->
+
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="row row-bottom-padded-sm">
+        <div class="col-md-12">
+          <p class="copyright text-center">&copy; 2016 <a href="index.html">Utah Renaissance Faire</a>. All Rights Reserved.
+            <br>Website by <a href="http://pexels.com/" target="_blank">Spencer Shattuck</a></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <ul class="social social-circle">
+            <li><a href="#"><i class="icon-twitter"></i></a></li>
+            <li><a href="#"><i class="icon-facebook"></i></a></li>
+            <li><a href="#"><i class="icon-youtube"></i></a></li>
+            <li><a href="#"><i class="icon-pinterest"></i></a></li>
+            <li><a href="#"><i class="icon-linkedin"></i></a></li>
+            <li><a href="#"><i class="icon-instagram"></i></a></li>
+            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+            <li><a href="#"><i class="icon-git"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="js/jquery.min.js"></script>
+  <!-- jQuery Easing -->
+  <script src="js/jquery.easing.1.3.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Waypoints -->
+  <script src="js/jquery.waypoints.min.js"></script>
+  <!-- Owl Carousel -->
+  <script src="js/owl.carousel.min.js"></script>
+  <!-- Main JS (Do not remove, not to be confused with Angular's main control) -->
+  <script src="js/main.js"></script>
+
   <!-- Angular and Dependencies -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
