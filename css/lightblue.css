@@ -130,6 +130,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 250px;
     margin-top:-10em;
   }
+
 }
 #-header .navbar {
   padding-bottom: 0;
@@ -750,7 +751,7 @@ h1, h2, h3, h4, h5, h6 {
 .-nav-toggle {
   position: absolute;
   top: 12px;
-  right: 0px;
+  right: -21px;
   z-index: 21;
   padding: 6px 0 0 0;
   display: block;
