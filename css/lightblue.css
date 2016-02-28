@@ -16,6 +16,12 @@
   font-family: 'Goudy Medieval';
   src: url('../fonts/goudy.ttf');
 }
+@font-face {
+  font-family: 'Goudy Medieval';
+  src: url('../fonts/goudy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 body {
