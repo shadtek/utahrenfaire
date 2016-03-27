@@ -129,7 +129,66 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 250px;
     margin-top:-10em;
   }
-
+}
+@media screen and (max-width: 767px) {
+  #-header {
+    margin-top: 0;
+    background: #fff;
+    -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  }
+  #-header .navbar-brand {
+    color: #5585b5 !important;
+  }
+  #-header #navbar li:first-child {
+    padding-top: 4em;
+  }
+  #-header.navbar-fixed-top #navbar li:first-child {
+    padding-top: 0em !important;
+  }
+  #-header.navbar-fixed-top #home-link {
+    display: block !important;
+  }
+  #-header #navbar li a {
+    color: rgba(0, 0, 0, 0.5) !important;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+  #-header #navbar li a:hover {
+    color: #5585b5 !important;
+  }
+  #-header #navbar li a span:before {
+    background: transparent !important;
+  }
+  #-header #navbar li.active a {
+    background: transparent;
+    background: none;
+    color: #5585b5 !important;
+  }
+  #-header #navbar li.active a span:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  #logo-text {
+    display: none !important;
+  }
+  #logo img {
+    display: block !important;
+    max-width: 250px;
+    margin-top:-10em;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  #-header #home-link {
+    display: none !important;
+  }
+  #-header.navbar-fixed-top #home-link {
+    display: block !important;
+  }
 }
 #-header .navbar {
   padding-bottom: 0;
@@ -214,12 +273,7 @@ h1, h2, h3, h4, h5, h6 {
 #-header.navbar-fixed-top #logo img {
   display: none !important;
 }
-#-header #home-link {
-  display: none !important;
-}
-#-header.navbar-fixed-top #home-link {
-  display: block !important;
-}
+
 
 #-header.navbar-fixed-top #navbar li a {
   color: rgba(0, 0, 0, 0.5);
@@ -501,7 +555,6 @@ h1, h2, h3, h4, h5, h6 {
 #-press {
   background: #f4f4f4;
 }
-
 #-our-services .box {
   padding: 30px;
   background: #fff;
@@ -516,6 +569,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 60px;
   }
 }
+
 #-our-services .box .icon {
   width: 85px;
   height: 85px;
