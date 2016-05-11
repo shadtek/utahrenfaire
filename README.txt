@@ -41,10 +41,10 @@ Page layout:
 
 Home
 
-Faire Info
--Event Features
+Faire Features
 -Schedule
--Directions
+-Event Features
+-Map
 
 Tickets
 -Admission Prices
