@@ -1,34 +1,21 @@
-<!-- faire info -->
-<div id="-about-us" data-section="faire-info" data-nav-section="faire-info">
-  <div class="container">
-    <div class="row" id="team">
-      <div class="col-md-12 section-heading text-center to-animate">
-        <h2><a data-nav-section="faire-info">Faire Features</a></h2>
-      </div>
-      <div class="col-md-12">
-        <div class="row">
-          <!-- item -->
-          <div class="text-center to-animate">
-            <div class="feature">
-              <img src="images/mayhem.jpg" class="img-responsive" alt="Feature">
-              <h3 class="name">Knights of Mayhem</h3>
-              <div class="position">Jousting</div>
-              <p class="text-center">Charlie and his Knights Of Mayhem instantly stir up excitement amongst the crowds, who watch with eager delight and anticipation from the edge of their seats. The Knights put on an incredible show and afterwards the fans rush to meet their favorite Knight, get autographs, pictures and even a rose! Fans are given an opportunity to take a ride on one of their well trained magnificent horses, led by the Captain of the war horses, Jagermeister.</p>
-              <ul class="social social-circle">
-                <li><a href="http://www.knightsofmayhem.com/" target="_blank"><i class="icon-globe2"></i></a></li>
-                <li><a href="https://www.facebook.com/joustingchampions" target="_blank"><i class="icon-facebook-official"></i></a></li>
-                <li><a href="https://www.youtube.com/results?search_query=knights+of+mayhem" target="_blank"><i class="icon-youtube"></i></a></li>
-                <li><a href="https://twitter.com/knightsofmayhem" target="_blank"><i class="icon-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/knightofmayhem/" target="_blank"><i class="icon-instagram"></i></a></li>
-                <li><a href="tel:408-916-8041"><i class="icon-phone" target="_blank"></i></a></li>
-                <li><a href="mailto:charlieandrews.kom@gmail.com" target="_blank"><i class="icon-envelope"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- /item -->          
+<h1>Entertainers</h1>
+
+</br>
+<table class="table table-striped table-condensed">
+  <tbody>
+    <tr ng-show="!item.hide" ng-repeat="item in entertainers track by item.name">
+      <td class="span2">
+        <div class="vendor-list-image">
+          <img style="width:134px;" src={{item.photo}} />
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /faire info -->
+      </td>
+      <td>
+        <div class="vendor-listing">
+          <h3>{{item.name}}</h3>
+          <p>{{item.description}}</p>
+          <h4><a ng-href="{{item.website}}" target="_blank">{{item.website}}</a></h4>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
