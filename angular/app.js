@@ -16,8 +16,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           templateUrl: "states/home/faire-features.html",
           controller: 'faireFeaturesCtrl'
           resolve: {
-            profilesRef: function(firebaseService, $state){
-              return firebaseService.getProfiles();
+            entertainersRef: function(firebaseService){
+              return firebaseService.getEntertainers();
             }
           }
         },
