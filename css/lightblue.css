@@ -325,6 +325,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0s;
 }
 
+@media (min-width: 768px) {
+  .navbar-right .dropdown-menu {
+    right: 0;
+    left: 1;
+  }
+}
+
 .section-heading {
   float: left;
   width: 100%;

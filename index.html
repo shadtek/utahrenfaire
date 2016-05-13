@@ -70,7 +70,18 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li id="home-link" class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
-            <li><a data-nav-section="faire-info"><span>Faire Features</span></a></li>
+            <li class="dropdown">
+              <a  class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span>Faire Features</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a data-nav-section="faire-info" href="#">Featured</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
             <li><a data-nav-section="pricing"><span>Tickets</span></a></li>
             <li><a data-nav-section="map"><span>Map</span></a></li>
             <li><a data-nav-section="forms"><span>Forms</span></a></li>
