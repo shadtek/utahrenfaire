@@ -98,15 +98,19 @@
 	var clickMenu = function() {
 
 		$('a:not([class="external"])').click(function(event){
+			console.log(event);
 			var section = $(this).data('nav-section'),
 				navbar = $('#navbar');
+				console.log(navbar);
 		    $('html, body').animate({
 		        scrollTop: $('[data-section="' + section + '"]').offset().top
 		    }, 500);
 
 		    if ( navbar.is(':visible')) {
+		    	console.log("I am being run");
 		    	navbar.removeClass('in');
 		    	navbar.attr('aria-expanded', 'false');
+		    	$("#dropDownMenuContainer").removeClass('open');
 		    	$('.js--nav-toggle').removeClass('active');
 		    }
 

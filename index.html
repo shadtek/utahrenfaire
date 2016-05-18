@@ -70,16 +70,16 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="renfaire-nav" class="nav navbar-nav navbar-right">
             <li id="home-link" class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
-            <li class="dropdown">
+            <li class="dropdown" id = "dropDownMenuContainer">
               <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <span>Faire Features</span>
               </a>
               <ul id="features-dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a data-nav-section="faire-info" href="#">Featured</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a data-toggle="collapse" data-target="dropdown" data-nav-section="faire-info">Featured</a></li>
+                <li><a data-toggle="collapse" data-target="dropdown" href="#">Another action</a></li>
+                <li><a data-toggle="collapse" data-target="dropdown" href="#">Something else here</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a data-toggle="collapse" data-target="dropdown" href="#">Separated link</a></li>
               </ul>
             </li>
             <li><a data-nav-section="pricing"><span>Tickets</span></a></li>
