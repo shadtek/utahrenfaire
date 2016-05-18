@@ -148,6 +148,11 @@ h1, h2, h3, h4, h5, h6 {
   #-header.navbar-fixed-top #navbar li:first-child {
     padding-top: 0em !important;
   }
+
+  #features-dropdown-menu li:first-child {
+    padding-top: 0em !important;
+  }
+  
   #-header.navbar-fixed-top #home-link {
     display: block !important;
   }
