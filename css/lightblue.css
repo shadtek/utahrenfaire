@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
   #features-dropdown-menu li:first-child {
     padding-top: 0em !important;
   }
-  
+
   #-header.navbar-fixed-top #home-link {
     display: block !important;
   }
@@ -1244,6 +1244,12 @@ h1, h2, h3, h4, h5, h6 {
   animation-duration: .3s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+
+/* Color overrides */
+#features-dropdown-menu li a {
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
 /*# sourceMappingURL=lightblue.css.map */
