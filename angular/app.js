@@ -21,6 +21,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
           }
         },
+        "tickets@home": {
+          templateUrl: "states/home/tickets.html",
+          controller: 'ticketsCtrl',
+          resolve: {
+            entertainersRef: function(firebaseService){
+              return firebaseService.getEntertainers();
+            }
+          }
+        },
       },
       resolve: {
         mainInfoRef: function(firebaseService){
