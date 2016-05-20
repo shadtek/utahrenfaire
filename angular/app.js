@@ -30,6 +30,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
           }
         },
+        "map@home": {
+          templateUrl: "states/home/map.html",
+          controller: 'mapCtrl',
+          resolve: {
+            entertainersRef: function(firebaseService){
+              return firebaseService.getEntertainers();
+            }
+          }
+        },
       },
       resolve: {
         mainInfoRef: function(firebaseService){
