@@ -1,4 +1,4 @@
-<!-- faire info -->
+faire info -->
 <div id="-about-us" data-section="faire-info" data-nav-section="faire-info">
   <div class="container">
     <div class="row" id="team">
@@ -24,6 +24,18 @@
                 <li ng-show="{{item.phone}}"><a href="tel:{{item.phone}}"><i class="icon-phone" target="_blank"></i></a></li>
                 <li ng-show="{{item.email}}"><a href="mailto:{{item.email}}" target="_blank"><i class="icon-envelope"></i></a></li>
               </ul>
+              <ul class="social">
+                <li><button class="btn-mini btn-success" ng-click="updateEntertainer(item)">Update</button></li>
+                <li>
+                  <button ng-hide="item.hide" class="btn-mini btn-warning" ng-click="toggleEntertainerHide(item)">Shown</button>
+                  <button ng-hide="!item.hide" class="btn-mini btn-warning" ng-click="toggleEntertainerHide(item)">Hidden</button>
+                </li>
+                <li><button class="btn-mini btn-danger" ng-click="removeEntertainer(item)">Delete</button></li>
+                <!-- <li>
+                  <p ng-hide="item.hide">Shown</p>
+                  <p ng-hide="!item.hide">Hidden</p>
+                </li> -->
+              </ul>
             </div>
           </div>
           <!-- /item -->          
@@ -32,4 +44,4 @@
     </div>
   </div>
 </div>
-<!-- /faire info -->
+<!-- /faire info
