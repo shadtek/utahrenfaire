@@ -1,4 +1,4 @@
-faire info -->
+<!-- faire info -->
 <div id="-about-us" data-section="faire-info" data-nav-section="faire-info">
   <div class="container">
     <div class="row" id="team">
@@ -12,9 +12,15 @@ faire info -->
           <div class="text-center" ng-show="!item.hide" ng-repeat="item in entertainers track by item.name">
             <div class="feature">
               <img src="{{item.photo}}" class="img-responsive" alt="Feature Photo">
-              <h3 class="name">{{item.name}}</h3>
-              <div ng-show="{{item.subName}}" class="position">{{item.subName}}</div>
-              <p ng-show="{{item.description}}" class="text-center">{{item.description}}</p>
+              <h3 ng-if="!userIsAdmin" class="name">{{item.name}}</h3>
+              <div ng-if="!userIsAdmin" ng-show="{{item.subName}}" class="position">{{item.subName}}</div>
+              <p ng-if="!userIsAdmin" ng-show="{{item.description}}" class="text-center">{{item.description}}</p>
+              <!-- <p ng-if="userIsAdmin">Description: <br><input ng-model="item.description" rows="4" placeholder="Description"></input></p> -->
+              <div ng-if="userIsAdmin" class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" rows="5" id="description"></textarea>
+              </div>
+
               <ul class="social social-circle">
                 <li ng-show="{{item.website}}"><a ng-href="{{item.website}}" target="_blank"><i class="icon-globe2"></i></a></li>
                 <li ng-show="{{item.facebook}}"><a ng-href="{{item.facebookPage}}" target="_blank"><i class="icon-facebook-official"></i></a></li>
@@ -24,18 +30,16 @@ faire info -->
                 <li ng-show="{{item.phone}}"><a href="tel:{{item.phone}}"><i class="icon-phone" target="_blank"></i></a></li>
                 <li ng-show="{{item.email}}"><a href="mailto:{{item.email}}" target="_blank"><i class="icon-envelope"></i></a></li>
               </ul>
-              <ul class="social">
+
+              <ul ng-if="userIsAdmin" class="social">
                 <li><button class="btn-mini btn-success" ng-click="updateEntertainer(item)">Update</button></li>
                 <li>
                   <button ng-hide="item.hide" class="btn-mini btn-warning" ng-click="toggleEntertainerHide(item)">Shown</button>
                   <button ng-hide="!item.hide" class="btn-mini btn-warning" ng-click="toggleEntertainerHide(item)">Hidden</button>
                 </li>
                 <li><button class="btn-mini btn-danger" ng-click="removeEntertainer(item)">Delete</button></li>
-                <!-- <li>
-                  <p ng-hide="item.hide">Shown</p>
-                  <p ng-hide="!item.hide">Hidden</p>
-                </li> -->
               </ul>
+
             </div>
           </div>
           <!-- /item -->          
