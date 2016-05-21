@@ -4,23 +4,17 @@
     <div class="row" id="team">
       <div class="col-md-12 section-heading text-center">
         <h2><a data-nav-section="faire-info">Faire Features</a></h2>
-        <h3>{{userIsAdmin}}</h3>
       </div>
       <div class="col-md-12">
         <div class="row">
           <!-- item -->
           <div class="text-center" ng-show="!item.hide" ng-repeat="item in entertainers track by item.name">
             <div class="feature">
+              <!-- public -->
               <img src="{{item.photo}}" class="img-responsive" alt="Feature Photo">
               <h3 ng-if="!userIsAdmin" class="name">{{item.name}}</h3>
               <div ng-if="!userIsAdmin" ng-show="{{item.subName}}" class="position">{{item.subName}}</div>
               <p ng-if="!userIsAdmin" ng-show="{{item.description}}" class="text-center">{{item.description}}</p>
-              <div ng-if="userIsAdmin" class="form-group">
-                <input class="form-control" ng-model="item.name" placeholder="Name"></input>
-                <input class="form-control" id="sub-name" ng-model="item.subName" placeholder="Sub Name"></input>
-                <textarea class="form-control" rows="5" id="description" ng-model="item.description" placeholder="Description">{{item.description}}</textarea>
-              </div>
-
               <ul class="social social-circle">
                 <li ng-show="{{item.website}}"><a ng-href="{{item.website}}" target="_blank"><i class="icon-globe2"></i></a></li>
                 <li ng-show="{{item.facebook}}"><a ng-href="{{item.facebookPage}}" target="_blank"><i class="icon-facebook-official"></i></a></li>
@@ -30,7 +24,19 @@
                 <li ng-show="{{item.phone}}"><a href="tel:{{item.phone}}"><i class="icon-phone" target="_blank"></i></a></li>
                 <li ng-show="{{item.email}}"><a href="mailto:{{item.email}}" target="_blank"><i class="icon-envelope"></i></a></li>
               </ul>
-
+              <!-- /public -->
+              <!-- admin -->
+              <div ng-if="userIsAdmin" class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon" id="name">Name</span>
+                  <input type="text" class="form-control" ng-model="item.name" placeholder="Name">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="sub-name">Sub Name</span>
+                  <input type="text" class="form-control" ng-model="item.subName" placeholder="Sub Name">
+                </div>
+                <textarea class="form-control" rows="5" id="description" ng-model="item.description" placeholder="Description">{{item.description}}</textarea>
+              </div>
               <ul ng-if="userIsAdmin" class="social">
                 <li><button class="btn-mini btn-success" ng-click="updateEntertainer(item)">Update</button></li>
                 <li>
@@ -39,7 +45,7 @@
                 </li>
                 <li><button class="btn-mini btn-danger" ng-click="removeEntertainer(item)">Delete</button></li>
               </ul>
-
+              <!-- /admin -->
             </div>
           </div>
           <!-- /item -->          
