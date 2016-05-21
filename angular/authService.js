@@ -8,6 +8,8 @@ app.service('authService', function($firebaseAuth, $q){
 
   var authObj = $firebaseAuth(fbRef);
 
+  var admin = false;
+
   this.login = function(user, cb){
     fbRef.authWithPassword({
       email : user.email,

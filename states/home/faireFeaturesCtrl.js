@@ -4,4 +4,6 @@ app.controller('faireFeaturesCtrl', function($scope, firebaseService, entertaine
 	
 	$scope.entertainers = entertainersRef;
 
+	$scope.$parent.userIsAdmin = "child sees admin";
+
 })
