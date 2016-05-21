@@ -15,7 +15,7 @@
               <h3 ng-if="!userIsAdmin" class="name">{{item.name}}</h3>
               <div ng-if="!userIsAdmin" ng-show="{{item.subName}}" class="position">{{item.subName}}</div>
               <p ng-if="!userIsAdmin" ng-show="{{item.description}}" class="text-center">{{item.description}}</p>
-              <ul class="social social-circle">
+              <ul ng-if="!userIsAdmin" class="social social-circle">
                 <li ng-show="{{item.website}}"><a ng-href="{{item.website}}" target="_blank"><i class="icon-globe2"></i></a></li>
                 <li ng-show="{{item.facebook}}"><a ng-href="{{item.facebookPage}}" target="_blank"><i class="icon-facebook-official"></i></a></li>
                 <li ng-show="{{item.youtube}}"><a ng-href="{{item.youtube}}" target="_blank"><i class="icon-youtube"></i></a></li>
@@ -29,6 +29,10 @@
                 <!-- Basic info -->
               <div ng-if="userIsAdmin" class="form-group">
                 <div class="input-group">
+                  <span class="input-group-addon" id="photo">Image Link</span>
+                  <input type="text" class="form-control" ng-model="item.photo" placeholder="Full image link with http://...">
+                </div>
+                <div class="input-group">
                   <span class="input-group-addon" id="name">Name</span>
                   <input type="text" class="form-control" ng-model="item.name" placeholder="Name">
                 </div>
@@ -36,7 +40,11 @@
                   <span class="input-group-addon" id="sub-name">SEO Name</span>
                   <input type="text" class="form-control" ng-model="item.subName" placeholder="SEO Name">
                 </div>
-                <textarea class="form-control" rows="5" id="description" ng-model="item.description" placeholder="Description">{{item.description}}</textarea>
+                <div class="input-group">
+                  <span class="input-group-addon" id="description">Description</span>
+                  <textarea class="form-control" rows="5" id="description" ng-model="item.description" placeholder="Description">{{item.description}}</textarea>
+                </div>
+                
                 <div class="input-group">
                   <span class="input-group-addon" id="website"><i class="icon-globe2"></i></span>
                   <input type="text" class="form-control" ng-model="item.website" placeholder="Website">
