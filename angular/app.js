@@ -12,6 +12,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           templateUrl: "states/home/home.html",
           controller: 'homeCtrl'
         },
+        // view
         "faire-features@home": {
           templateUrl: "states/home/faire-features.html",
           controller: 'faireFeaturesCtrl',
@@ -21,6 +22,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
           }
         },
+        // view;
+        // view
         "tickets@home": {
           templateUrl: "states/home/tickets.html",
           controller: 'ticketsCtrl',
@@ -30,6 +33,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
           }
         },
+        // view;
+        // view
         "map@home": {
           templateUrl: "states/home/map.html",
           controller: 'mapCtrl',
@@ -39,6 +44,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
           }
         },
+        // view;
+        // view
         "forms@home": {
           templateUrl: "states/home/forms.html",
           controller: 'formsCtrl',
@@ -48,6 +55,19 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
           }
         },
+        // view;
+        // view
+        "gallery@home": {
+          templateUrl: "states/home/gallery.html",
+          controller: 'galleryCtrl',
+          resolve: {
+            entertainersRef: function(firebaseService){
+              return firebaseService.getEntertainers();
+            }
+          }
+        },
+        // view;
+
       },
       resolve: {
         mainInfoRef: function(firebaseService){
