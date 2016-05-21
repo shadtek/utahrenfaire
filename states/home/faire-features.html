@@ -18,7 +18,7 @@
               <!-- <p ng-if="userIsAdmin">Description: <br><input ng-model="item.description" rows="4" placeholder="Description"></input></p> -->
               <div ng-if="userIsAdmin" class="form-group">
                 <label for="description">Description:</label>
-                <textarea class="form-control" rows="5" id="description"></textarea>
+                <textarea class="form-control" rows="5" id="description" ng-model="item.description" placeholder="Description">{{item.description}}</textarea>
               </div>
 
               <ul class="social social-circle">
