@@ -79,7 +79,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           }
         },
         // view;
-
       },
       resolve: {
         mainInfoRef: function(firebaseService){
