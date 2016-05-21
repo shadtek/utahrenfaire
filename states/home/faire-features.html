@@ -20,12 +20,13 @@
                 <li ng-show="{{item.facebook}}"><a ng-href="{{item.facebookPage}}" target="_blank"><i class="icon-facebook-official"></i></a></li>
                 <li ng-show="{{item.youtube}}"><a ng-href="{{item.youtube}}" target="_blank"><i class="icon-youtube"></i></a></li>
                 <li ng-show="{{item.twitter}}"><a ng-href="{{item.twitter}}" target="_blank"><i class="icon-twitter"></i></a></li>
-                <li ng-show="{{item.instagram}}"><a ng-href="{{item.instagram}}" ttarget="_blank"><i class="icon-instagram"></i></a></li>
-                <li ng-show="{{item.phone}}"><a href="tel:{{item.phone}}"><i class="icon-phone" target="_blank"></i></a></li>
-                <li ng-show="{{item.email}}"><a href="mailto:{{item.email}}" target="_blank"><i class="icon-envelope"></i></a></li>
+                <li ng-show="{{item.instagram}}"><a ng-href="{{item.instagram}}" target="_blank"><i class="icon-instagram"></i></a></li>
+                <li ng-show="{{item.phone}}"><a href="tel:{{item.phone}}"><i class="icon-phone"></i></a></li>
+                <li ng-show="{{item.email}}"><a href="mailto:{{item.email}}"><i class="icon-envelope"></i></a></li>
               </ul>
               <!-- /public -->
               <!-- admin -->
+                <!-- Basic info -->
               <div ng-if="userIsAdmin" class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon" id="name">Name</span>
@@ -36,6 +37,34 @@
                   <input type="text" class="form-control" ng-model="item.subName" placeholder="SEO Name">
                 </div>
                 <textarea class="form-control" rows="5" id="description" ng-model="item.description" placeholder="Description">{{item.description}}</textarea>
+                <div class="input-group">
+                  <span class="input-group-addon" id="website"><i class="icon-globe2"></i></span>
+                  <input type="text" class="form-control" ng-model="item.website" placeholder="Website">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="facebook"><i class="icon-facebook-official"></i></span>
+                  <input type="text" class="form-control" ng-model="item.facebook" placeholder="Facebook">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="youtube"><i class="icon-youtube"></i></span>
+                  <input type="text" class="form-control" ng-model="item.youtube" placeholder="YouTube">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="twitter"><i class="icon-twitter"></i></span>
+                  <input type="text" class="form-control" ng-model="item.twitter" placeholder="Twitter">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="instagram"><i class="icon-instagram"></i></span>
+                  <input type="text" class="form-control" ng-model="item.instagram" placeholder="Instagram">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="phone"><i class="icon-phone"></i></span>
+                  <input type="text" class="form-control" ng-model="item.phone" placeholder="Phone">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="email"><i class="icon-envelope"></i></span>
+                  <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
+                </div>
               </div>
               <ul ng-if="userIsAdmin" class="social">
                 <li><button class="btn-mini btn-success" ng-click="updateEntertainer(item)">Update</button></li>
