@@ -15,9 +15,9 @@
               <h3 ng-if="!userIsAdmin" class="name">{{item.name}}</h3>
               <div ng-if="!userIsAdmin" ng-show="{{item.subName}}" class="position">{{item.subName}}</div>
               <p ng-if="!userIsAdmin" ng-show="{{item.description}}" class="text-center">{{item.description}}</p>
-              <!-- <p ng-if="userIsAdmin">Description: <br><input ng-model="item.description" rows="4" placeholder="Description"></input></p> -->
               <div ng-if="userIsAdmin" class="form-group">
-                <label for="description">Description:</label>
+                <input class="form-control" ng-model="item.name" placeholder="Name"></input>
+                <input class="form-control" id="sub-name" ng-model="item.subName" placeholder="Sub Name"></input>
                 <textarea class="form-control" rows="5" id="description" ng-model="item.description" placeholder="Description">{{item.description}}</textarea>
               </div>
 
