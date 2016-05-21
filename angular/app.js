@@ -39,6 +39,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
           }
         },
+        "forms@home": {
+          templateUrl: "states/home/forms.html",
+          controller: 'formsCtrl',
+          resolve: {
+            entertainersRef: function(firebaseService){
+              return firebaseService.getEntertainers();
+            }
+          }
+        },
       },
       resolve: {
         mainInfoRef: function(firebaseService){
