@@ -3,6 +3,7 @@ var app = angular.module('utahrenfaire', ['ui.router', 'firebase']);
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
+    // state
     .state('home', {
       url: "/",
       templateUrl: "states/home/home.html",
@@ -67,6 +68,17 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           }
         },
         // view;
+        // view
+        "about@home": {
+          templateUrl: "states/home/about.html",
+          controller: 'aboutCtrl',
+          resolve: {
+            entertainersRef: function(firebaseService){
+              return firebaseService.getEntertainers();
+            }
+          }
+        },
+        // view;
 
       },
       resolve: {
@@ -75,7 +87,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-     .state('otherwise', {
+    // state;
+    // state
+      // admin will go here
+    // state
+    .state('otherwise', {
     url: '*path',
     resolve: {
       redirect: function($location) {
