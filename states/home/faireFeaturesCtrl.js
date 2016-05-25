@@ -1,35 +1,35 @@
 var app = angular.module('utahrenfaire');
 
-app.controller('faireFeaturesCtrl', function($scope, entertainersRef, firebaseService){
+app.controller('faireFeaturesCtrl', function($scope, featuresRef, firebaseService){
   window.scrollTo(0, 0)
 
-  $scope.entertainers = entertainersRef;
+  $scope.features = featuresRef;
 
   $scope.$parent.userIsAdmin = "child sees admin";
 
-  $scope.addEntertainer = function(item){
-    $scope.entertainers.$add(item);
+  $scope.addFeatures = function(item){
+    $scope.features.$add(item);
     console.log("Added")
     $scope.item = ""
   }
 
-  $scope.updateEntertainer = function(item){
-  	if (item.position2){
-      item.position = item.position2;
-      delete item.position2;
+  $scope.updateFeatures = function(item){
+  	if (item.rank2){
+      item.rank = item.rank2;
+      delete item.rank2;
     }
-    $scope.entertainers.$save(item);
+    $scope.features.$save(item);
     console.log("Updated")
   };
 
-  $scope.toggleEntertainerHide = function(item){
+  $scope.toggleFeaturesHide = function(item){
     item.hide = !item.hide;
-    $scope.entertainers.$save(item);
+    $scope.features.$save(item);
     console.log("Hide Toggled")
   };
 
-  $scope.removeEntertainer = function(item){
-    $scope.entertainers.$remove(item);
+  $scope.removeFeatures = function(item){
+    $scope.features.$remove(item);
     console.log("Deleted")
   }
 

@@ -18,8 +18,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           templateUrl: "states/home/faire-features.html",
           controller: 'faireFeaturesCtrl',
           resolve: {
-            entertainersRef: function(firebaseService){
-              return firebaseService.getEntertainers();
+            featuresRef: function(firebaseService){
+              return firebaseService.getFeatures();
             }
           }
         },
@@ -72,6 +72,17 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         "about@home": {
           templateUrl: "states/home/about.html",
           controller: 'aboutCtrl',
+          resolve: {
+            entertainersRef: function(firebaseService){
+              return firebaseService.getEntertainers();
+            }
+          }
+        },
+        // view;
+        // view
+        "login@home": {
+          templateUrl: "states/home/login.html",
+          controller: 'loginCtrl',
           resolve: {
             entertainersRef: function(firebaseService){
               return firebaseService.getEntertainers();
