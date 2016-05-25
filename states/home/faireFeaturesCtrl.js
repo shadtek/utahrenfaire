@@ -5,8 +5,6 @@ app.controller('faireFeaturesCtrl', function($scope, featuresRef, firebaseServic
 
   $scope.features = featuresRef;
 
-  $scope.$parent.userIsAdmin = "child sees admin";
-
   $scope.addFeatures = function(item){
     $scope.features.$add(item);
     console.log("Added")

@@ -5,8 +5,6 @@ app.controller('galleryCtrl', function($scope, entertainersRef, firebaseService)
 
   $scope.entertainers = entertainersRef;
 
-  $scope.$parent.userIsAdmin = "child sees admin";
-
   $scope.addEntertainer = function(item){
     $scope.entertainers.$add(item);
     console.log("Added")

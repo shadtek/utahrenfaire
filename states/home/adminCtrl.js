@@ -1,6 +1,6 @@
 var app = angular.module('utahrenfaire');
 
-app.controller('adminCtrl', function($scope, authService, $rootScope, $location) {
+app.controller('adminCtrl', function($scope, authService, $rootScope) {
 
 	var loginCallback = function(user){
     $rootScope.loggedIn = true;
@@ -9,12 +9,15 @@ app.controller('adminCtrl', function($scope, authService, $rootScope, $location)
     $scope.$apply();
   };
 
-  $scope.login = function () {
-    return authService.login($scope.details, loginCallback);
+  $scope.login = function() {
+    authService.login($scope.details, loginCallback).then(function(response){
+      console.log(response)
+    })
   };
 
-  $scope.logout = function(){
+  $scope.logout = function() {
     authService.logout();
-  }
+    console.log("log me out")
+  };
 
-})
+});
