@@ -24,6 +24,15 @@ app.service('authService', function($firebaseAuth, $q){
     })
   };
 
+  this.checkAuth = function(){
+    var dfd = $q.defer();
+    if(fbRef.getAuth())
+      dfd.resolve(true);
+    else
+      dfd.reject('Not authenticated');
+    return dfd.promise;
+  }
+
   this.logout = function(){
     return fbRef.unauth();
   }

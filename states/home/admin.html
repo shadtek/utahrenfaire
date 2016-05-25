@@ -5,7 +5,7 @@
   <input type="password" placeholder="Password" class="form-control" ng-model="details.password" required><br>
   <button class="btn btn-info">Sign In</button>
 </form> -->
-<div class="form-group" ng-submit="login()">
+<form class="form-group" ng-submit="login()">
 	<div class="input-group">
 	  <span class="input-group-addon" id="email">Email</span>
 	  <input class="form-control" type="email" ng-model="details.email" placeholder="Email" required>
@@ -14,7 +14,7 @@
 	  <span class="input-group-addon" id="photo">Password</span>
 	  <input type="password" class="form-control" ng-model="details.password" placeholder="Password" required>
 	</div>
-	<button ng-if="" class="btn btn-info">Sign In</button>
-</div>
+	<button class="btn btn-info">Sign In</button>
+</form>
 
 <button class="btn btn-info">Sign Out</button>

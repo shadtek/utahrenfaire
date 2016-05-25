@@ -1,6 +1,6 @@
 var app = angular.module('utahrenfaire');
 
-app.controller('loginCtrl', function($scope, authService, $rootScope, $location) {
+app.controller('adminCtrl', function($scope, authService, $rootScope, $location) {
 
 	var loginCallback = function(user){
     $rootScope.loggedIn = true;
