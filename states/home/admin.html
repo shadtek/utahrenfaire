@@ -1,0 +1,20 @@
+<h2>Admin</h2>
+<!-- <form ng-submit="login()">
+  <p ng-show="error" class="text-danger">{{ error }}</p>
+  <input type="email" placeholder="Email" class="form-control" ng-model="details.email" required><br>
+  <input type="password" placeholder="Password" class="form-control" ng-model="details.password" required><br>
+  <button class="btn btn-info">Sign In</button>
+</form> -->
+<div class="form-group" ng-submit="login()">
+	<div class="input-group">
+	  <span class="input-group-addon" id="email">Email</span>
+	  <input class="form-control" type="email" ng-model="details.email" placeholder="Email" required>
+	</div>
+	<div class="input-group">
+	  <span class="input-group-addon" id="photo">Password</span>
+	  <input type="password" class="form-control" ng-model="details.password" placeholder="Password" required>
+	</div>
+	<button class="btn btn-info">Sign In</button>
+</div>
+
+<button ng-if="userIsAdmin" class="btn btn-info">Sign Out</button>

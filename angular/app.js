@@ -80,14 +80,9 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         },
         // view;
         // view
-        "login@home": {
-          templateUrl: "states/home/login.html",
-          controller: 'loginCtrl',
-          resolve: {
-            entertainersRef: function(firebaseService){
-              return firebaseService.getEntertainers();
-            }
-          }
+        "admin@home": {
+          templateUrl: "states/home/admin.html",
+          controller: 'adminCtrl'
         },
         // view;
       },

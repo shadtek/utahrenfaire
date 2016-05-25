@@ -143,17 +143,10 @@
                 </div>
               </div>
               <ul ng-if="userIsAdmin" class="social">
-                <li><button class="btn-mini btn-success" ng-click="updateEntertainer(item)">Update</button></li>
-                <li>
-                  <button ng-hide="item.hide" class="btn-mini btn-warning" ng-click="toggleEntertainerHide(item)">Shown</button>
-                  <button ng-hide="!item.hide" class="btn-mini btn-warning" ng-click="toggleEntertainerHide(item)">Hidden</button>
-                </li>
-                <li><button class="btn-mini btn-danger" ng-click="removeEntertainer(item)">Delete</button></li>
+                <li><button class="btn-mini btn-success" ng-click="addFeatures(item)">Add New</button></li>
               </ul>
-              <!-- /admin repeat -->
             </div>
           </div>
-          <!-- /item -->
           <!-- /admin add new -->
         </div>
       </div>
