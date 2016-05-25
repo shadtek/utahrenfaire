@@ -6,7 +6,6 @@ app.controller('loginCtrl', function($scope, authService, $rootScope, $location)
     $rootScope.loggedIn = true;
     $rootScope.user = user;
     user.uid = user.uid.replace('simplelogin:', '');
-    $location.path('/home-edits');
     $scope.$apply();
   };
 
@@ -16,7 +15,6 @@ app.controller('loginCtrl', function($scope, authService, $rootScope, $location)
 
   $scope.logout = function(){
     authService.logout();
-    $location.path('/login');
   }
 
 })
