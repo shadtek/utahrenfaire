@@ -1,6 +1,6 @@
 var app = angular.module('utahrenfaire');
 
-app.service('authService', function($firebaseAuth, $q){
+app.service('authService', function($firebaseAuth, $q, $window){
 
   var firebaseUrl = 'https://utahrenfaire.firebaseio.com/'
 
@@ -10,6 +10,10 @@ app.service('authService', function($firebaseAuth, $q){
 
   var admin = false;
 
+  var adminReload = function(){
+    $window.location.reload()
+  }
+
   this.login = function(user, cb){
     fbRef.authWithPassword({
       email : user.email,
@@ -17,7 +21,9 @@ app.service('authService', function($firebaseAuth, $q){
     }, function(err, authData){
       if(authData){
         cb(authData)
-        console.log('You are logged in', authData);
+        //Use this for debugging:
+        //console.log('You are logged in', authData);
+        adminReload(); 
       } else {
         console.log('You made a mistake', err)
       }
@@ -34,7 +40,8 @@ app.service('authService', function($firebaseAuth, $q){
   }
 
   this.logout = function(){
-    return fbRef.unauth();
+    fbRef.unauth();
+    adminReload();
   }
 
 });

@@ -10,9 +10,7 @@ app.controller('adminCtrl', function($scope, authService, $rootScope) {
   };
 
   $scope.login = function() {
-    authService.login($scope.details, loginCallback).then(function(response){
-      console.log(response)
-    })
+    authService.login($scope.details, loginCallback)
   };
 
   $scope.logout = function() {
