@@ -8,9 +8,9 @@
       <div class="col-md-12">
         <div class="row">
           <!-- admin add new -->
-          <div class="text-center">
+          <div class="text-center" ng-if="userIsAdmin">
             <div class="feature">
-              <form name="adminAdd" ng-if="userIsAdmin" data-ng-submit="addFeatures(item)" class="form-group">
+              <form class="form-group" name="adminAdd">
                 <div class="input-group">
                   <span class="input-group-addon" id="rank">Rank</span>
                   <input class="form-control" type="number" ng-model="item.rank" placeholder="{{item.rank}}">
@@ -61,13 +61,13 @@
                   <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
                 </div>
                 <br>
-                <button type="submit" class="btn-mini btn-success">Add New</button>
+                <button class="btn-mini btn-success" ng-click="addFeatures(item)">Add New</button>
               </form>
             </div>
           </div>
           <!-- /admin add new -->
           <!-- public repeat -->
-          <div ng-if="!userIsAdmin" class="text-center" ng-show="!item.hide" ng-repeat="item in features | orderBy: 'rank' ">
+          <div class="text-center" ng-if="!userIsAdmin" ng-show="!item.hide" ng-repeat="item in features | orderBy: 'rank' ">
             <div class="feature">
               <img src="{{item.photo}}" class="img-responsive" alt="Feature Photo">
               <h3 class="name">{{item.name}}</h3>
@@ -86,9 +86,9 @@
           </div>
           <!-- /public repeat -->
           <!-- admin repeat -->
-          <div class="text-center" ng-repeat="item in features | orderBy: 'rank' ">
+          <div class="text-center" ng-if="userIsAdmin" ng-repeat="item in features | orderBy: 'rank' ">
             <div class="feature">
-              <form name="adminRepeat" ng-if="userIsAdmin" class="form-group">
+              <form name="adminRepeat" class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon" id="rank">Rank</span>
                   <input class="form-control" type="number" ng-model="item.rank2" placeholder="{{item.rank}}">

@@ -8,7 +8,6 @@ app.controller('faireFeaturesCtrl', function($scope, featuresRef, firebaseServic
   $scope.addFeatures = function(item){
     $scope.features.$add(item);
     console.log("Added");
-    // $scope.adminAdd.$setPristine();
     $scope.item="";
   };
 
