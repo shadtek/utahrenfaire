@@ -7,34 +7,19 @@
       </div>
       <div class="col-md-12">
         <div class="row">
-          <!-- item -->
-          <div class="text-center" ng-show="!item.hide" ng-repeat="item in features | orderBy: 'rank' ">
+          <!-- admin add new -->
+          <div class="text-center">
             <div class="feature">
-              <!-- public repeat -->
-              <img src="{{item.photo}}" class="img-responsive" alt="Feature Photo">
-              <h3 ng-if="!userIsAdmin" class="name">{{item.name}}</h3>
-              <div ng-if="!userIsAdmin" ng-show="{{item.subName}}" class="position">{{item.subName}}</div>
-              <p ng-if="!userIsAdmin" ng-show="{{item.description}}" class="text-center">{{item.description}}</p>
-              <ul ng-if="!userIsAdmin" class="social social-circle">
-                <li ng-show="{{item.website}}"><a ng-href="{{item.website}}" target="_blank"><i class="icon-globe2"></i></a></li>
-                <li ng-show="{{item.facebook}}"><a ng-href="{{item.facebookPage}}" target="_blank"><i class="icon-facebook-official"></i></a></li>
-                <li ng-show="{{item.youtube}}"><a ng-href="{{item.youtube}}" target="_blank"><i class="icon-youtube"></i></a></li>
-                <li ng-show="{{item.twitter}}"><a ng-href="{{item.twitter}}" target="_blank"><i class="icon-twitter"></i></a></li>
-                <li ng-show="{{item.instagram}}"><a ng-href="{{item.instagram}}" target="_blank"><i class="icon-instagram"></i></a></li>
-                <li ng-show="{{item.phone}}"><a href="tel:{{item.phone}}"><i class="icon-phone"></i></a></li>
-                <li ng-show="{{item.email}}"><a href="mailto:{{item.email}}"><i class="icon-envelope"></i></a></li>
-              </ul>
-              <!-- /public repeat -->
-              <!-- admin repeat -->
-              <div ng-if="userIsAdmin" class="form-group">
+              <form name="adminAddNew" ng-if="userIsAdmin" class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon" id="rank">Rank</span>
-                  <input class="form-control" type="number" ng-model="item.rank2" placeholder="{{item.rank}}">
+                  <input class="form-control" type="number" ng-model="item.rank" placeholder="{{item.rank}}">
                 </div>
                 <div class="input-group">
                   <span class="input-group-addon" id="photo">Image Link</span>
                   <input type="text" class="form-control" ng-model="item.photo" placeholder="Image link">
                 </div>
+                <img src="{{item.photo}}" class="img-responsive" alt="Feature Photo">
                 <div class="input-group">
                   <span class="input-group-addon" id="name">Name</span>
                   <input type="text" class="form-control" ng-model="item.name" placeholder="Name">
@@ -75,23 +60,35 @@
                   <span class="input-group-addon" id="email"><i class="icon-envelope"></i></span>
                   <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
                 </div>
-              </div>
-              <ul ng-if="userIsAdmin" class="social">
-                <li><button class="btn-mini btn-success" ng-click="updateEntertainer(item)">Update</button></li>
-                <li>
-                  <button ng-hide="item.hide" class="btn-mini btn-warning" ng-click="toggleEntertainerHide(item)">Shown</button>
-                  <button ng-hide="!item.hide" class="btn-mini btn-warning" ng-click="toggleEntertainerHide(item)">Hidden</button>
-                </li>
-                <li><button class="btn-mini btn-danger" ng-click="removeEntertainer(item)">Delete</button></li>
-              </ul>
-              <!-- /admin repeat -->
+                <br>
+                <button class="btn-mini btn-success" ng-click="addFeatures(item)">Add New</button>
+              </form>
             </div>
           </div>
-          <!-- /item -->
-          <!-- admin add new -->
-          <div class="text-center">
+          <!-- /admin add new -->
+          <!-- public repeat -->
+          <div ng-if="!userIsAdmin" class="text-center" ng-show="!item.hide" ng-repeat="item in features | orderBy: 'rank' ">
             <div class="feature">
-              <div ng-if="userIsAdmin" class="form-group">
+              <img src="{{item.photo}}" class="img-responsive" alt="Feature Photo">
+              <h3 class="name">{{item.name}}</h3>
+              <div ng-show="{{item.subName}}" class="position">{{item.subName}}</div>
+              <p ng-show="{{item.description}}" class="text-center">{{item.description}}</p>
+              <ul class="social social-circle">
+                <li ng-show="{{item.website}}"><a ng-href="{{item.website}}" target="_blank"><i class="icon-globe2"></i></a></li>
+                <li ng-show="{{item.facebook}}"><a ng-href="{{item.facebookPage}}" target="_blank"><i class="icon-facebook-official"></i></a></li>
+                <li ng-show="{{item.youtube}}"><a ng-href="{{item.youtube}}" target="_blank"><i class="icon-youtube"></i></a></li>
+                <li ng-show="{{item.twitter}}"><a ng-href="{{item.twitter}}" target="_blank"><i class="icon-twitter"></i></a></li>
+                <li ng-show="{{item.instagram}}"><a ng-href="{{item.instagram}}" target="_blank"><i class="icon-instagram"></i></a></li>
+                <li ng-show="{{item.phone}}"><a href="tel:{{item.phone}}"><i class="icon-phone"></i></a></li>
+                <li ng-show="{{item.email}}"><a href="mailto:{{item.email}}"><i class="icon-envelope"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /public repeat -->
+          <!-- admin repeat -->
+          <div class="text-center" ng-repeat="item in features | orderBy: 'rank' ">
+            <div class="feature">
+              <form name="adminRepeat" ng-if="userIsAdmin" class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon" id="rank">Rank</span>
                   <input class="form-control" type="number" ng-model="item.rank2" placeholder="{{item.rank}}">
@@ -141,13 +138,18 @@
                   <span class="input-group-addon" id="email"><i class="icon-envelope"></i></span>
                   <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
                 </div>
-              </div>
-              <ul ng-if="userIsAdmin" class="social">
-                <li><button class="btn-mini btn-success" ng-click="addFeatures(item)">Add New</button></li>
-              </ul>
+                <ul class="social">
+                  <li><button class="btn-mini btn-success" ng-click="updateFeatures(item)">Update</button></li>
+                  <li>
+                    <button ng-hide="item.hide" class="btn-mini btn-warning" ng-click="toggleFeaturesHide(item)">Shown</button>
+                    <button ng-hide="!item.hide" class="btn-mini btn-warning" ng-click="toggleFeaturesHide(item)">Hidden</button>
+                  </li>
+                  <li><button class="btn-mini btn-danger" ng-click="removeFeatures(item)">Delete</button></li>
+                </ul>
+              </form>
             </div>
           </div>
-          <!-- /admin add new -->
+          <!-- /admin repeat -->
         </div>
       </div>
     </div>

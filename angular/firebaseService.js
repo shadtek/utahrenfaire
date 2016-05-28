@@ -12,7 +12,7 @@ app.service('firebaseService', function ($firebase, $firebaseObject, $firebaseAr
   };
 
   this.getFeatures = function() {
-    return $firebaseObject(new Firebase(firebaseUrl + 'features'));
+    return $firebaseArray(new Firebase(firebaseUrl + 'features'));
   };
 
   this.getVendors = function() {

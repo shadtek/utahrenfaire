@@ -7,9 +7,9 @@ app.controller('faireFeaturesCtrl', function($scope, featuresRef, firebaseServic
 
   $scope.addFeatures = function(item){
     $scope.features.$add(item);
-    console.log("Added")
-    $scope.item = ""
-  }
+    console.log("Added");
+    $scope.adminAddNew.$setPristine();
+  };
 
   $scope.updateFeatures = function(item){
   	if (item.rank2){
