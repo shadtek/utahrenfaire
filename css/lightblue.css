@@ -51,10 +51,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-textarea {
-  resize: vertical;
-}
-
 ::-webkit-selection {
   color: #818892;
   background: #f9f6f0;
@@ -152,6 +148,11 @@ textarea {
   #-header.navbar-fixed-top #navbar li:first-child {
     padding-top: 0em !important;
   }
+
+  #features-dropdown-menu li:first-child {
+    padding-top: 0em !important;
+  }
+
   #-header.navbar-fixed-top #home-link {
     display: block !important;
   }
@@ -329,6 +330,14 @@ textarea {
   transition: 0s;
 }
 
+@media (min-width: 768px) {
+  #features-dropdown-menu {
+    left: 0;
+  }
+}
+#renfaire-nav > .open > a{
+  background-color: rgba(255, 255, 255, 0)
+}
 .section-heading {
   float: left;
   width: 100%;
@@ -378,6 +387,8 @@ textarea {
   color: #444;
   text-decoration: none
 }
+
+
 .btn {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -944,6 +955,7 @@ textarea {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
+
 .owl-carousel .owl-controls .owl-nav {
   opacity: 0;
   -webkit-transition: 0.5s;
@@ -1234,8 +1246,10 @@ textarea {
   animation-fill-mode: both;
 }
 
-.item-description {
-  white-space: pre-wrap;
+
+/* Color overrides */
+#features-dropdown-menu li a {
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
 /*# sourceMappingURL=lightblue.css.map */
