@@ -11,6 +11,10 @@ app.service('firebaseService', function ($firebase, $firebaseObject, $firebaseAr
   	return $firebaseObject(new Firebase(firebaseUrl + 'mainInfo'));
   };
 
+  this.getCarousel = function() {
+    return $firebaseArray(new Firebase(firebaseUrl + 'carousel'));
+  };
+
   this.getFeatures = function() {
     return $firebaseArray(new Firebase(firebaseUrl + 'features'));
   };
