@@ -11,6 +11,7 @@
           <div class="text-center" ng-if="userIsAdmin">
             <div class="feature">
               <form id="adminAdd" class="form-group" name="adminAdd">
+                <button class="btn-mini btn-success" ng-click="addFeatures(item)">Add New</button>
                 <div class="input-group">
                   <span class="input-group-addon" id="rank">Rank</span>
                   <input class="form-control" type="number" ng-model="item.rank" placeholder="{{item.rank}}">
@@ -60,8 +61,6 @@
                   <span class="input-group-addon" id="email"><i class="icon-envelope"></i></span>
                   <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
                 </div>
-                <br>
-                <button class="btn-mini btn-success" ng-click="addFeatures(item)">Add New</button>
               </form>
             </div>
           </div>
@@ -89,6 +88,18 @@
           <div class="text-center" ng-if="userIsAdmin" ng-repeat="item in features | orderBy: 'rank' ">
             <div class="feature">
               <form name="adminRepeat" class="form-group">
+                <ul class="social">
+                  <li>
+                    <button class="btn-mini btn-success" ng-click="updateFeatures(item)">Update</button>
+                  </li>
+                  <li>
+                    <button ng-hide="item.hide" class="btn-mini btn-warning" ng-click="toggleFeaturesHide(item)">Shown</button>
+                    <button ng-hide="!item.hide" class="btn-mini btn-warning" ng-click="toggleFeaturesHide(item)">Hidden</button>
+                  </li>
+                  <li>
+                    <button class="btn-mini btn-danger" ng-click="removeFeatures(item)">Delete</button>
+                  </li>
+                </ul>
                 <div class="input-group">
                   <span class="input-group-addon" id="rank">Rank</span>
                   <input class="form-control" type="number" ng-model="item.rank2" placeholder="{{item.rank}}">
@@ -138,14 +149,6 @@
                   <span class="input-group-addon" id="email"><i class="icon-envelope"></i></span>
                   <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
                 </div>
-                <ul class="social">
-                  <li><button class="btn-mini btn-success" ng-click="updateFeatures(item)">Update</button></li>
-                  <li>
-                    <button ng-hide="item.hide" class="btn-mini btn-warning" ng-click="toggleFeaturesHide(item)">Shown</button>
-                    <button ng-hide="!item.hide" class="btn-mini btn-warning" ng-click="toggleFeaturesHide(item)">Hidden</button>
-                  </li>
-                  <li><button class="btn-mini btn-danger" ng-click="removeFeatures(item)">Delete</button></li>
-                </ul>
               </form>
             </div>
           </div>

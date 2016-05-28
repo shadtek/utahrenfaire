@@ -9,7 +9,6 @@ app.controller('faireFeaturesCtrl', function($scope, featuresRef, firebaseServic
   $scope.addFeatures = function(item){
     $scope.features.$add(item);
     console.log("Added and form cleared");
-    console.log($scope.item);
     $scope.item = {};
   };
 
