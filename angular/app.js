@@ -14,15 +14,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           controller: 'homeCtrl'
         },
         // view
-        // "carousel@home": {
-        //   templateUrl: "states/home/carousel.html",
-        //   controller: 'carouselCtrl',
-        //   resolve: {
-        //     carouselRef: function(firebaseService){
-        //       return firebaseService.getCarousel();
-        //     }
-        //   }
-        // },
+        "carousel@home": {
+          templateUrl: "states/home/carousel.html",
+          controller: 'carouselCtrl',
+          resolve: {
+            carouselRef: function(firebaseService){
+              return firebaseService.getCarousel();
+            }
+          }
+        },
         // view;
         // view
         "faire-features@home": {

@@ -1,6 +1,6 @@
 var app = angular.module('utahrenfaire');
 
-app.controller('carouselCtrl', function($scope, featuresRef, firebaseService){
+app.controller('carouselCtrl', function($scope, carouselRef, firebaseService){
 
   $scope.carousel = carouselRef;
   $scope.item = {};
