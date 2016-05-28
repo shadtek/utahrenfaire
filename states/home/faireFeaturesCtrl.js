@@ -4,11 +4,13 @@ app.controller('faireFeaturesCtrl', function($scope, featuresRef, firebaseServic
   window.scrollTo(0, 0)
 
   $scope.features = featuresRef;
+  $scope.item = {};
 
   $scope.addFeatures = function(item){
     $scope.features.$add(item);
-    console.log("Added");
-    $scope.item="";
+    console.log("Added and form cleared");
+    console.log($scope.item);
+    $scope.item = {};
   };
 
   $scope.updateFeatures = function(item){
@@ -23,7 +25,7 @@ app.controller('faireFeaturesCtrl', function($scope, featuresRef, firebaseServic
   $scope.toggleFeaturesHide = function(item){
     item.hide = !item.hide;
     $scope.features.$save(item);
-    console.log("Hide Toggled")
+    console.log("Hide toggled")
   };
 
   $scope.removeFeatures = function(item){
