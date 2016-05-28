@@ -10,7 +10,7 @@
           <!-- admin add new -->
           <div class="text-center">
             <div class="feature">
-              <form name="adminAddNew" ng-if="userIsAdmin" class="form-group">
+              <form name="adminAdd" ng-if="userIsAdmin" data-ng-submit="addFeatures(item)" class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon" id="rank">Rank</span>
                   <input class="form-control" type="number" ng-model="item.rank" placeholder="{{item.rank}}">
@@ -61,7 +61,7 @@
                   <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
                 </div>
                 <br>
-                <button class="btn-mini btn-success" ng-click="addFeatures(item)">Add New</button>
+                <button type="submit" class="btn-mini btn-success">Add New</button>
               </form>
             </div>
           </div>
