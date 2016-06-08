@@ -6,4 +6,5 @@ app.controller('homeCtrl', function($scope, firebaseService, mainInfoRef, authSe
 	authService.checkAuth().then(function(response){
 		$scope.userIsAdmin = true;
 	})
+
 })
