@@ -64,19 +64,20 @@ app.directive('owlDirective', function() {
 		        loop: true,
 		        margin: 0,
 		        responsiveClass: true,
-		        nav: true,
-		        dots: true,
+		        // nav: true,
+		        // dots: true,
+		        nav: false,
+		        dots: false,
 		        autoHeight: true,
 		        smartSpeed: 500,
 		        autoplay: true,
 		      autoplayTimeout: 5000,
 		      autoplayHoverPause: true,
-		        navText: [  
-		          "<i class='icon-arrow-left2 owl-direction'></i>",
-		          "<i class='icon-arrow-right2 owl-direction'></i>"
-		        ]
+		        // navText: [  
+		        //   "<i class='icon-arrow-left2 owl-direction'></i>",
+		        //   "<i class='icon-arrow-right2 owl-direction'></i>"
+		        // ]
 		    });
-		    
 		  });
 		}
 	}
