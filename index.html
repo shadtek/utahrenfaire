@@ -59,40 +59,7 @@
 
 <body ng-controller="mainCtrl" cz-shortcut-listen="true">
   <a rel="#top"></a>
-  <header role="banner" id="-header">
-    <div class="container">
-      <nav class="navbar navbar-default">
-        <div class="navbar-header">
-          <!-- Mobile Toggle Menu Button -->
-          <a href="#" class="js--nav-toggle -nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-          <a id="logo" class="navbar-brand" href="index.html"><img src="images/urf-logo.png"></a>
-          <a id="logo-text" class="navbar-brand" href="index.html">Utah Renaissance Faire</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul id="renfaire-nav" class="nav navbar-nav navbar-right">
-            <li id="home-link" class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
-            <li class="dropdown" id = "dropDownMenuContainer">
-              <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <span>Faire Features</span>
-              </a>
-              <ul id="features-dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a data-toggle="collapse" data-target="dropdown" data-nav-section="faire-info">Featured</a></li>
-                <li><a data-toggle="collapse" data-target="dropdown" data-nav-section="entertainers">Entertainers</a></li>
-                <!-- <li><a data-toggle="collapse" data-target="dropdown" href="#">Another action</a></li>
-                <li><a data-toggle="collapse" data-target="dropdown" href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a data-toggle="collapse" data-target="dropdown" href="#">Separated link</a></li> -->
-              </ul>
-            </li>
-            <li><a data-nav-section="pricing"><span>Tickets</span></a></li>
-            <li><a data-nav-section="map"><span>Map</span></a></li>
-            <li><a data-nav-section="forms"><span>Forms</span></a></li>
-            <li><a data-nav-section="gallery"><span>Gallery</span></a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
+  
   <ui-view></ui-view>
 
   <!-- jQuery -->
@@ -116,6 +83,8 @@
   <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
   <!-- App Init -->
   <script src='angular/app.js'></script>
+  <!-- Directives -->
+  <script src="states/home/owlDirective.js"></script>
   <!-- Controllers -->
   <script src='angular/mainCtrl.js'></script>
   <script src='states/home/homeCtrl.js'></script>
