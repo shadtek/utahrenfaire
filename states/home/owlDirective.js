@@ -1,14 +1,46 @@
 var app = angular.module('utahrenfaire');
 
+app.controller('carouselCtrl', function($scope, carouselRef, firebaseService){
+
+  $scope.carousel = carouselRef;
+  $scope.item = {};
+
+  $scope.addCarousel = function(item){
+    $scope.carousel.$add(item);
+    console.log("Added and form cleared");
+    $scope.item = {};
+  };
+
+  $scope.updateCarousel = function(item){
+  	if (item.rank2){
+      item.rank = item.rank2;
+      delete item.rank2;
+    }
+    $scope.carousel.$save(item);
+    console.log("Updated")
+  };
+
+  $scope.toggleCarouselHide = function(item){
+    item.hide = !item.hide;
+    $scope.carousel.$save(item);
+    console.log("Hide toggled")
+  };
+
+  $scope.removeCarousel = function(item){
+    $scope.carousel.$remove(item);
+    console.log("Deleted")
+  }
+ 
+});
+
 app.directive('owlDirective', function() {
 	return {
 		templateUrl: 'states/home/carousel.html',
 		restrict: 'E',
 		link: function(scope, elem, attrs) {
-			console.log("omg");
 			$(document).ready(function() {
     
-		    var owl = $('.owl-carousel');
+		    var owl = angular.element('.owl-carousel');
 
 		    owl.on('initialized.owl.carousel change.owl.carousel',function(elem){
 		      var current = elem.item.index;
