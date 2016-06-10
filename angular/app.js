@@ -16,7 +16,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         // view
         "carousel@home": {
           template:"<owl-directive></owl-directive>",
-          // controller: 'carouselCtrl',
           resolve: {
             carouselRef: function(firebaseService){
               return firebaseService.getCarousel();
