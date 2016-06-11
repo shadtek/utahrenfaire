@@ -4,12 +4,9 @@ app.controller('carouselCtrl', function($scope, carouselRef, firebaseService){
 
   $scope.carousel = carouselRef;
   $scope.item = {};
-  console.log('i am the carouselCtrl');
 
-  // $scope.slideImg = {
-  // 	'background-image':'url($scope.carousel.)', 
-  // 	'background-position': 'center'
-  // };
+  $scope.slideImg = 'images/robbie.jpg'
+
 
   $scope.addCarousel = function(item){
     $scope.carousel.$add(item);
