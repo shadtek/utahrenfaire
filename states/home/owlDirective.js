@@ -3,16 +3,14 @@ var app = angular.module('utahrenfaire');
 app.controller('carouselCtrl', function($scope, carouselRef, firebaseService){
 
   $scope.carousel = carouselRef.$loaded(function(data){
-
   	$scope.slideImg = 'images/robbie.jpg'
   	$scope.slideImg2 = data[0].photo;
   });
+
   $scope.item = {};
 
   console.log(carouselRef);
   
-
-
   $scope.addCarousel = function(item){
     $scope.carousel.$add(item);
     console.log("Added and form cleared");
