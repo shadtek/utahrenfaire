@@ -2,10 +2,15 @@ var app = angular.module('utahrenfaire');
 
 app.controller('carouselCtrl', function($scope, carouselRef, firebaseService){
 
-  $scope.carousel = carouselRef;
+  $scope.carousel = carouselRef.$loaded(function(data){
+
+  	$scope.slideImg = 'images/robbie.jpg'
+  	$scope.slideImg2 = data[0].photo;
+  });
   $scope.item = {};
 
-  // $scope.slideImg = 'images/robbie.jpg'
+  console.log(carouselRef);
+  
 
 
   $scope.addCarousel = function(item){
