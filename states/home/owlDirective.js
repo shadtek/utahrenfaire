@@ -3,13 +3,11 @@ var app = angular.module('utahrenfaire');
 app.controller('carouselCtrl', function($scope, carouselRef, firebaseService){
 
   $scope.carousel = carouselRef.$loaded(function(data){
-  	$scope.slideImg = 'images/robbie.jpg'
-  	$scope.slideImg2 = data[0].photo;
+  	$scope.carousel = data;
+  	setTimeout(initCarosel, 100);
   });
 
   $scope.item = {};
-
-  console.log(carouselRef);
   
   $scope.addCarousel = function(item){
     $scope.carousel.$add(item);
@@ -45,47 +43,52 @@ app.directive('owlDirective', function() {
 		restrict: 'E',
 		link: function(scope, elem, attrs) {
 			$(document).ready(function() {
-    
-		    var owl = angular.element('.owl-carousel');
-
-		    owl.on('initialized.owl.carousel change.owl.carousel',function(elem){
-		      var current = elem.item.index;
-		      $(elem.target).find(".owl-item").eq(current).find(".to-animate").removeClass('fadeInUp animated');
-		      $(elem.target).find(".owl-item").eq(current).find(".to-animate-2").removeClass('fadeInUp animated');
-		    
-		    });
-		    owl.on('initialized.owl.carousel changed.owl.carousel',function(elem){
-		      setTimeout(function(){
-		        var current = elem.item.index;
-		        $(elem.target).find(".owl-item").eq(current).find(".to-animate").addClass('fadeInUp animated');
-		      }, 700);
-		      setTimeout(function(){
-		        var current = elem.item.index;
-		        $(elem.target).find(".owl-item").eq(current).find(".to-animate-2").addClass('fadeInUp animated');
-		      }, 900);
-		    });
-
-		    owl.owlCarousel({
-		      items: 1,
-		        loop: true,
-		        margin: 0,
-		        responsiveClass: true,
-		        // nav: true,
-		        // dots: true,
-		        nav: false,
-		        dots: false,
-		        autoHeight: true,
-		        smartSpeed: 500,
-		        autoplay: true,
-		      autoplayTimeout: 5000,
-		      autoplayHoverPause: true
-		      // ,
-		        // navText: [  
-		        //   "<i class='icon-arrow-left2 owl-direction'></i>",
-		        //   "<i class='icon-arrow-right2 owl-direction'></i>"
-		        // ]
-		    });
+    	// setTimeout(, 100)
 		  });
 		}
 	}
 })
+
+
+function initCarosel(){
+
+  var owl = angular.element('.owl-carousel');
+
+  owl.on('initialized.owl.carousel change.owl.carousel',function(elem){
+    var current = elem.item.index;
+    $(elem.target).find(".owl-item").eq(current).find(".to-animate").removeClass('fadeInUp animated');
+    $(elem.target).find(".owl-item").eq(current).find(".to-animate-2").removeClass('fadeInUp animated');
+  
+  });
+  owl.on('initialized.owl.carousel changed.owl.carousel',function(elem){
+    setTimeout(function(){
+      var current = elem.item.index;
+      $(elem.target).find(".owl-item").eq(current).find(".to-animate").addClass('fadeInUp animated');
+    }, 700);
+    setTimeout(function(){
+      var current = elem.item.index;
+      $(elem.target).find(".owl-item").eq(current).find(".to-animate-2").addClass('fadeInUp animated');
+    }, 900);
+  });
+
+  owl.owlCarousel({
+    items: 1,
+      loop: true,
+      margin: 0,
+      responsiveClass: true,
+      // nav: true,
+      // dots: true,
+      nav: false,
+      dots: false,
+      autoHeight: true,
+      smartSpeed: 500,
+      autoplay: true,
+    autoplayTimeout: 5000,
+    autoplayHoverPause: true
+    // ,
+      // navText: [  
+      //   "<i class='icon-arrow-left2 owl-direction'></i>",
+      //   "<i class='icon-arrow-right2 owl-direction'></i>"
+      // ]
+  });
+}
