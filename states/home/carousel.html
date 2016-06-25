@@ -1,4 +1,3 @@
-<!-- Slider start -->
 <div id="slider" data-section="home">
   <div id="owl-example" class="owl-carousel owl-carousel-fullwidth">
     <!-- repeat start -->
@@ -9,7 +8,7 @@
             <div class="col-md-7 col-sm-7">
               <div class="-owl-text-wrap">
                 <div class="-owl-text">
-                  <h1 class="-lead to-animate">Join Us</h1>
+                  <h1 class="-lead to-animate">{{item.lead}}</h1>
                   <h2 class="-sub-lead to-animate">{{mainInfo.eventPlace}}<br>
                   {{mainInfo.eventDays}}<br>
                   {{mainInfo.eventHours}}<br>
@@ -25,7 +24,102 @@
     </div>
 </div>
 <!-- /Slider -->
-<h1>↑↑↑NEW↑↑↑</h1>
+<div class="col-md-12">
+  <div class="row">
+  <!-- admin add new -->
+  <div class="text-center" ng-if="userIsAdmin">
+    <div class="feature">
+      <form id="adminAdd" class="form-group" name="adminAdd">
+        <button class="btn-mini btn-success" ng-click="addCarousel(item)">Add New</button>
+        <div class="input-group">
+          <span class="input-group-addon" id="rank">Rank</span>
+          <input class="form-control" type="number" ng-model="item.rank" placeholder="{{item.rank}}">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="lead">Lead</span>
+          <input type="text" class="form-control" ng-model="item.lead" placeholder="Lead">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="photo">Image Link</span>
+          <input type="text" class="form-control" ng-model="item.photo" placeholder="Image link">
+        </div>
+        <img src="{{item.photo}}" class="img-responsive" alt="Slide Photo">
+      </form>
+    </div>
+  </div>
+  <!-- /admin add new -->
+  </div>
+</div>
+<!-- admin repeat -->
+<div class="text-center" ng-if="userIsAdmin" ng-repeat="item in carousel">
+<!-- | orderBy: 'rank'  -->
+  <div class="feature">
+    <form name="adminRepeat" class="form-group">
+      <ul class="social">
+        <li>
+          <button class="btn-mini btn-success" ng-click="updateCarousel(item)">Update</button>
+        </li>
+        <li>
+          <button ng-hide="item.hide" class="btn-mini btn-warning" ng-click="toggleCarouselHide(item)">Shown</button>
+          <button ng-hide="!item.hide" class="btn-mini btn-warning" ng-click="toggleCarouselHide(item)">Hidden</button>
+        </li>
+        <li>
+          <button class="btn-mini btn-danger" ng-click="removeCarousel(item)">Delete</button>
+        </li>
+      </ul>
+      <div class="input-group">
+        <span class="input-group-addon" id="rank">Rank</span>
+        <input class="form-control" type="number" ng-model="item.rank2" placeholder="{{item.rank}}">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="photo">Image Link</span>
+        <input type="text" class="form-control" ng-model="item.photo" placeholder="Image link">
+      </div>
+      <img src="{{item.photo}}" class="img-responsive" alt="Feature Photo">
+      <div class="input-group">
+        <span class="input-group-addon" id="name">Name</span>
+        <input type="text" class="form-control" ng-model="item.name" placeholder="Name">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="sub-name">SEO Name</span>
+        <input type="text" class="form-control" ng-model="item.subName" placeholder="SEO name">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="description">Description</span>
+        <textarea class="form-control" rows="5" id="description" ng-model="item.description" placeholder="Description">{{item.description}}</textarea>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="website"><i class="icon-globe2"></i></span>
+        <input type="text" class="form-control" ng-model="item.website" placeholder="Website">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="facebook"><i class="icon-facebook-official"></i></span>
+        <input type="text" class="form-control" ng-model="item.facebook" placeholder="Facebook">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="youtube"><i class="icon-youtube"></i></span>
+        <input type="text" class="form-control" ng-model="item.youtube" placeholder="YouTube">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="twitter"><i class="icon-twitter"></i></span>
+        <input type="text" class="form-control" ng-model="item.twitter" placeholder="Twitter">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="instagram"><i class="icon-instagram"></i></span>
+        <input type="text" class="form-control" ng-model="item.instagram" placeholder="Instagram">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="phone"><i class="icon-phone"></i></span>
+        <input type="text" class="form-control" ng-model="item.phone" placeholder="Phone">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="email"><i class="icon-envelope"></i></span>
+        <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
+      </div>
+    </form>
+  </div>
+</div>
+<!-- /admin repeat -->
 <h1>↓↓↓OLD↓↓↓</h1>
 <!-- Slider start -->
 <div id="slider" data-section="home">
@@ -308,4 +402,3 @@
       <!-- /item -->
   </div>
 </div>
-<!-- /Slider -->
