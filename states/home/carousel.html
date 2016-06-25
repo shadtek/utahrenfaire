@@ -102,19 +102,20 @@
         <span class="input-group-addon" id="photo">Image Link</span>
         <input type="text" class="form-control" ng-model="item.photo" placeholder="Image link">
       </div>
-      <div id="slider">
+      <img src="{{item.photo}}" class="img-responsive" alt="Slide Photo">
+      <!-- <div id="slider">
         <div id="owl-example" class="owl-carousel owl-carousel-fullwidth">
           <div class="item" ng-style="{'background-image':'url(' + item.photo + ')', 'background-position': 'center'}">
             <div class="overlay"></div>
           </div>
         </div>
-      </div>
+      </div> -->
     </form>
   </div>
 </div>
 <!-- /admin repeat -->
 <h1>↓↓↓OLD↓↓↓</h1>
-<div id="slider" data-section="home">
+<div id="slider">
   <div id="owl-example" class="owl-carousel owl-carousel-fullwidth">
     <!-- item -->
     <div class="item" style="background-image:url(images/robbie.jpg); background-position: center;">
