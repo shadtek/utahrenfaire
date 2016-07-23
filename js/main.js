@@ -51,58 +51,58 @@
 
 
 	// Page Nav
-	var clickMenu = function() {
-		$('a:not([class="external"])').click(function(event){
-			var section = $(this).data('nav-section'),
-				navbar = $('#navbar');
-		    $('html, body').animate({
-		        scrollTop: $('[data-section="' + section + '"]').offset().top
-		    }, 500);
+	// var clickMenu = function() {
+	// 	$('a:not([class="external"])').click(function(event){
+	// 		var section = $(this).data('nav-section'),
+	// 			navbar = $('#navbar');
+	// 	    $('html, body').animate({
+	// 	        scrollTop: $('[data-section="' + section + '"]').offset().top
+	// 	    }, 500);
 
-		    if ( navbar.is(':visible')) {
-		    	navbar.removeClass('in');
-		    	navbar.attr('aria-expanded', 'false');
-		    	$('.js--nav-toggle').removeClass('active');
-		    }
+	// 	    if ( navbar.is(':visible')) {
+	// 	    	navbar.removeClass('in');
+	// 	    	navbar.attr('aria-expanded', 'false');
+	// 	    	$('.js--nav-toggle').removeClass('active');
+	// 	    }
 
-		    event.preventDefault();
-		    return false;
-		});
+	// 	    event.preventDefault();
+	// 	    return false;
+	// 	});
 
-	};
+	// };
 
 	// Reflect scrolling in navigation
-	var navActive = function(section) {
+	// var navActive = function(section) {
 
-		var $el = $('#navbar > ul');
-		$el.find('li').removeClass('active');
-		$el.each(function(){
-			$(this).find('a[data-nav-section="'+section+'"]').closest('li').addClass('active');
-		});
+	// 	var $el = $('#navbar > ul');
+	// 	$el.find('li').removeClass('active');
+	// 	$el.each(function(){
+	// 		$(this).find('a[data-nav-section="'+section+'"]').closest('li').addClass('active');
+	// 	});
 
-	};
-	var navigationSection = function() {
-		console.log('nav-section');
-		var $section = $('div[data-section]');
+	// };
+	// var navigationSection = function() {
+	// 	console.log('nav-section');
+	// 	var $section = $('div[data-section]');
 		
-		$section.waypoint(function(direction) {
-		  	if (direction === 'down') {
-		    	navActive($(this.element).data('section'));
+	// 	$section.waypoint(function(direction) {
+	// 	  	if (direction === 'down') {
+	// 	    	navActive($(this.element).data('section'));
 		    
-		  	}
-		}, {
-		  	offset: '150px'
-		});
+	// 	  	}
+	// 	}, {
+	// 	  	offset: '150px'
+	// 	});
 
-		$section.waypoint(function(direction) {
-		  	if (direction === 'up') {
-		    	navActive($(this.element).data('section'));
-		  	}
-		}, {
-		  	offset: function() { return -$(this.element).height() + 155; }
-		});
+	// 	$section.waypoint(function(direction) {
+	// 	  	if (direction === 'up') {
+	// 	    	navActive($(this.element).data('section'));
+	// 	  	}
+	// 	}, {
+	// 	  	offset: function() { return -$(this.element).height() + 155; }
+	// 	});
 
-	};
+	// };
 
 
 	// Window Scroll
@@ -403,9 +403,9 @@
 	$(function(){
 
 		burgerMenu();
-		clickMenu();
+		// clickMenu();
 		windowScroll();
-		navigationSection();
+		// navigationSection();
 		aboutWayPoint();
 		teamWayPoint();
 		servicesWayPoint();
