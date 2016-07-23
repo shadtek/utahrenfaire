@@ -52,7 +52,6 @@
 
 	// Page Nav
 	var clickMenu = function() {
-
 		$('a:not([class="external"])').click(function(event){
 			var section = $(this).data('nav-section'),
 				navbar = $('#navbar');
@@ -83,7 +82,7 @@
 
 	};
 	var navigationSection = function() {
-
+		console.log('nav-section');
 		var $section = $('div[data-section]');
 		
 		$section.waypoint(function(direction) {
@@ -393,6 +392,9 @@
 
 	};
 
+	var test = function() {
+		console.log('tested');
+	};
 
 	
 	
@@ -411,6 +413,8 @@
 		testimonialsWayPoint();
 		pricingWayPoint();
 		pressWayPoint();
+		test();
+
 
 	});
 
