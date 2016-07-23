@@ -15,18 +15,18 @@
               <span>Faire Features</span>
             </a>
             <ul id="features-dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a data-toggle="collapse" data-target="dropdown" data-nav-section="faire-info">Featured</a></li>
-              <li><a data-toggle="collapse" data-target="dropdown" data-nav-section="entertainers">Entertainers</a></li>
+              <li><a data-toggle="collapse" data-target="dropdown" ng-click="scrollTo('featured')">Featured</a></li>
+              <li><a data-toggle="collapse" data-target="dropdown" ng-click="scrollTo('entertainers')">Entertainers</a></li>
               <!-- <li><a data-toggle="collapse" data-target="dropdown" href="#">Another action</a></li>
               <li><a data-toggle="collapse" data-target="dropdown" href="#">Something else here</a></li>
               <li role="separator" class="divider"></li>
               <li><a data-toggle="collapse" data-target="dropdown" href="#">Separated link</a></li> -->
             </ul>
           </li>
-          <li><a ng-click="scrollTo('-pricing')"><span>Tickets</span></a></li>
-          <li><a ng-click="scrollTo('-about-us')"><span>Map</span></a></li>
-          <li><a ng-click="scrollTo('-press')"><span>Forms</span></a></li>
-          <li><a dng-click="scrollTo('-pricing')"><span>Gallery</span></a></li>
+          <li><a ng-click="scrollTo('tickets')"><span>Tickets</span></a></li>
+          <li><a ng-click="scrollTo('map')"><span>Map</span></a></li>
+          <li><a ng-click="scrollTo('forms')"><span>Forms</span></a></li>
+          <li><a ng-click="scrollTo('gallery')"><span>Gallery</span></a></li>
         </ul>
       </div>
     </nav>
