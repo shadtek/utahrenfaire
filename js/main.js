@@ -392,10 +392,6 @@
 
 	};
 
-	var test = function() {
-		console.log('tested');
-	};
-
 	
 	
 
@@ -413,7 +409,6 @@
 		testimonialsWayPoint();
 		pricingWayPoint();
 		pressWayPoint();
-		test();
 
 
 	});

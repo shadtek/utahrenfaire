@@ -4,7 +4,7 @@ app.controller('mainCtrl', function($scope, $location, $anchorScroll){
 	$scope.go = function(path) {
 		$location.path(path)
 	}
-
+	
 	$scope.scrollTo = function (scrollLocation) {
 		$location.hash(scrollLocation);
 		$anchorScroll();
@@ -12,5 +12,4 @@ app.controller('mainCtrl', function($scope, $location, $anchorScroll){
 		header.addClass('navbar-fixed-top -animated slideInDown');
 	}
 
-	
 })

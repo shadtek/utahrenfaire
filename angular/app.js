@@ -104,9 +104,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       }
     })
     // state;
-    // state
-      // admin will go here
-    // state
     .state('otherwise', {
     url: '*path',
     resolve: {
@@ -119,12 +116,4 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true);
 
-})
-.run(function($rootScope, $state){
-  //If the route change failed due to authentication error, redirect them out
-  $rootScope.$on('$stateChangeError', function(current, previous, rejection){
-    console.log('You need to be logged in to see this page.');
-    
-      $state.go('about.admin.login');
-  })
 })
