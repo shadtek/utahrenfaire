@@ -152,7 +152,9 @@ h1, h2, h3, h4, h5, h6 {
   #features-dropdown-menu li:first-child {
     padding-top: 0em !important;
   }
-
+ /* #-header #home-link {
+    display: none !important;
+  }*/
   #-header.navbar-fixed-top #home-link {
     display: block !important;
   }

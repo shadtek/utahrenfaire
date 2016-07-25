@@ -9,18 +9,15 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul id="renfaire-nav" class="nav navbar-nav navbar-right">
-          <li id="home-link" class="navbar-link"><a data-nav-section="home" ng-click="scrollTo('home')"><span>Home</span></a></li>
+          <li id="home-link" class="navbar-link"><a href="index.html"><span>Home</span></a></li>
           <li class="dropdown" id = "dropDownMenuContainer">
             <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               <span>Faire Features</span>
             </a>
             <ul id="features-dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a data-toggle="collapse" data-target="dropdown" ng-click="scrollTo('featured')">Featured</a></li>
-              <li><a data-toggle="collapse" data-target="dropdown" ng-click="scrollTo('entertainers')">Entertainers</a></li>
-              <!-- <li><a data-toggle="collapse" data-target="dropdown" href="#">Another action</a></li>
-              <li><a data-toggle="collapse" data-target="dropdown" href="#">Something else here</a></li>
+              <li><a data-toggle="collapse" data-target="#navbar" ng-click="scrollTo('featured')">Featured</a></li>
               <li role="separator" class="divider"></li>
-              <li><a data-toggle="collapse" data-target="dropdown" href="#">Separated link</a></li> -->
+              <li><a data-toggle="collapse" data-target="#navbar" ng-click="scrollTo('entertainers')">Entertainers</a></li>
             </ul>
           </li>
           <li><a ng-click="scrollTo('tickets')" data-toggle="collapse" data-target="#navbar"><span>Tickets</span></a></li>
