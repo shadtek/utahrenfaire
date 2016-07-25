@@ -44,7 +44,6 @@ app.directive('owlDirective', function() {
 		restrict: 'E',
 		link: function(scope, elem, attrs) {
 			$(document).ready(function() {
-    	// setTimeout(, 100)
 		  });
 		}
 	}
@@ -85,7 +84,7 @@ function initCarosel(){
       smartSpeed: 500,
       autoplay: true,
     autoplayTimeout: 5000,
-    autoplayHoverPause: true
+    autoplayHoverPause: false
     // ,
       // navText: [  
       //   "<i class='icon-arrow-left2 owl-direction'></i>",
