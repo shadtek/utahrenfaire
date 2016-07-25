@@ -48,6 +48,37 @@
     </div>
   </div>
 </div>
+<!-- admin main info edit -->
+<div class="col-md-12">
+  <div class="row">
+  <!-- admin add new -->
+  <div class="text-center" ng-if="userIsAdmin">
+    <div class="feature">
+      <form id="adminAdd" class="form-group" name="adminAdd">
+        <button class="btn-mini btn-success" ng-click="updateMainInfo()">Update Main Info</button>
+        <div class="input-group">
+          <span class="input-group-addon" id="place">Event Place</span>
+          <input type="text" class="form-control" ng-model="mainInfo.eventPlace" placeholder="Event Place">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="eventDays">Event Days</span>
+          <input type="text" class="form-control" ng-model="mainInfo.eventDays" placeholder="Event Days">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="eventDays">Event Hours</span>
+          <input type="text" class="form-control" ng-model="mainInfo.eventHours" placeholder="Event Days">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="eventDays">Event Dates</span>
+          <input type="text" class="form-control" ng-model="mainInfo.eventDate" placeholder="Event Days">
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- /admin add new -->
+  </div>
+</div>
+<!-- /admin main info edit -->
 
 <div class="col-md-12">
   <div class="row">

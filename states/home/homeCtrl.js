@@ -7,4 +7,8 @@ app.controller('homeCtrl', function($scope, firebaseService, mainInfoRef, authSe
 		$scope.userIsAdmin = true;
 	})
 
+	$scope.updateMainInfo= function(){
+		$scope.mainInfo.$save();
+	};
+
 })
