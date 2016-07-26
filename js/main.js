@@ -15,50 +15,6 @@
 	};
 
 
-
-	// Carousel Feature Slide
-	var owlCrouselFeatureSlide = function() {
-		
-		var owl = $('.owl-carousel');
-
-		owl.on('initialized.owl.carousel change.owl.carousel',function(elem){
-			var current = elem.item.index;
-			$(elem.target).find(".owl-item").eq(current).find(".to-animate").removeClass('fadeInUp animated');
-			$(elem.target).find(".owl-item").eq(current).find(".to-animate-2").removeClass('fadeInUp animated');
-		
-		});
-		owl.on('initialized.owl.carousel changed.owl.carousel',function(elem){
-			setTimeout(function(){
-				var current = elem.item.index;
-				$(elem.target).find(".owl-item").eq(current).find(".to-animate").addClass('fadeInUp animated');
-			}, 700);
-			setTimeout(function(){
-				var current = elem.item.index;
-				$(elem.target).find(".owl-item").eq(current).find(".to-animate-2").addClass('fadeInUp animated');
-			}, 900);
-     	});
-		owl.owlCarousel({
-			items: 1,
-		    loop: true,
-		    margin: 0,
-		    responsiveClass: true,
-		    nav: true,
-		    dots: true,
-		    autoHeight: true,
-		    smartSpeed: 500,
-		    autoplay: true,
-			autoplayTimeout: 5000,
-			autoplayHoverPause: true,
-		    navText: [	
-		      "<i class='icon-arrow-left2 owl-direction'></i>",
-		      "<i class='icon-arrow-right2 owl-direction'></i>"
-	     	]
-		});
-
-	};
-
-
-
 	// animate-box
 	var contentWayPoint = function() {
 
@@ -95,63 +51,58 @@
 
 
 	// Page Nav
-	var clickMenu = function() {
+	// var clickMenu = function() {
+	// 	$('a:not([class="external"])').click(function(event){
+	// 		var section = $(this).data('nav-section'),
+	// 			navbar = $('#navbar');
+	// 	    $('html, body').animate({
+	// 	        scrollTop: $('[data-section="' + section + '"]').offset().top
+	// 	    }, 500);
 
-		$('a:not([class="external"])').click(function(event){
-			console.log(event);
-			var section = $(this).data('nav-section'),
-				navbar = $('#navbar');
-				console.log(navbar);
-		    $('html, body').animate({
-		        scrollTop: $('[data-section="' + section + '"]').offset().top
-		    }, 500);
+	// 	    if ( navbar.is(':visible')) {
+	// 	    	navbar.removeClass('in');
+	// 	    	navbar.attr('aria-expanded', 'false');
+	// 	    	$('.js--nav-toggle').removeClass('active');
+	// 	    }
 
-		    if ( navbar.is(':visible')) {
-		    	console.log("I am being run");
-		    	navbar.removeClass('in');
-		    	navbar.attr('aria-expanded', 'false');
-		    	$("#dropDownMenuContainer").removeClass('open');
-		    	$('.js--nav-toggle').removeClass('active');
-		    }
+	// 	    event.preventDefault();
+	// 	    return false;
+	// 	});
 
-		    event.preventDefault();
-		    return false;
-		});
-
-	};
+	// };
 
 	// Reflect scrolling in navigation
-	var navActive = function(section) {
+	// var navActive = function(section) {
 
-		var $el = $('#navbar > ul');
-		$el.find('li').removeClass('active');
-		$el.each(function(){
-			$(this).find('a[data-nav-section="'+section+'"]').closest('li').addClass('active');
-		});
+	// 	var $el = $('#navbar > ul');
+	// 	$el.find('li').removeClass('active');
+	// 	$el.each(function(){
+	// 		$(this).find('a[data-nav-section="'+section+'"]').closest('li').addClass('active');
+	// 	});
 
-	};
-	var navigationSection = function() {
-
-		var $section = $('div[data-section]');
+	// };
+	// var navigationSection = function() {
+	// 	console.log('nav-section');
+	// 	var $section = $('div[data-section]');
 		
-		$section.waypoint(function(direction) {
-		  	if (direction === 'down') {
-		    	navActive($(this.element).data('section'));
+	// 	$section.waypoint(function(direction) {
+	// 	  	if (direction === 'down') {
+	// 	    	navActive($(this.element).data('section'));
 		    
-		  	}
-		}, {
-		  	offset: '150px'
-		});
+	// 	  	}
+	// 	}, {
+	// 	  	offset: '150px'
+	// 	});
 
-		$section.waypoint(function(direction) {
-		  	if (direction === 'up') {
-		    	navActive($(this.element).data('section'));
-		  	}
-		}, {
-		  	offset: function() { return -$(this.element).height() + 155; }
-		});
+	// 	$section.waypoint(function(direction) {
+	// 	  	if (direction === 'up') {
+	// 	    	navActive($(this.element).data('section'));
+	// 	  	}
+	// 	}, {
+	// 	  	offset: function() { return -$(this.element).height() + 155; }
+	// 	});
 
-	};
+	// };
 
 
 	// Window Scroll
@@ -441,7 +392,6 @@
 
 	};
 
-
 	
 	
 
@@ -449,11 +399,9 @@
 	$(function(){
 
 		burgerMenu();
-		owlCrouselFeatureSlide();
-		clickMenu();
+		// clickMenu();
 		windowScroll();
-		navigationSection();
-
+		// navigationSection();
 		aboutWayPoint();
 		teamWayPoint();
 		servicesWayPoint();
@@ -461,6 +409,7 @@
 		testimonialsWayPoint();
 		pricingWayPoint();
 		pressWayPoint();
+
 
 	});
 

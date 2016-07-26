@@ -1,0 +1,15 @@
+<h2>Admin</h2>
+
+<form class="form-group" ng-submit="login()">
+	<div class="input-group">
+	  <span class="input-group-addon" id="email">Email</span>
+	  <input class="form-control" type="email" ng-model="details.email" placeholder="Email" required>
+	</div>
+	<div class="input-group">
+	  <span class="input-group-addon" id="photo">Password</span>
+	  <input type="password" class="form-control" ng-model="details.password" placeholder="Password" required>
+	</div>
+	<button ng-if="!userIsAdmin" class="btn btn-info">Sign In</button>
+</form>
+
+<button ng-click="logout()" ng-if="userIsAdmin" class="btn btn-info">Sign Out</button>

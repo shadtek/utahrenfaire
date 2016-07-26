@@ -152,7 +152,6 @@ h1, h2, h3, h4, h5, h6 {
   #features-dropdown-menu li:first-child {
     padding-top: 0em !important;
   }
-
   #-header.navbar-fixed-top #home-link {
     display: block !important;
   }
@@ -187,7 +186,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top:-10em;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 991px) {
+
+/* and (max-width: 991px) */
+@media screen and (min-width: 768px) {
   #-header #home-link {
     display: none !important;
   }
@@ -1246,10 +1247,35 @@ h1, h2, h3, h4, h5, h6 {
   animation-fill-mode: both;
 }
 
+/* Saves white space / carriage returns when bringing back data from Firebase */
+.item-description {
+  white-space: pre-wrap;
+}
 
 /* Color overrides */
 #features-dropdown-menu li a {
   color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.logged-in {
+  font-family: "Goudy Medieval", Arial, sans-serif;
+  font-weight: 700;
+  text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  letter-spacing: 1px;
+  color: #fff;
+  font-size: 46px;
+  line-height: 50px;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .logged-in {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 30px;
+    line-height: 30px;
+  }
 }
 
 /*# sourceMappingURL=lightblue.css.map */

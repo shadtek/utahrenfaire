@@ -1,0 +1,148 @@
+<div id="home"></div>
+<div id="slider">
+  <div id="owl-example" class="owl-carousel owl-carousel-fullwidth">
+    <!-- public repat -->
+    <div ng-if="!userIsAdmin" ng-show="!item.hide" ng-repeat="item in carousel" class="item" ng-style="{'background-image':'url(' + item.photo + ')', 'background-position': 'center'}">
+      <div class="overlay"></div>
+      <div class="container" style="position: relative;">
+        <div class="row">
+          <div class="col-md-7 col-sm-7">
+            <div class="-owl-text-wrap">
+              <div class="-owl-text">
+                <h1 class="-lead to-animate">{{item.lead}}</h1>
+                <h2 class="-sub-lead to-animate">{{mainInfo.eventPlace}}<br>
+                {{mainInfo.eventDays}}<br>
+                {{mainInfo.eventHours}}<br>
+                {{mainInfo.eventDate}}</h2>
+                <p class="to-animate-2"><a data-nav-section="pricing" class="btn btn-primary btn-lg">Get Tickets</a></p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /public repeat -->
+  </div>
+</div>
+
+<div ng-if="userIsAdmin" id="slider">
+  <div id="owl-example" class="owl-carousel owl-carousel-fullwidth">
+    <div class="item" style="background-image:url(images/spencer.jpg); background-position: center;">
+      <div class="overlay"></div>
+      <div class="container" style="position: relative;">
+        <div class="row">
+          <div class="col-md-7 col-sm-7">
+            <div class="-owl-text-wrap">
+              <div class="-owl-text">
+                <h1 class="-lead to-animate">Logged in as Admin</h1>
+                <h2 class="-sub-lead to-animate">{{mainInfo.eventPlace}}<br>
+                {{mainInfo.eventDays}}<br>
+                {{mainInfo.eventHours}}<br>
+                {{mainInfo.eventDate}}</h2>
+                <p class="to-animate-2"><a data-nav-section="pricing" class="btn btn-primary btn-lg">Get Tickets</a></p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- admin main info edit -->
+<div class="col-md-12">
+  <div class="row">
+  <!-- admin add new -->
+  <div class="text-center" ng-if="userIsAdmin">
+    <div class="feature">
+      <form id="adminAdd" class="form-group" name="adminAdd">
+        <button class="btn-mini btn-success" ng-click="updateMainInfo()">Update Main Info</button>
+        <div class="input-group">
+          <span class="input-group-addon" id="place">Event Place</span>
+          <input type="text" class="form-control" ng-model="mainInfo.eventPlace" placeholder="Event Place">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="eventDays">Event Days</span>
+          <input type="text" class="form-control" ng-model="mainInfo.eventDays" placeholder="Event Days">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="eventDays">Event Hours</span>
+          <input type="text" class="form-control" ng-model="mainInfo.eventHours" placeholder="Event Days">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="eventDays">Event Dates</span>
+          <input type="text" class="form-control" ng-model="mainInfo.eventDate" placeholder="Event Days">
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- /admin add new -->
+  </div>
+</div>
+<!-- /admin main info edit -->
+
+<div class="col-md-12">
+  <div class="row">
+  <!-- admin add new -->
+  <div class="text-center" ng-if="userIsAdmin">
+    <div class="feature">
+      <form id="adminAdd" class="form-group" name="adminAdd">
+        <button class="btn-mini btn-success" ng-click="addCarousel(item)">Add New Slide</button>
+        <div class="input-group">
+          <span class="input-group-addon" id="rank">Rank</span>
+          <input class="form-control" type="number" ng-model="item.rank" placeholder="Rank">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="lead">Lead</span>
+          <input type="text" class="form-control" ng-model="item.lead" placeholder="Lead">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="photo">Image Link</span>
+          <input type="text" class="form-control" ng-model="item.photo" placeholder="Image link">
+        </div>
+        <img src="{{item.photo}}" class="img-responsive" alt="Slide Photo">
+      </form>
+    </div>
+  </div>
+  <!-- /admin add new -->
+  </div>
+</div>
+<!-- admin repeat -->
+<div class="text-center" ng-if="userIsAdmin" ng-repeat="item in carousel">
+  <div class="feature">
+    <form name="adminRepeat" class="form-group">
+      <ul class="social">
+        <li>
+          <button class="btn-mini btn-success" ng-click="updateCarousel(item)">Update</button>
+        </li>
+        <li>
+          <button ng-hide="item.hide" class="btn-mini btn-warning" ng-click="toggleCarouselHide(item)">Shown</button>
+          <button ng-hide="!item.hide" class="btn-mini btn-warning" ng-click="toggleCarouselHide(item)">Hidden</button>
+        </li>
+        <li>
+          <button class="btn-mini btn-danger" ng-click="removeCarousel(item)">Delete</button>
+        </li>
+      </ul>
+      <div class="input-group">
+        <span class="input-group-addon" id="rank">Rank</span>
+        <input class="form-control" type="number" ng-model="item.rank2" placeholder="{{item.rank}}">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="lead">Lead</span>
+        <input type="text" class="form-control" ng-model="item.lead" placeholder="Lead">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="photo">Image Link</span>
+        <input type="text" class="form-control" ng-model="item.photo" placeholder="Image link">
+      </div>
+      <img src="{{item.photo}}" class="img-responsive" alt="Slide Photo">
+      <!-- <div id="slider">
+        <div id="owl-example" class="owl-carousel owl-carousel-fullwidth">
+          <div class="item" ng-style="{'background-image':'url(' + item.photo + ')', 'background-position': 'center'}">
+            <div class="overlay"></div>
+          </div>
+        </div>
+      </div> -->
+    </form>
+  </div>
+</div>
+<!-- /admin repeat -->

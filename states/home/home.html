@@ -1,1 +1,79 @@
-<h1>The text to the right needs to appear on a slide as well. {{mainInfo.eventPlace}}</h1>
+<header role="banner" id="-header">
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <!-- Mobile Toggle Menu Button -->
+        <a href="#" class="-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+        <a id="logo" class="navbar-brand" href="index.html"><img src="images/urf-logo.png"></a>
+        <a id="logo-text" class="navbar-brand" href="index.html">Utah Renaissance Faire</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul id="renfaire-nav" class="nav navbar-nav navbar-right">
+          <li id="home-link" class="navbar-link"><a href="index.html"><span>Home</span></a></li>
+          <li class="dropdown" id = "dropDownMenuContainer">
+            <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <span>Faire Features</span>
+            </a>
+            <ul id="features-dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a data-toggle="collapse" data-target="#navbar" ng-click="scrollTo('featured')">Featured</a></li>
+              <!-- <li role="separator" class="divider"></li> -->
+              <!-- <li><a data-toggle="collapse" data-target="#navbar" ng-click="scrollTo('entertainers')">Entertainers</a></li> -->
+            </ul>
+          </li>
+          <li><a ng-click="scrollTo('tickets')" data-toggle="collapse" data-target="#navbar"><span>Tickets</span></a></li>
+          <li><a ng-click="scrollTo('map')" data-toggle="collapse" data-target="#navbar"><span>Map</span></a></li>
+          <li><a ng-click="scrollTo('forms')" data-toggle="collapse" data-target="#navbar"><span>Forms</span></a></li>
+          <li><a ng-click="scrollTo('gallery')" data-toggle="collapse" data-target="#navbar"><span>Gallery</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<div ui-view="carousel"></div>
+<div ui-view="faire-features"></div>
+<!-- <div ui-view="entertainers"></div> -->
+<!-- <div ui-view="vendors"></div> -->
+<!-- <div ui-view="guilds"></div> -->
+<!-- <div ui-view="schedule"></div> -->
+<div ui-view="tickets"></div>
+<div ui-view="map"></div>
+<div ui-view="forms"></div>
+<div ui-view="gallery"></div>
+<div ui-view="about"></div>
+
+<!-- <h2 class="text-center">More things are coming to the website. Check back for updates!</h2> -->
+
+<footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="row row-bottom-padded-sm">
+        <div class="col-md-12">
+          <p class="copyright text-center">&copy; 2016 <a href="index.html">Utah Renaissance Faire</a>. All Rights Reserved.
+            <br>Website by <a href="https://www.linkedin.com/in/shadtek" target="_blank">Spencer Shattuck</a></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <ul class="social social-circle">
+            <!-- <li><a href="#" target="_blank"><i class="icon-twitter"></i></a></li> -->
+            <li><a href="https://www.facebook.com/UtahRenaissanceFaire" target="_blank"><i class="icon-facebook"></i></a></li>
+            <!-- <li><a href="#" target="_blank"><i class="icon-youtube"></i></a></li> -->
+            <!-- <li><a href="#" target="_blank"><i class="icon-pinterest"></i></a></li> -->
+            <li><a href="https://www.linkedin.com/in/shadtek" target="_blank"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/utahrenfaire/" target="_blank"><i class="icon-instagram"></i></a></li>
+            <li><a href="https://github.com/shadtek/utahrenfaire" target="_blank"><i class="icon-git"></i></a></li>
+            <li><a href="tel:8019998007"><i class="icon-phone" target="_blank"></i></a></li>
+            <li><a href="mailto:info@utahrenaissancefaire.org" target="_blank"><i class="icon-envelope"></i></a></li>
+            <!-- <li><a href="mailto:info@utahrenaissancefaire.org" target="_blank"><i class="icon-gear"></i></a></li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <ul class="social social-circle">
+            <li><a ng-click="showLogin = !showLogin"><i class="icon-gear"></i></a></li>
+          </ul>
+          <div ui-view="admin" ng-show="showLogin"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
