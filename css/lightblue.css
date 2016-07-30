@@ -107,6 +107,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   #-header #navbar li a:hover {
     color: #5585b5 !important;
+    cursor: pointer;
   }
   #-header #navbar li a span:before {
     background: transparent !important;
@@ -744,20 +745,20 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.-nav-toggle {
+.js--nav-toggle {
   width: 25px;
   height: 25px;
   cursor: pointer;
   text-decoration: none;
 }
-.-nav-toggle.active i::before, .-nav-toggle.active i::after {
+.js--nav-toggle.active i::before, .js--nav-toggle.active i::after {
   background: #5585b5;
 }
-.-nav-toggle:hover, .-nav-toggle:focus, .-nav-toggle:active {
+.js--nav-toggle:hover, .js--nav-toggle:focus, .js--nav-toggle:active {
   outline: none;
   border-bottom: none !important;
 }
-.-nav-toggle i {
+.js--nav-toggle i {
   position: relative;
   display: -moz-inline-stack;
   display: inline-block;
@@ -772,7 +773,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #5585b5;
   transition: all .2s ease-out;
 }
-.-nav-toggle i::before, .-nav-toggle i::after {
+.js--nav-toggle i::before, .js--nav-toggle i::after {
   content: '';
   width: 25px;
   height: 3px;
@@ -784,27 +785,27 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.2s;
 }
 
-.-nav-toggle i::before {
+.js--nav-toggle i::before {
   top: -7px;
 }
 
-.-nav-toggle i::after {
+.js--nav-toggle i::after {
   bottom: -7px;
 }
 
-.-nav-toggle:hover i::before {
+.js--nav-toggle:hover i::before {
   top: -10px;
 }
 
-.-nav-toggle:hover i::after {
+.js--nav-toggle:hover i::after {
   bottom: -10px;
 }
 
-.-nav-toggle.active i {
+.js--nav-toggle.active i {
   background: transparent;
 }
 
-.-nav-toggle.active i::before {
+.js--nav-toggle.active i::before {
   top: 0;
   -webkit-transform: rotateZ(45deg);
   -moz-transform: rotateZ(45deg);
@@ -813,7 +814,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: rotateZ(45deg);
 }
 
-.-nav-toggle.active i::after {
+.js--nav-toggle.active i::after {
   bottom: 0;
   -webkit-transform: rotateZ(-45deg);
   -moz-transform: rotateZ(-45deg);
@@ -822,7 +823,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: rotateZ(-45deg);
 }
 
-.-nav-toggle {
+.js--nav-toggle {
   position: absolute;
   top: 12px;
   right: -21px;
@@ -836,7 +837,7 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: none !important;
 }
 @media screen and (max-width: 767px) {
-  .-nav-toggle {
+  .js--nav-toggle {
     display: block;
   }
 }

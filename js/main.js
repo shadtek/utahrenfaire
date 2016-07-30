@@ -34,12 +34,28 @@
 	// Burger Menu
 	var burgerMenu = function() {
 
-		$('body').on('click', '.js--nav-toggle', function(event){
+		var body = $('body');
+		var jsNavToggle = $('.js--nav-toggle')
+		var navbar = $('#navbar')
 
-			if ( $('#navbar').is(':visible') ) {
+		body.on('click', jsNavToggle, function(event){
+
+			if ( $(navbar).is(':visible') ) {
 				$(this).removeClass('active');	
 			} else {
 				$(this).addClass('active');	
+			}
+
+			event.preventDefault();
+			
+		});
+
+		body.on('click', '.nav-link', function(event){
+
+			if ( $(navbar).is(':visible') ) {
+				$(jsNavToggle).removeClass('active');	
+			} else {
+				$(jsNavToggle).addClass('active');	
 			}
 
 			event.preventDefault();
@@ -51,25 +67,25 @@
 
 
 	// Page Nav
-	// var clickMenu = function() {
-	// 	$('a:not([class="external"])').click(function(event){
-	// 		var section = $(this).data('nav-section'),
-	// 			navbar = $('#navbar');
-	// 	    $('html, body').animate({
-	// 	        scrollTop: $('[data-section="' + section + '"]').offset().top
-	// 	    }, 500);
+	var clickMenu = function() {
+		$('a:not([class="external"])').click(function(event){
+			var section = $(this).data('nav-section'),
+				navbar = $('#navbar');
+		    $('html, body').animate({
+		        scrollTop: $('[data-section="' + section + '"]').offset().top
+		    }, 500);
 
-	// 	    if ( navbar.is(':visible')) {
-	// 	    	navbar.removeClass('in');
-	// 	    	navbar.attr('aria-expanded', 'false');
-	// 	    	$('.js--nav-toggle').removeClass('active');
-	// 	    }
+		    if ( navbar.is(':visible')) {
+		    	navbar.removeClass('in');
+		    	navbar.attr('aria-expanded', 'false');
+		    	$('.js--nav-toggle').removeClass('active');
+		    }
 
-	// 	    event.preventDefault();
-	// 	    return false;
-	// 	});
+		    event.preventDefault();
+		    return false;
+		});
 
-	// };
+	};
 
 	// Reflect scrolling in navigation
 	// var navActive = function(section) {
@@ -397,9 +413,8 @@
 
 	// Document on load.
 	$(function(){
-
 		burgerMenu();
-		// clickMenu();
+		clickMenu();
 		windowScroll();
 		// navigationSection();
 		aboutWayPoint();
