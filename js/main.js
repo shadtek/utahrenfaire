@@ -35,12 +35,10 @@
 	var burgerMenu = function() {
 
 		var body = $('body');
-		var jsNavToggle = $('.js--nav-toggle')
-		var navbar = $('#navbar')
 
-		body.on('click', jsNavToggle, function(event){
+		body.on('click', '.js--nav-toggle', function(event){
 
-			if ( $(navbar).is(':visible') ) {
+			if ( $('#navbar').is(':visible') ) {
 				$(this).removeClass('active');	
 			} else {
 				$(this).addClass('active');	
@@ -52,10 +50,10 @@
 
 		body.on('click', '.nav-link', function(event){
 
-			if ( $(navbar).is(':visible') ) {
-				$(jsNavToggle).removeClass('active');	
+			if ( $('#navbar').is(':visible') ) {
+				$('.js--nav-toggle').removeClass('active');	
 			} else {
-				$(jsNavToggle).addClass('active');	
+				$('.js--nav-toggle').addClass('active');	
 			}
 
 			event.preventDefault();
