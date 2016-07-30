@@ -9,7 +9,6 @@ app.controller('carouselCtrl', function($scope, carouselRef, firebaseService){
 
   $scope.item = {};
   
-  
   $scope.addCarousel = function(item){
     $scope.carousel.$add(item);
     console.log("Added and form cleared");
