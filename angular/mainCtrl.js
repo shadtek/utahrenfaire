@@ -10,7 +10,6 @@ app.controller('mainCtrl', function($scope, $location, $anchorScroll){
 		$anchorScroll();
 		var header = $('#-header');
 		header.addClass('navbar-fixed-top -animated slideInDown');
-		
 	}
 
 })

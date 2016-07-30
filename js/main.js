@@ -413,7 +413,6 @@
 
 	// Document on load.
 	$(function(){
-
 		burgerMenu();
 		clickMenu();
 		windowScroll();
