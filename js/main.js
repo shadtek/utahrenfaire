@@ -34,9 +34,13 @@
 	// Burger Menu
 	var burgerMenu = function() {
 
-		$('body').on('click', '.js--nav-toggle', function(event){
+		var body = $('body');
+		var jsNavToggle = $('.js--nav-toggle')
+		var navbar = $('#navbar')
 
-			if ( $('#navbar').is(':visible') ) {
+		body.on('click', jsNavToggle, function(event){
+
+			if ( $(navbar).is(':visible') ) {
 				$(this).removeClass('active');	
 			} else {
 				$(this).addClass('active');	
@@ -46,12 +50,12 @@
 			
 		});
 
-		$('body').on('click', '.nav-link', function(event){
+		body.on('click', '.nav-link', function(event){
 
-			if ( $('#navbar').is(':visible') ) {
-				$('.js--nav-toggle').removeClass('active');	
+			if ( $(navbar).is(':visible') ) {
+				$(jsNavToggle).removeClass('active');	
 			} else {
-				$('.js--nav-toggle').addClass('active');	
+				$(jsNavToggle).addClass('active');	
 			}
 
 			event.preventDefault();
