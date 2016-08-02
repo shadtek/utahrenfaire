@@ -1181,8 +1181,8 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 768px) {
   .owl-carousel-fullwidth .item .-owl-text .-lead {
     margin-bottom: 20px;
-    margin-top: 10px;
-    font-size: 30px;
+    margin-top: 100px;
+    font-size: 49px;
     line-height: 30px;
   }
 }
@@ -1276,6 +1276,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 10px;
     font-size: 30px;
     line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider-img {
+    background-position: center 70px !important;
   }
 }
 

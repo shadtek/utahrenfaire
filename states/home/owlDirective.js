@@ -82,7 +82,7 @@ function initCarosel(){
       autoHeight: true,
       smartSpeed: 500,
       autoplay: true,
-    autoplayTimeout: 4500,
+    autoplayTimeout: 8000,
     autoplayHoverPause: false
     // ,
       // navText: [  

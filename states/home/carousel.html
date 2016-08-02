@@ -1,19 +1,26 @@
 <div id="slider">
   <div id="owl-example" class="owl-carousel owl-carousel-fullwidth">
     <!-- public repat -->
-    <div ng-if="!userIsAdmin" ng-show="!item.hide" ng-repeat="item in carousel" class="item" ng-style="{'background-image':'url(' + item.photo + ')', 'background-position': 'center'}">
+    <div ng-if="!userIsAdmin" ng-show="!item.hide" ng-repeat="item in carousel" class="item slider-img" ng-style="{'background-image':'url(' + item.photo + ')', 'background-position': 'center'}">
       <div class="overlay"></div>
       <div class="container" style="position: relative;">
         <div class="row">
           <div class="col-md-7 col-sm-7">
             <div class="-owl-text-wrap">
               <div class="-owl-text">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
                 <h1 class="-lead to-animate">{{item.lead}}</h1>
-                <h2 class="-sub-lead to-animate">{{mainInfo.eventPlace}}<br>
+                <!-- <h2 class="-sub-lead to-animate">{{mainInfo.eventPlace}}<br>
                 {{mainInfo.eventDays}}<br>
                 {{mainInfo.eventHours}}<br>
-                {{mainInfo.eventDate}}</h2>
-                <p class="to-animate-2"><a data-nav-section="pricing" class="btn btn-primary btn-lg">Get Tickets</a></p>
+                {{mainInfo.eventDate}}</h2> -->
+                <!-- <p class="to-animate-2"><a data-nav-section="pricing" class="btn btn-primary btn-lg">Get Tickets</a></p> -->
             </div>
           </div>
           </div>
@@ -21,6 +28,23 @@
       </div>
     </div>
     <!-- /public repeat -->
+  </div>
+</div>
+<div id="-about-us">
+  <div class="container">
+    <div class="row" id="team">
+      <div class="col-md-12 section-heading text-center">
+        <h2>{{mainInfo.eventPlace}}<br>
+        {{mainInfo.eventDays}}<br>
+        {{mainInfo.eventHours}}<br>
+        {{mainInfo.eventDate}}</h2>
+        <p><a data-nav-section="pricing" class="btn btn-primary btn-lg">Get Tickets</a></p>
+        <h1>Proudly sponsored by:</h1>
+        <div class="feature">
+          <img src="http://i.imgur.com/N5iDBuK.jpg" class="img-responsive" alt="Sponsor">
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -46,6 +70,7 @@
       </div>
     </div>
   </div>
+  <h1>Test</h1>
 </div>
 <!-- admin main info edit -->
 <div class="col-md-12">
