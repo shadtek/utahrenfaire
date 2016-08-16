@@ -189,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* and (max-width: 991px) */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   #-header #home-link {
     display: none !important;
   }
@@ -332,7 +332,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0s;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   #features-dropdown-menu {
     left: 0;
   }
@@ -340,6 +340,21 @@ h1, h2, h3, h4, h5, h6 {
 #renfaire-nav > .open > a{
   background-color: rgba(255, 255, 255, 0)
 }
+
+/* Incase you want a background when on large screens and at the top of page
+
+@media (min-width: 767px) {
+  #renfaire-nav {
+    background-color: rgba(82, 58, 53, .6)
+  }
+}
+
+#-header.navbar-fixed-top #renfaire-nav {
+  background-color: rgba(255, 255, 255, 0)
+}
+
+*/
+
 .section-heading {
   float: left;
   width: 100%;
@@ -369,7 +384,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: -40px;
   bottom: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .section-heading h2 {
     font-size: 30px;
   }
@@ -379,7 +394,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
   color: #929292;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .section-heading h3 {
     font-size: 24px !important;
     line-height: 34px;
@@ -648,7 +663,7 @@ h1, h2, h3, h4, h5, h6 {
 #-features {
   padding: 7em 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #-features {
     padding: 4em 0;
   }
@@ -977,7 +992,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .owl-carousel .owl-controls .owl-nav {
     display: none;
   }
@@ -1041,7 +1056,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .owl-theme .owl-controls .owl-nav {
     display: none;
   }
@@ -1134,7 +1149,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   bottom: -12em;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .owl-carousel-fullwidth .item .iphone-image .iphone {
     bottom: 0em;
     text-align: center;
@@ -1178,7 +1193,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 50px;
   color: #000;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .owl-carousel-fullwidth .item .-owl-text .-lead {
     margin-bottom: 20px;
     margin-top: 100px;
@@ -1194,7 +1209,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 30px;
   color: white;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .owl-carousel-fullwidth .item .-owl-text .-sub-lead {
     font-size: 24px;
     line-height: 34px;
@@ -1217,7 +1232,7 @@ h1, h2, h3, h4, h5, h6 {
 .row-bottom-padded-lg {
   padding-bottom: 7em;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .row-bottom-padded-lg {
     padding-bottom: 2em;
   }
@@ -1226,7 +1241,7 @@ h1, h2, h3, h4, h5, h6 {
 .row-bottom-padded-md {
   padding-bottom: 4em;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .row-bottom-padded-md {
     padding-bottom: 2em;
   }
@@ -1235,7 +1250,7 @@ h1, h2, h3, h4, h5, h6 {
 .row-bottom-padded-sm {
   padding-bottom: 2em;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .row-bottom-padded-sm {
     padding-bottom: 2em;
   }
@@ -1270,7 +1285,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 50px;
   color: #000;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .logged-in {
     margin-bottom: 20px;
     margin-top: 10px;
@@ -1279,7 +1294,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .slider-img {
     background-position: center 70px !important;
   }
