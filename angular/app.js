@@ -36,6 +36,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         },
         // view;
         // view
+        "schedule@home": {
+          templateUrl: "states/home/schedule.html"
+        },
+        // view;
+        // view
         "tickets@home": {
           templateUrl: "states/home/tickets.html",
           controller: 'ticketsCtrl',
