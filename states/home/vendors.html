@@ -1,0 +1,162 @@
+<!-- vendors -->
+<div id="vendors"></div>
+<div id="-about-us">
+  <div class="container">
+    <div class="row" id="team">
+      <div class="col-md-12 section-heading text-center">
+        <h2 ng-click="scrollTo('vendors')">Vendors</h2>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <!-- admin add new -->
+          <div class="text-center" ng-if="userIsAdmin">
+            <div class="feature">
+              <form id="adminAdd" class="form-group" name="adminAdd">
+                <button class="btn-mini btn-success" ng-click="addVendor(item)">Add New Vendor</button>
+                <div class="input-group">
+                  <span class="input-group-addon" id="rank">Rank</span>
+                  <input class="form-control" type="number" ng-model="item.rank" placeholder="Rank">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="photo">Image Link</span>
+                  <input type="text" class="form-control" ng-model="item.photo" placeholder="Image link">
+                </div>
+                <img src="{{item.photo}}" class="img-responsive" alt="Vendor Photo">
+                <div class="input-group">
+                  <span class="input-group-addon" id="name">Name</span>
+                  <input type="text" class="form-control" ng-model="item.name" placeholder="Name">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="sub-name">SEO Name</span>
+                  <input type="text" class="form-control" ng-model="item.subName" placeholder="SEO name">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="description">Description</span>
+                  <textarea class="form-control" rows="5" id="description" ng-model="item.description" placeholder="Description">{{item.description}}</textarea>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="website"><i class="icon-globe2"></i></span>
+                  <input type="text" class="form-control" ng-model="item.website" placeholder="Website">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="facebook"><i class="icon-facebook-official"></i></span>
+                  <input type="text" class="form-control" ng-model="item.facebook" placeholder="Facebook">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="youtube"><i class="icon-youtube"></i></span>
+                  <input type="text" class="form-control" ng-model="item.youtube" placeholder="YouTube">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="twitter"><i class="icon-twitter"></i></span>
+                  <input type="text" class="form-control" ng-model="item.twitter" placeholder="Twitter">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="instagram"><i class="icon-instagram"></i></span>
+                  <input type="text" class="form-control" ng-model="item.instagram" placeholder="Instagram">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="phone"><i class="icon-phone"></i></span>
+                  <input type="text" class="form-control" ng-model="item.phone" placeholder="Phone">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="email"><i class="icon-envelope"></i></span>
+                  <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- /admin add new -->
+          <!-- public repeat -->
+          <div class="text-center" ng-if="!userIsAdmin" ng-show="!item.hide" ng-repeat="item in vendors | orderBy: 'rank' ">
+            <div class="feature">
+              <img src="{{item.photo}}" class="img-responsive" alt="Vendor Photo">
+              <h3 class="name">{{item.name}}</h3>
+              <div ng-show="item.subName" class="position">{{item.subName}}</div>
+              <p ng-show="item.description" class="text-center item-description">{{item.description}}</p>
+              <ul class="social social-circle">
+                <li ng-show="item.website"><a ng-href="{{item.website}}" target="_blank"><i class="icon-globe2"></i></a></li>
+                <li ng-show="item.facebook"><a ng-href="{{item.facebookPage}}" target="_blank"><i class="icon-facebook-official"></i></a></li>
+                <li ng-show="item.youtube"><a ng-href="{{item.youtube}}" target="_blank"><i class="icon-youtube"></i></a></li>
+                <li ng-show="item.twitter"><a ng-href="{{item.twitter}}" target="_blank"><i class="icon-twitter"></i></a></li>
+                <li ng-show="item.instagram"><a ng-href="{{item.instagram}}" target="_blank"><i class="icon-instagram"></i></a></li>
+                <li ng-show="item.phone"><a href="tel:{{item.phone}}"><i class="icon-phone"></i></a></li>
+                <li ng-show="item.email"><a href="mailto:{{item.email}}"><i class="icon-envelope"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /public repeat -->
+          <!-- admin repeat -->
+          <div class="text-center" ng-if="userIsAdmin" ng-repeat="item in vendors | orderBy: 'rank' ">
+            <div class="feature">
+              <form name="adminRepeat" class="form-group">
+                <ul class="social">
+                  <li>
+                    <button class="btn-mini btn-success" ng-click="updateVendor(item)">Update</button>
+                  </li>
+                  <li>
+                    <button ng-hide="item.hide" class="btn-mini btn-warning" ng-click="toggleVendorHide(item)">Shown</button>
+                    <button ng-hide="!item.hide" class="btn-mini btn-warning" ng-click="toggleVendorHide(item)">Hidden</button>
+                  </li>
+                  <li>
+                    <button class="btn-mini btn-danger" ng-click="removeVendor(item)">Delete</button>
+                  </li>
+                </ul>
+                <div class="input-group">
+                  <span class="input-group-addon" id="rank">Rank</span>
+                  <input class="form-control" type="number" ng-model="item.rank2" placeholder="{{item.rank}}">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="photo">Image Link</span>
+                  <input type="text" class="form-control" ng-model="item.photo" placeholder="Image link">
+                </div>
+                <img src="{{item.photo}}" class="img-responsive" alt="Vendor Photo">
+                <div class="input-group">
+                  <span class="input-group-addon" id="name">Name</span>
+                  <input type="text" class="form-control" ng-model="item.name" placeholder="Name">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="sub-name">SEO Name</span>
+                  <input type="text" class="form-control" ng-model="item.subName" placeholder="SEO name">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="description">Description</span>
+                  <textarea class="form-control" rows="5" id="description" ng-model="item.description" placeholder="Description">{{item.description}}</textarea>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="website"><i class="icon-globe2"></i></span>
+                  <input type="text" class="form-control" ng-model="item.website" placeholder="Website">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="facebook"><i class="icon-facebook-official"></i></span>
+                  <input type="text" class="form-control" ng-model="item.facebook" placeholder="Facebook">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="youtube"><i class="icon-youtube"></i></span>
+                  <input type="text" class="form-control" ng-model="item.youtube" placeholder="YouTube">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="twitter"><i class="icon-twitter"></i></span>
+                  <input type="text" class="form-control" ng-model="item.twitter" placeholder="Twitter">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="instagram"><i class="icon-instagram"></i></span>
+                  <input type="text" class="form-control" ng-model="item.instagram" placeholder="Instagram">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="phone"><i class="icon-phone"></i></span>
+                  <input type="text" class="form-control" ng-model="item.phone" placeholder="Phone">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="email"><i class="icon-envelope"></i></span>
+                  <input type="text" class="form-control" ng-model="item.email" placeholder="Email">
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- /admin repeat -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /faire info -->
