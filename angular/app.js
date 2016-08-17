@@ -36,6 +36,18 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         },
         // view;
         // view
+        "vendors@home": {
+          templateUrl: "states/home/vendors.html",
+          controller: 'vendorsCtrl',
+          resolve: {
+            vendorsRef: function(firebaseService){
+              return firebaseService.getVendors();
+            }
+          }
+        },
+        // view;
+
+        // view
         "schedule@home": {
           templateUrl: "states/home/schedule.html"
         },
