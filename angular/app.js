@@ -36,6 +36,17 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         },
         // view;
         // view
+        "entertainers@home": {
+          templateUrl: "states/home/entertainers.html",
+          controller: 'entertainersCtrl',
+          resolve: {
+            entertainersRef: function(firebaseService){
+              return firebaseService.getEntertainers();
+            }
+          }
+        },
+        // view;
+        // view
         "vendors@home": {
           templateUrl: "states/home/vendors.html",
           controller: 'vendorsCtrl',
@@ -46,7 +57,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           }
         },
         // view;
-
         // view
         "schedule@home": {
           templateUrl: "states/home/schedule.html"
@@ -55,56 +65,31 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         // view
         "tickets@home": {
           templateUrl: "states/home/tickets.html",
-          controller: 'ticketsCtrl',
-          resolve: {
-            entertainersRef: function(firebaseService){
-              return firebaseService.getEntertainers();
-            }
-          }
+          controller: 'ticketsCtrl'
         },
         // view;
         // view
         "map@home": {
           templateUrl: "states/home/map.html",
-          controller: 'mapCtrl',
-          resolve: {
-            entertainersRef: function(firebaseService){
-              return firebaseService.getEntertainers();
-            }
-          }
+          controller: 'mapCtrl'
         },
         // view;
         // view
         "forms@home": {
           templateUrl: "states/home/forms.html",
-          controller: 'formsCtrl',
-          resolve: {
-            entertainersRef: function(firebaseService){
-              return firebaseService.getEntertainers();
-            }
-          }
+          controller: 'formsCtrl'
         },
         // view;
         // view
         "gallery@home": {
           templateUrl: "states/home/gallery.html",
-          controller: 'galleryCtrl',
-          resolve: {
-            entertainersRef: function(firebaseService){
-              return firebaseService.getEntertainers();
-            }
-          }
+          controller: 'galleryCtrl'
         },
         // view;
         // view
         "about@home": {
           templateUrl: "states/home/about.html",
-          controller: 'aboutCtrl',
-          resolve: {
-            entertainersRef: function(firebaseService){
-              return firebaseService.getEntertainers();
-            }
-          }
+          controller: 'aboutCtrl'
         },
         // view;
         // view

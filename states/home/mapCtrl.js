@@ -1,7 +1,6 @@
 var app = angular.module('utahrenfaire');
 
-app.controller('mapCtrl', function($scope, firebaseService, entertainersRef) {
+app.controller('mapCtrl', function($scope, firebaseService) {
 	
-	$scope.entertainers = entertainersRef;
 
 })
