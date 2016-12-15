@@ -2,6 +2,8 @@ var app = angular.module('utahrenfaire', ['ui.router', 'firebase']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
+  $urlRouterProvider.otherwise('/');
+
   $stateProvider
     // state
     .state('home', {
