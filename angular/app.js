@@ -108,15 +108,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
       }
     })
     // state;
-    .state('otherwise', {
-    url: '*path',
-    resolve: {
-      redirect: function($location) {
-        $location.path("/").replace()
-        console.log("redirecting...")
-      }
-    }
-    });
+    // .state('otherwise', {
+    // url: '*path',
+    // resolve: {
+    //   redirect: function($location) {
+    //     $location.path("/").replace()
+    //     console.log("redirecting...")
+    //   }
+    // }
+    // });
 
     $locationProvider.html5Mode(true);
 
