@@ -20,7 +20,7 @@
 <div id="slider">
   <div id="owl-example" class="owl-carousel owl-carousel-fullwidth">
     <!-- public repat -->
-    <div ng-if="!userIsAdmin" ng-show="!item.hide" ng-repeat="item in carousel" class="item slider-img" ng-style="{'background-image':'url(' + item.photo + ')', 'background-position': 'center'}">
+    <div ng-if="!userIsAdmin" ng-show="!item.hide" ng-repeat="item in carousel | orderBy: 'rank' " class="item slider-img" ng-style="{'background-image':'url(' + item.photo + ')', 'background-position': 'center'}">
       <div class="overlay"></div>
       <div class="container" style="position: relative;">
         <div class="row">
@@ -157,7 +157,7 @@
   </div>
 </div>
 <!-- admin repeat -->
-<div class="text-center" ng-if="userIsAdmin" ng-repeat="item in carousel">
+<div class="text-center" ng-if="userIsAdmin" ng-repeat="item in carousel | orderBy: 'rank' ">
   <div class="feature">
     <form name="adminRepeat" class="form-group">
       <ul class="social">
