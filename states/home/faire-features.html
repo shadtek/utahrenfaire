@@ -91,7 +91,9 @@
               <img src="{{item.photo}}" class="img-responsive" alt="Feature Photo">
               <h3 class="name">{{item.name}}</h3>
               <div ng-show="item.subName" class="position">{{item.subName}}</div>
-              <p ng-show="item.description" class="text-center item-description">{{item.description}}</p>
+              <div class="container">
+                <p ng-show="item.description" class="text-justify item-description">{{item.description}}</p>
+              </div>
               <ul class="social social-circle">
                 <li ng-show="item.website"><a ng-href="{{item.website}}" target="_blank"><i class="icon-globe2"></i></a></li>
                 <li ng-show="item.facebook"><a ng-href="{{item.facebookPage}}" target="_blank"><i class="icon-facebook-official"></i></a></li>
