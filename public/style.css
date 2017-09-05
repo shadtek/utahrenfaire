@@ -1,0 +1,103 @@
+/* Font */
+@font-face {
+  font-family: 'Goudy Medieval';
+  src: url('../fonts/GOUDY.TTF');
+}
+.goudym {
+	font-family: 'Goudy Medieval', Arial, sans-serif;
+	letter-spacing: 2px;
+}
+.goudyl {
+	font-family: 'Goudy Bookletter 1911', serif;
+}
+/* Resets */
+html,body{
+	width:100%;
+	overflow-x:hidden;
+}
+.row {
+	margin-bottom: 0px;
+}
+
+
+/*--- Top down CSS ---*/
+/* nav */
+.brand-logo {
+	max-height: 6.5rem; /* Link height same as logo height */
+}
+.brand-logo img{
+	max-height: 6.5rem;
+}
+.dropdown-content {
+	min-width: 200px;
+}
+.side-nav li>a>i {
+	margin: 0 5px 0 0;
+}
+@media screen and (max-width: 415px) {
+	nav .brand-logo {
+		font-size: 1.6em;
+		margin-left: -.5rem;
+	}
+	nav .button-collapse {
+		margin-right: 5px;
+	}
+}
+/* #contact-bar */
+#contact-bar {
+	font-size: 1.35rem;
+	padding-top: 2.5rem;
+}
+
+#contact-bar a:link {
+	color: #ffd740;
+}
+
+#contact-bar a:visited {
+	color: #ffd740;
+}
+
+#contact-bar a:hover {
+	color: white;
+}
+
+#contact-bar a:active {
+	color: #ffd740;
+}
+
+@media screen and (max-width: 700px) {
+	#top-text {
+		width: 95%;
+	}
+	.social-link {
+		margin-left: .5rem;
+	}
+}
+@media screen and (min-width: 701px) {
+	.social-link {
+		margin-left: 1rem;
+	}
+}
+
+/* .slider */
+#slider-parent {
+	background: url('img/bricks.jpg') fixed center/cover no-repeat;
+	padding-bottom: 2rem;
+}
+
+.slider .slides li img {
+	background-position-x: center;
+	background-position-y: top;
+}
+@media screen and (max-width: 600px) {
+	.slider .indicators .indicator-item {
+		height: .6rem;
+		width: .6rem;
+		margin: 0 .6rem;
+	}
+}
+
+/* #sponsors */
+#sponsors img {
+	max-width: 100%;
+}

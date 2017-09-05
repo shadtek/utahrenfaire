@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="utahrenfaire">
+<head>
+	<base href="/"></base>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>UtahRenFaire</title>
+	<link rel="canonical" href="http://www.utahrenfaire.org/" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Jquery first -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Google Analytics -->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-89598550-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- Standard Meta -->
+	<meta property="og:image" content="http://www.utahrenfaire.org/img/bw-joust.jpg" />
+	<meta name="description" content="At Thanksgiving Point. Friday and Saturday 10am to 8pm, the last weekend of August." />
+	<meta name="keywords" content="medieval times, utah renaissance faire, renfaire, utah valley ren fair, jousting, knights of mayhem, theater, shakespeare, family fun, festival" />
+	<meta name="author" content="Spencer Shattuck" />
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://www.utahrenfaire.org" />
+	<meta property="og:title" content="UtahRenFaire" />
+	<meta property="og:image:url" content="http://www.utahrenfaire.org/img/bw-joust.jpg" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:image:width" content="749" />
+	<meta property="og:image:height" content="592" />
+	<meta property="og:site_name" content="The Utah Renaissance Faire" />
+	<meta property="og:description" content="At Thanksgiving Point. Friday and Saturday 10am to 8pm, the last weekend of August." />
+	<meta name="twitter:title" content="UtahRenFaire" />
+	<meta name="twitter:image" content="http://www.utahrenfaire.org/img/bw-joust.jpg" />
+	<meta name="twitter:url" content="http://www.utahrenfaire.org" />
+	<meta name="twitter:card" content="At Thanksgiving Point. Friday and Saturday 10am to 8pm, the last weekend of August." />
+	<!-- Font -->
+	<link type='text/css' href='fonts/GOUDY.TTF'>
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911'>
+	<!-- Icons -->
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- Compiled and minified CSS -->
+	<link rel='stylesheet' type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+	<!-- Custom Styles -->
+	<link rel='stylesheet' type='text/css' href='style.css'>
+	<!-- Compiled and minified JavaScript -->
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+
+</head>
+<body>
+	<ui-view></ui-view>
+	<!-- Angular CDNs -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"  integrity="sha256-Nfc6cMygZ4KL6eCnEri0iQjhvESQY3xivXAVj5XNbic="  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js" integrity="sha256-FMocp8pp1WruAK6GtjNDtuGAALCt/dCsVtw7oSjvPX0=" crossorigin="anonymous"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script> -->
+	<!-- Angular App -->
+	<script src='js/app.js'></script>
+	<!-- Controllers -->
+	<script src='js/mainCtrl.js'></script>
+	<script src='views/home/homeCtrl.js'></script>
+	<script src='views/tickets/ticket-info/ticketInfoCtrl.js'></script>
+
+	<!-- Frontend Scripts -->
+	<script>
+		$(document).ready(function(){
+
+			$('.slider').slider({
+				interval: 3000,
+				transition: 700,
+				height: 500
+			});
+
+			// works on load
+			if ($(window).width() > 1440) {
+				$('.slider').addClass('container');
+			} else {
+				$('.slider').removeClass('container');
+			}
+
+			// works after load
+			$(window).resize(function() {
+				if ($(window).width() > 1440) {
+					$('.slider').addClass('container');
+				} else {
+					$('.slider').removeClass('container');
+				}
+			});
+
+			$(".button-collapse").sideNav({
+				menuWidth: 200, // Default is 240
+				edge: 'left', // Choose the horizontal origin
+				closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+				draggable: true // Choose whether you can drag to open on touch screens
+			});
+
+			$('.dropdown').dropdown({
+				inDuration: 300,
+				outDuration: 225,
+				constrain_width: false, // Does not change width of dropdown to that of the activator
+				hover: true, // Activate on hover
+				gutter: 0, // Spacing from edge
+				belowOrigin: true, // Displays dropdown below the button
+				alignment: 'left' // Displays dropdown with edge aligned to the left of button
+			});
+
+		});
+	</script>
+</body>
+</html>

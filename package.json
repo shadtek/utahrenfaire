@@ -1,0 +1,27 @@
+{
+  "name": "urf",
+  "version": "1.0.0",
+  "description": "Website for the Utah Renaissance Faire",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadtek/urf.git"
+  },
+  "author": "Spencer Shattuck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shadtek/urf/issues"
+  },
+  "homepage": "https://github.com/shadtek/urf#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "engines": {
+    "node": "v6.9.4",
+    "npm": "3.10.10"
+  }
+}
